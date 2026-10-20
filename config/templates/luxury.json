@@ -1,0 +1,183 @@
+{
+  "id": "luxury",
+  "order": 4,
+  "name": {
+    "ja": "ダーク・ラグジュアリー",
+    "en": "Dark Luxury"
+  },
+  "desc": {
+    "ja": "黒と金、細い線と明朝体。落ち着いた大人の配信に。",
+    "en": "Black and gold with fine lines and serif type. For a calm, refined stream."
+  },
+  "tokens": {
+    "accent": "#d8b46a",
+    "accent2": "#f3dfa8",
+    "bg": "#0b0a08",
+    "surface": "#15120d",
+    "text": "#f4ecd8",
+    "muted": "#b3a68a",
+    "font": "Noto Sans JP",
+    "headingFont": "Shippori Mincho",
+    "numberFont": "Cinzel",
+    "radius": 4
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "linear-gradient(160deg, {surface@0.96}, {bg@0.94})",
+    "bgAlpha": 1,
+    "borderStyle": "solid",
+    "borderWidth": 1,
+    "borderColor": "{accent@0.75}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accent2}",
+    "numberColor": "{accent2}",
+    "glowStrength": 0,
+    "insetColor": "{accent@0.22}",
+    "insetWidth": 5,
+    "innerShadow": "",
+    "shadowColor": "#000000",
+    "shadowAlpha": 0.6,
+    "shadowBlur": 22,
+    "shadowY": 8,
+    "padding": 20
+  },
+  "title": {
+    "font": "Shippori Mincho",
+    "weight": 800,
+    "fill": {
+      "type": "gradient",
+      "angle": 180,
+      "stops": [
+        "#fff8e4",
+        "{accent2}",
+        "{accent}"
+      ]
+    },
+    "strokes": [
+      {
+        "color": "#1a1306",
+        "width": 2
+      }
+    ],
+    "glow": {
+      "color": "{accent@0.55}",
+      "size": 8
+    },
+    "shadow": null,
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 4,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 2,
+        "fill": "#1a1306"
+      },
+      {
+        "w": 6,
+        "fill": "linear-gradient(135deg, {accent2}, {accent} 45%, {accent2} 55%, #8a6a2a)"
+      },
+      {
+        "w": 2,
+        "fill": "#1a1306"
+      },
+      {
+        "w": 1,
+        "fill": "{accent@0.6}"
+      }
+    ],
+    "shadow": {
+      "y": 8,
+      "blur": 24,
+      "color": "rgba(0,0,0,.6)"
+    },
+    "corners": {
+      "len": 34,
+      "w": 2,
+      "color": "{accent2}",
+      "gap": 12
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.94,
+      "textColor": "{text}",
+      "headingColor": "{accent2}",
+      "numberColor": "{accent2}",
+      "font": "{font}",
+      "headingFont": "{headingFont}"
+    }
+  },
+  "callout": {
+    "font": "Shippori Mincho",
+    "size": 56,
+    "bold": true,
+    "color": "#fff8e4",
+    "fill": "gradient",
+    "grad1": "#fff8e4",
+    "grad2": "{accent2}",
+    "grad3": "{accent}",
+    "gradAngle": 180,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "shine",
+    "effectColor": "{accent}",
+    "box": "card",
+    "boxColor": "{bg}",
+    "boxAlpha": 0.9,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 2,
+    "radius": 6,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{muted}",
+    "iconColor": "{accent2}"
+  },
+  "story": {
+    "font": "Noto Serif JP",
+    "titleFont": "Shippori Mincho",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accent2}",
+    "align": "center",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "{accent}",
+    "boxColor": "{bg}",
+    "boxAlpha": 0.9,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 1,
+    "borderColor": "{accent}",
+    "radius": 4,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "line",
+    "dim": 0.6,
+    "backdropBlur": 4,
+    "backdropColor": "#000000",
+    "valign": "center"
+  },
+  "background": "radial-gradient(1000px 600px at 50% -10%, {accent@0.18}, transparent 65%), linear-gradient(180deg, #14110b 0%, {bg} 100%)",
+  "scene": {
+    "fx": "particles",
+    "layout": "center"
+  }
+}

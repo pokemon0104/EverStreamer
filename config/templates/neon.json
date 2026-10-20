@@ -1,0 +1,158 @@
+{
+  "id": "neon",
+  "order": 1,
+  "name": {
+    "ja": "ネオンサイバー",
+    "en": "Neon Cyber"
+  },
+  "desc": {
+    "ja": "暗い背景に、発光するラインとグロー。FPS・アクション・夜の配信に。",
+    "en": "Glowing lines on a dark base. Great for FPS, action and late-night streams."
+  },
+  "tokens": {
+    "accent": "#22e4ff",
+    "accent2": "#ff3dd1",
+    "bg": "#06071a",
+    "surface": "#0b0e26",
+    "text": "#eaf7ff",
+    "muted": "#8ea4cc",
+    "font": "Noto Sans JP",
+    "headingFont": "Orbitron",
+    "numberFont": "Orbitron",
+    "radius": 12
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "linear-gradient(160deg, {surface@0.92} 0%, {bg@0.88} 100%)",
+    "bgAlpha": 1,
+    "borderStyle": "solid",
+    "borderWidth": 2,
+    "borderColor": "{accent}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accent}",
+    "numberColor": "{accentLight}",
+    "glowColor": "{accent}",
+    "glowStrength": 0,
+    "innerShadow": "inset 0 0 22px {accent@0.22}",
+    "shadowColor": "{accent}",
+    "shadowAlpha": 0.5,
+    "shadowBlur": 22,
+    "shadowY": 0,
+    "padding": 18
+  },
+  "title": {
+    "font": "Orbitron",
+    "fallbackFont": "Noto Sans JP",
+    "weight": 900,
+    "fill": {
+      "type": "solid",
+      "color": "#ffffff"
+    },
+    "strokes": [
+      {
+        "color": "{accent}",
+        "width": 2
+      }
+    ],
+    "glow": {
+      "color": "{accent}",
+      "size": 14
+    },
+    "shadow": null,
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 16,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 2,
+        "fill": "{bg@0.7}"
+      },
+      {
+        "w": 3,
+        "fill": "linear-gradient(135deg, {accent}, {accent2})"
+      }
+    ],
+    "glow": {
+      "color": "{accent@0.65}",
+      "blur": 26
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.9,
+      "textColor": "{text}",
+      "headingColor": "{accent}",
+      "numberColor": "{accentLight}",
+      "font": "{font}",
+      "headingFont": "{headingFont}"
+    }
+  },
+  "callout": {
+    "font": "Noto Sans JP",
+    "size": 60,
+    "bold": true,
+    "color": "#ffffff",
+    "fill": "solid",
+    "strokeWidth": 0,
+    "shadow": false,
+    "effect": "neon",
+    "effectColor": "{accent}",
+    "box": "pill",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.85,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 3,
+    "radius": 999,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{accent2Light}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "Noto Sans JP",
+    "titleFont": "Orbitron",
+    "size": 38,
+    "titleSize": 50,
+    "color": "{text}",
+    "titleColor": "{accent}",
+    "align": "center",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 8,
+    "glowColor": "{accent}",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.82,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 2,
+    "borderColor": "{accent}",
+    "radius": 18,
+    "padding": 44,
+    "boxWidth": 70,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.5,
+    "backdropBlur": 4,
+    "backdropColor": "{bg}",
+    "valign": "center"
+  },
+  "background": "radial-gradient(1200px 700px at 85% 10%, {accent2@0.22}, transparent 60%), radial-gradient(900px 600px at 10% 90%, {accent@0.2}, transparent 60%), linear-gradient(160deg, {bg} 0%, #02030c 100%)",
+  "scene": {
+    "fx": "grid",
+    "layout": "center"
+  }
+}

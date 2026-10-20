@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# User data: settings, API keys, uploaded images/videos, font cache
+data/
+
+# Release builds
+dist/
+
+# Secrets (just in case)
+*.key
+.env
+.env.*
+youtube-key.json
+
+# Logs / OS files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+desktop.ini

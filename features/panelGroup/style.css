@@ -1,0 +1,16 @@
+/* パネルのグループ:入れ物には枠も背景も付けない。中のパネルは横一列で、高さがそろう */
+.ov-panel.ov-pgroup { padding: 0 !important; }
+.ov-panel.ov-pgroup > .ov-box { border: none !important; box-shadow: none !important; overflow: visible; border-radius: 0; }
+.ov-panel.ov-pgroup > .ov-box::before,
+.ov-panel.ov-pgroup > .ov-box::after,
+.ov-panel.ov-pgroup > .ov-box > .ov-glint { display: none !important; }
+.ov-panel.ov-pgroup > .ov-box > .ov-content {
+  display: flex; flex-direction: row; align-items: stretch;
+  gap: var(--pg-gap, 12px); padding: 0; overflow: visible;
+}
+.ov-panel.ov-pgroup > .ov-box > .ov-content > .ov-panel { min-width: 0; }
+.ov-panel.is-empty { display: none !important; }
+/* 管理画面:空のグループ(または中がすべて非表示)の場所を点線で示す */
+.ov-stage.is-editor .ov-panel.ov-pgroup.is-empty:not(.is-gone) { display: flex !important; }
+.ov-stage.is-editor .ov-panel.ov-pgroup.is-empty > .ov-box > .ov-content { min-height: 60px; border: 3px dashed rgba(255, 255, 255, .45); border-radius: 8px; }
+.ov-panel.ov-pgroup > .ov-box > .ov-gframe { display: none !important; }

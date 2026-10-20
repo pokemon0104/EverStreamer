@@ -1,0 +1,163 @@
+{
+  "id": "esports",
+  "order": 8,
+  "name": {
+    "ja": "eスポーツ",
+    "en": "Esports"
+  },
+  "desc": {
+    "ja": "斜めのカットと力強い赤。対戦ゲーム・大会風の配信に。",
+    "en": "Diagonal cuts and bold red. For competitive games and tournament-style streams."
+  },
+  "tokens": {
+    "accent": "#ff2d55",
+    "accent2": "#ff9500",
+    "bg": "#09090c",
+    "surface": "#141419",
+    "text": "#ffffff",
+    "muted": "#a3a3b2",
+    "font": "Noto Sans JP",
+    "headingFont": "Bebas Neue",
+    "numberFont": "Bebas Neue",
+    "radius": 0
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "linear-gradient(115deg, {surface@0.96} 0%, {bg@0.94} 100%)",
+    "bgAlpha": 1,
+    "borderStyle": "none",
+    "borderWidth": 0,
+    "borderColor": "{accent}",
+    "radius": 0,
+    "textColor": "{text}",
+    "headingColor": "{text}",
+    "numberColor": "{text}",
+    "glowStrength": 0,
+    "innerShadow": "",
+    "shadowColor": "#000000",
+    "shadowAlpha": 0.55,
+    "shadowBlur": 16,
+    "shadowY": 6,
+    "letterSpacing": 0.03,
+    "padding": 18
+  },
+  "title": {
+    "font": "Bebas Neue",
+    "fallbackFont": "Dela Gothic One",
+    "weight": 400,
+    "fill": {
+      "type": "solid",
+      "color": "#ffffff"
+    },
+    "strokes": [],
+    "glow": null,
+    "shadow": {
+      "x": 5,
+      "y": 5,
+      "blur": 0,
+      "color": "{accent}"
+    },
+    "italic": true,
+    "skew": -8
+  },
+  "frame": {
+    "radius": 0,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 6,
+        "fill": "linear-gradient(90deg, {accent}, {accent2})"
+      }
+    ],
+    "corners": {
+      "len": 30,
+      "w": 5,
+      "color": "#ffffff",
+      "gap": 12
+    },
+    "shadow": {
+      "y": 0,
+      "blur": 18,
+      "color": "{accent@0.5}"
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.92,
+      "textColor": "{text}",
+      "headingColor": "{text}",
+      "numberColor": "{text}",
+      "font": "{font}",
+      "headingFont": "{headingFont}"
+    }
+  },
+  "callout": {
+    "font": "Dela Gothic One",
+    "size": 58,
+    "bold": false,
+    "color": "#ffffff",
+    "fill": "solid",
+    "grad1": "#ffffff",
+    "grad2": "{accentLight}",
+    "grad3": "",
+    "gradAngle": 90,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "shake",
+    "effectColor": "{accent}",
+    "box": "ribbon",
+    "boxColor": "{accent}",
+    "boxAlpha": 1,
+    "boxImage": "linear-gradient(90deg, {accent}, {accent2})",
+    "borderColor": "{accent}",
+    "borderWidth": 0,
+    "radius": 0,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "#ffffff",
+    "iconColor": "#ffffff"
+  },
+  "story": {
+    "font": "Noto Sans JP",
+    "titleFont": "Bebas Neue",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accent}",
+    "align": "left",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "{accent}",
+    "boxColor": "{bg}",
+    "boxAlpha": 0.9,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 0,
+    "borderColor": "{accent}",
+    "radius": 0,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.55,
+    "backdropBlur": 4,
+    "backdropColor": "#000000",
+    "valign": "center"
+  },
+  "background": "repeating-linear-gradient(115deg, rgba(255,255,255,.022) 0 2px, transparent 2px 26px), linear-gradient(115deg, transparent 0%, transparent 62%, {accent@0.16} 62.2%, transparent 74%, {accent2@0.10} 74.2%, transparent 82%), radial-gradient(900px 600px at 85% 15%, {accent@0.14}, transparent 60%), {bg}",
+  "scene": {
+    "fx": "lines",
+    "layout": "left"
+  }
+}

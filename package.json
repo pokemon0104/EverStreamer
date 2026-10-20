@@ -1,0 +1,29 @@
+{
+  "name": "everstreamer",
+  "version": "1.0.0",
+  "description": "Template-based OBS overlay for game streamers: 8 templates, YouTube & Twitch chat, PNGtuber character, alerts, horizontal and vertical (Shorts) layouts. Japanese / English.",
+  "license": "MIT",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "release": "node scripts/release.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "obs",
+    "overlay",
+    "streaming",
+    "youtube",
+    "twitch",
+    "pngtuber",
+    "browser-source",
+    "vtuber"
+  ],
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

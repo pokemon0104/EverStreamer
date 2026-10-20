@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440">
+<defs>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6f0d9"/><stop offset="1" stop-color="#5fcfae"/></linearGradient>
+<radialGradient id="s" cx=".35" cy=".25" r=".6"><stop offset="0" stop-color="#ffffff" stop-opacity=".7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="200" cy="420" rx="120" ry="14" fill="#000" opacity=".18"/>
+<!-- 双葉 -->
+<path d="M200 92 C200 70 198 58 192 46" stroke="#1d3340" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M192 50 C170 26 138 30 132 44 C150 62 178 62 192 50Z" fill="#8ad46a" stroke="#1d3340" stroke-width="6" stroke-linejoin="round"/>
+<path d="M194 52 C210 24 244 22 252 36 C236 58 208 62 194 52Z" fill="#a4e27f" stroke="#1d3340" stroke-width="6" stroke-linejoin="round"/>
+<!-- 耳 -->
+<path d="M96 150 C80 104 92 82 112 86 C132 90 146 116 150 132Z" fill="url(#b)" stroke="#1d3340" stroke-width="8" stroke-linejoin="round"/>
+<path d="M304 150 C320 104 308 82 288 86 C268 90 254 116 250 132Z" fill="url(#b)" stroke="#1d3340" stroke-width="8" stroke-linejoin="round"/>
+<!-- からだ -->
+<path d="M200 96 C300 96 352 170 352 270 C352 360 292 410 200 410 C108 410 48 360 48 270 C48 170 100 96 200 96Z" fill="url(#b)" stroke="#1d3340" stroke-width="9"/>
+<path d="M200 96 C300 96 352 170 352 270 C352 360 292 410 200 410 C108 410 48 360 48 270 C48 170 100 96 200 96Z" fill="url(#s)"/>
+<!-- おなか -->
+<ellipse cx="200" cy="330" rx="92" ry="62" fill="#e9fff7" opacity=".85"/>
+<!-- ほっぺ -->
+<ellipse cx="112" cy="268" rx="26" ry="15" fill="#ff9fb4" opacity=".75"/>
+<ellipse cx="288" cy="268" rx="26" ry="15" fill="#ff9fb4" opacity=".75"/>
+<path d="M130 228 Q148 240 166 228" stroke="#1d3340" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M234 228 Q252 240 270 228" stroke="#1d3340" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M184 268 Q192 278 200 268 Q208 278 216 268" stroke="#1d3340" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- 手 -->
+<path d="M70 300 C52 312 52 336 74 338" stroke="#1d3340" stroke-width="8" fill="#7fdcbf" stroke-linecap="round"/>
+<path d="M330 300 C348 312 348 336 326 338" stroke="#1d3340" stroke-width="8" fill="#7fdcbf" stroke-linecap="round"/>
+
+</svg>

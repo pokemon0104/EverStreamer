@@ -1,0 +1,11 @@
+/* APIキーの取り方・クォータ */
+.adm .yt-steps { margin: 4px 0 8px; padding-left: 22px; }
+.adm .yt-steps li { margin-bottom: 8px; }
+.adm .yt-steps li b { display: block; }
+.adm .yt-quota { margin: 8px 0; }
+.adm .yt-qbar { height: 8px; border-radius: 99px; background: var(--surface2); overflow: hidden; }
+.adm .yt-qbar i { display: block; height: 100%; background: var(--ok); transition: width .4s; }
+.adm .yt-quota[data-level='warn'] .yt-qbar i { background: #f0b429; }
+.adm .yt-quota[data-level='high'] .yt-qbar i { background: var(--live); }
+.adm .yt-quota[data-level='warn'] .hint { color: #f0c860; }
+.adm .yt-quota[data-level='high'] .hint { color: #ff9a9e; }

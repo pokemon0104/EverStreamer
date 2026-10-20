@@ -1,0 +1,7 @@
+.t-text .tf-body { display: flex; flex-direction: column; gap: .15em; }
+.t-text .tf-p { margin: 0; }
+.t-text .tf-gap { height: .5em; }
+.t-text .tf-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .2em; }
+.t-text .tf-list li { display: flex; gap: .45em; align-items: baseline; }
+.t-text .tf-mark { flex: 0 0 auto; font-size: .78em; opacity: .95; }
+.t-text .tf-li { flex: 1 1 auto; min-width: 0; }

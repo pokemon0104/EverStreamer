@@ -1,0 +1,90 @@
+.t-gameTitle { display: flex; flex-direction: column; justify-content: center; }
+.t-gameTitle .gt-status {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  margin-bottom: .5em;
+  white-space: nowrap;
+  min-width: 0;
+}
+.t-gameTitle .gt-live {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  padding: .2em .6em .16em;
+  border-radius: .3em;
+  background: #d61f2c;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-shadow: none;
+  font-family: var(--t-nfont, var(--font)); font-weight: 700;
+  font-size: .8em;
+}
+.t-gameTitle .gt-live i { width: .6em; height: .6em; border-radius: 50%; background: #fff; display: block; }
+.t-gameTitle .gt-live.on i { animation: gt-blink 1.2s steps(2, start) infinite; }
+.t-gameTitle .gt-live.off { background: #4a4a55; color: #d8d8e0; }
+.t-gameTitle .gt-live.off i { background: #9a9aa8; }
+@keyframes gt-blink { to { visibility: hidden; } }
+.t-gameTitle .gt-hws { display: inline-flex; gap: .3em; align-items: center; }
+.t-gameTitle .gt-status .hw { font-size: .95em; }
+.t-gameTitle .gt-timer {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .06em;
+}
+.t-gameTitle .gt-main {
+  --tfit: 1;
+  display: flex;
+  gap: .3em;
+  align-items: stretch;
+  min-width: 0;
+  font-size: calc(var(--fs-h) * var(--k) * var(--tfit));
+}
+.t-gameTitle .gt-main.pos-right { flex-direction: row-reverse; }
+.t-gameTitle .gt-main.pos-top { flex-direction: column; }
+.t-gameTitle .gt-main.pos-bottom { flex-direction: column-reverse; }
+.t-gameTitle .gt-main.pos-top .gt-hws-main,
+.t-gameTitle .gt-main.pos-bottom .gt-hws-main { align-self: flex-start; }
+.t-gameTitle .gt-main.align-center.pos-top .gt-hws-main,
+.t-gameTitle .gt-main.align-center.pos-bottom .gt-hws-main { align-self: center; }
+.t-gameTitle .gt-hws-main { display: flex; align-items: stretch; gap: .15em; flex: 0 0 auto; }
+.t-gameTitle .gt-hws-main .hw { font-size: .5em; }
+.t-gameTitle .gt-titlebox {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+.t-gameTitle .gt-main.align-center .gt-titlebox { justify-content: center; }
+.t-gameTitle .gt-title {
+  position: relative;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-shadow: none;
+  padding: .06em .12em .1em .04em;
+}
+.t-gameTitle .gt-layers { position: relative; display: inline-block; }
+.t-gameTitle .gt-l { position: absolute; left: 0; top: 0; white-space: nowrap; }
+.t-gameTitle .gt-fill { position: relative; }
+.t-gameTitle .gt-logo { display: block; max-width: 100%; height: auto; object-fit: contain; }
+.t-gameTitle .gt-title.wrap { white-space: normal; line-height: 1.25; flex: 1 1 auto; min-width: 0; }
+.t-gameTitle .gt-title.wrap .gt-layers { display: block; }
+.t-gameTitle .gt-title.wrap .gt-l { right: 0; white-space: normal; }
+.t-gameTitle .gt-main.align-center .gt-title.wrap { text-align: center; }
+
+/* ゲームロゴ(ロゴだけを大きく) */
+.t-gameLogo { display: flex; flex-direction: column; }
+.t-gameLogo .gl-box { flex: 1 1 auto; min-height: 0; display: flex; width: 100%; }
+.t-gameLogo .gl-img { display: block; width: 100%; height: 100%; object-fit: contain; min-height: 0; }
+.t-gameLogo .gl-text { width: 100%; font-size: calc(var(--fs-h) * var(--k) * var(--tfit, 1)); }
+.t-gameLogo .gl-title { white-space: normal; word-break: keep-all; overflow-wrap: normal; line-height: 1.2; text-shadow: none; padding: .06em .12em .1em .04em; position: relative; }
+.t-gameLogo .gl-title .gt-layers { position: relative; display: block; }
+.t-gameLogo .gl-title .gt-l { position: absolute; left: 0; right: 0; top: 0; white-space: normal; }
+.t-gameLogo .gl-title .gt-fill { position: relative; }
+.t-gameLogo .gl-empty { width: 100%; min-height: 60px; display: flex; align-items: center; justify-content: center; border: 2px dashed rgba(255,255,255,.5); font-size: 16px; opacity: .8; }
+
+.t-gameLogo .gl-title.one { white-space: nowrap; }
+.t-gameLogo .gl-title.one .gt-layers { display: inline-block; }
+.t-gameLogo .gl-title.one .gt-l { right: auto; white-space: nowrap; }

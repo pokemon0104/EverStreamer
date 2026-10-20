@@ -1,0 +1,9 @@
+/* 最新のサポーター */
+.t-supporters .sp-title { font-family: var(--hfont); color: var(--c-head); font-size: calc(var(--fs-h) * var(--k)); font-weight: 800; margin-bottom: calc(6px * var(--k)); text-shadow: var(--tshadow); }
+.t-supporters .sp-list { display: flex; flex-direction: column; gap: calc(6px * var(--k)); }
+.t-supporters .sp-row { display: flex; align-items: center; gap: calc(10px * var(--k)); font-size: calc(var(--fs-b) * var(--k) * .88); font-weight: var(--fw); color: var(--c-text); min-width: 0; text-shadow: var(--tshadow); }
+.t-supporters .sp-row.first { font-size: calc(var(--fs-b) * var(--k)); }
+.t-supporters .sp-ic { flex: 0 0 auto; }
+.t-supporters .sp-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-supporters .sp-amt { flex: 0 0 auto; font-family: var(--nfont); font-weight: 800; color: var(--t-on-accent, #111); background: linear-gradient(135deg, var(--t-accent, #ffd34d), var(--t-accent2, #ff9f1a)); border-radius: 99px; padding: 0 .6em; font-size: .85em; }
+.t-supporters .sp-empty { opacity: .6; font-size: calc(var(--fs-b) * var(--k) * .85); }

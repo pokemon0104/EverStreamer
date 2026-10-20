@@ -1,0 +1,11 @@
+/* ファンタジー:四隅の金の飾り */
+.ov-stage[data-template='fantasy'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; inset: 4px; z-index: 2; pointer-events: none;
+  background:
+    radial-gradient(circle, var(--t-accent-light) 0 3px, var(--t-accent) 3.5px 5px, transparent 5.5px) left top / 14px 14px no-repeat,
+    radial-gradient(circle, var(--t-accent-light) 0 3px, var(--t-accent) 3.5px 5px, transparent 5.5px) right top / 14px 14px no-repeat,
+    radial-gradient(circle, var(--t-accent-light) 0 3px, var(--t-accent) 3.5px 5px, transparent 5.5px) left bottom / 14px 14px no-repeat,
+    radial-gradient(circle, var(--t-accent-light) 0 3px, var(--t-accent) 3.5px 5px, transparent 5.5px) right bottom / 14px 14px no-repeat;
+  filter: drop-shadow(0 0 4px var(--t-accent2));
+}
+.ov-stage[data-template='fantasy'] .sc-kicker { font-family: var(--t-hfont), serif; letter-spacing: .4em; }

@@ -1,0 +1,9 @@
+/* ダーク・ラグジュアリー:上辺の中央に小さなひし形 */
+.ov-stage[data-template='luxury'] .ov-panel.is-tpl .ov-box { overflow: visible; }
+.ov-stage[data-template='luxury'] .ov-panel.is-tpl .ov-box::before { border-radius: inherit; }
+.ov-stage[data-template='luxury'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; left: 50%; top: -5px; width: 9px; height: 9px; z-index: 3; pointer-events: none;
+  transform: translateX(-50%) rotate(45deg); background: var(--t-accent2); box-shadow: 0 0 8px var(--t-accent);
+}
+.ov-stage[data-template='luxury'] .ov-panel.is-tpl .ov-content { overflow: hidden; }
+.ov-stage[data-template='luxury'] .sc-kicker { letter-spacing: .5em; font-family: var(--t-nfont), serif; }

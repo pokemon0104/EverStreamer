@@ -1,0 +1,71 @@
+.t-number { display: flex; flex-direction: column; justify-content: center; }
+.t-number .np-label { margin-bottom: .2em; }
+.t-number .np-line { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: .25em; row-gap: 0; }
+.t-number .np-num {
+  font-size: calc(var(--fs-n) * var(--k));
+  color: var(--c-num);
+  font-weight: 800;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--nfont, var(--hfont));
+}
+.t-number .np-sub { font-weight: 700; }
+
+/* バー */
+.t-number .np-barwrap { margin-top: .45em; min-width: 0; }
+.t-number .np-bar {
+  --bar-c: var(--c-num);
+  --bar-bg: color-mix(in srgb, var(--c-text) 14%, transparent);
+  position: relative;
+  height: calc(var(--bar-h, 22px) * var(--k));
+  background: var(--bar-bg);
+  border-radius: 999px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.t-number .np-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--bar-fill, var(--bar-c));
+  box-shadow: 0 0 calc(var(--bar-h, 22px) * var(--k) * .6) color-mix(in srgb, var(--bar-c) 55%, transparent), inset 0 calc(var(--bar-h, 22px) * var(--k) * .2) 0 rgba(255, 255, 255, .25);
+}
+/* テンプレートに合わせたパネル:メインカラー→サブカラーのグラデーション */
+.ov-panel.is-tpl .t-number .np-bar { --bar-fill: linear-gradient(90deg, var(--t-accent), var(--t-accent2)); --bar-c: var(--t-accent); }
+/* ブロック:等間隔に区切ったゲージ */
+.t-number .np-bar.blocks {
+  border-radius: 4px;
+  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0, #000 calc(100% / var(--blocks) - 3px), transparent calc(100% / var(--blocks) - 3px), transparent calc(100% / var(--blocks)));
+  mask-image: repeating-linear-gradient(90deg, #000 0, #000 calc(100% / var(--blocks) - 3px), transparent calc(100% / var(--blocks) - 3px), transparent calc(100% / var(--blocks)));
+}
+.t-number .np-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: .6em;
+  margin-top: .2em;
+  font-size: .85em;
+  font-variant-numeric: tabular-nums;
+  opacity: .95;
+}
+/* 増えたときに光る */
+.t-number .np-fill.flash { animation: np-flash 1s ease-out; }
+@keyframes np-flash { 0% { filter: brightness(2.4) saturate(1.4); } 100% { filter: none; } }
+.t-number .np-num.flash { animation: np-pop .7s ease-out; }
+@keyframes np-pop { 0% { transform: scale(1.25); filter: brightness(1.8); } 100% { transform: none; filter: none; } }
+
+/* 交互に切り替え(文字 ⇄ バー) */
+.t-number .np-stack { display: grid; overflow: hidden; /* 隠れている側のずれを、はみ出し判定に含めない */ }
+.t-number .np-layer {
+  grid-area: 1 / 1;
+  min-width: 0;
+  transition: opacity .5s ease, transform .5s ease;
+}
+.t-number .np-layer .np-barwrap { margin-top: 0; }
+.t-number .np-stack[data-phase='a'] .np-layer.b { opacity: 0; transform: translateY(40%); pointer-events: none; }
+.t-number .np-stack[data-phase='b'] .np-layer.a { opacity: 0; transform: translateY(-40%); pointer-events: none; }
+
+/* 絵文字+数字 / 演出だけ */
+.t-number .np-emo { font-size: calc(var(--fs-n) * var(--k) * var(--emo-k, .9)); line-height: 1; align-self: center; font-family: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
+.t-number .np-line.emo { align-items: center; column-gap: .3em; }
+.t-number .np-ghost.peek { font-size: 14px; }

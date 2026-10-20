@@ -1,0 +1,181 @@
+{
+  "id": "fantasy",
+  "order": 6,
+  "name": {
+    "ja": "ファンタジー",
+    "en": "Fantasy"
+  },
+  "desc": {
+    "ja": "深い紫と金の装飾。RPG・アドベンチャー・世界観のあるゲームに。",
+    "en": "Deep purple with ornate gold trim. For RPGs, adventures and story-rich games."
+  },
+  "tokens": {
+    "accent": "#e8c76a",
+    "accent2": "#7cc6ff",
+    "bg": "#0e0b20",
+    "surface": "#191433",
+    "text": "#f3eeff",
+    "muted": "#b7add9",
+    "font": "Noto Sans JP",
+    "headingFont": "Cinzel",
+    "numberFont": "Cinzel",
+    "radius": 12
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "radial-gradient(120% 90% at 50% 0%, {accent2@0.14}, transparent 60%), linear-gradient(180deg, {surface@0.95}, {bg@0.94})",
+    "bgAlpha": 1,
+    "borderStyle": "double",
+    "borderWidth": 5,
+    "borderColor": "{accent}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accent}",
+    "numberColor": "{accentLight}",
+    "glowStrength": 0,
+    "innerShadow": "inset 0 0 26px {accent2@0.18}",
+    "shadowColor": "#000000",
+    "shadowAlpha": 0.6,
+    "shadowBlur": 20,
+    "shadowY": 6,
+    "padding": 20
+  },
+  "title": {
+    "font": "Cinzel",
+    "fallbackFont": "Shippori Mincho",
+    "weight": 700,
+    "fill": {
+      "type": "gradient",
+      "angle": 180,
+      "stops": [
+        "#fffbe8",
+        "{accent}",
+        "#a07a2a"
+      ]
+    },
+    "strokes": [
+      {
+        "color": "#1a1230",
+        "width": 3
+      }
+    ],
+    "glow": {
+      "color": "{accent2@0.6}",
+      "size": 10
+    },
+    "shadow": null,
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 14,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 2,
+        "fill": "#1a1230"
+      },
+      {
+        "w": 5,
+        "fill": "linear-gradient(135deg, {accentLight}, {accent} 50%, #8f6a22)"
+      },
+      {
+        "w": 3,
+        "fill": "#1a1230"
+      },
+      {
+        "w": 2,
+        "fill": "{accent@0.7}"
+      }
+    ],
+    "glow": {
+      "color": "{accent2@0.45}",
+      "blur": 24
+    },
+    "corners": {
+      "len": 30,
+      "w": 3,
+      "color": "{accentLight}",
+      "gap": 10
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.92,
+      "textColor": "{text}",
+      "headingColor": "{accent}",
+      "numberColor": "{accentLight}",
+      "font": "{font}",
+      "headingFont": "{headingFont}"
+    }
+  },
+  "callout": {
+    "font": "Shippori Mincho",
+    "size": 56,
+    "bold": true,
+    "color": "#fffbe8",
+    "fill": "gradient",
+    "grad1": "#fffbe8",
+    "grad2": "{accent}",
+    "grad3": "",
+    "gradAngle": 180,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "sparkle",
+    "effectColor": "{accentLight}",
+    "box": "window",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.92,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 5,
+    "radius": 14,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{accent2}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "Noto Serif JP",
+    "titleFont": "Cinzel",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accent}",
+    "align": "center",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 6,
+    "glowColor": "{accent2}",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.92,
+    "boxImage": "",
+    "borderStyle": "double",
+    "borderWidth": 7,
+    "borderColor": "{accent}",
+    "radius": 14,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "brackets",
+    "dim": 0.55,
+    "backdropBlur": 4,
+    "backdropColor": "#05030f",
+    "valign": "center"
+  },
+  "background": "radial-gradient(1000px 700px at 50% 110%, {accent2@0.22}, transparent 60%), radial-gradient(800px 500px at 10% 0%, #6b3fd1 0%, transparent 60%), linear-gradient(180deg, #1a1240 0%, {bg} 100%)",
+  "scene": {
+    "fx": "particles",
+    "layout": "center"
+  }
+}

@@ -1,0 +1,16 @@
+/* FPS・タクティカル:角を切ったパネルと、左上・右下のブラケット */
+.ov-stage[data-template='tactical'] .ov-panel.is-tpl .ov-box {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+.ov-stage[data-template='tactical'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(var(--t-accent), var(--t-accent)) left top / 22px 3px no-repeat,
+    linear-gradient(var(--t-accent), var(--t-accent)) left top / 3px 22px no-repeat,
+    linear-gradient(var(--t-accent), var(--t-accent)) right bottom / 22px 3px no-repeat,
+    linear-gradient(var(--t-accent), var(--t-accent)) right bottom / 3px 22px no-repeat,
+    linear-gradient(135deg, transparent calc(100% - 23px), var(--t-accent) calc(100% - 23px), var(--t-accent) calc(100% - 21px), transparent calc(100% - 21px)) right top / 24px 24px no-repeat;
+}
+.ov-stage[data-template='tactical'] .ov-panel.is-tpl .ov-content { text-transform: none; }
+.ov-stage[data-template='tactical'] .sc-title { letter-spacing: .04em; }
+.ov-stage[data-template='tactical'] .sc-kicker::before { display: none; }

@@ -1,0 +1,144 @@
+/* ===== オーバーレイ描画(プレビューと共通) ===== */
+.ov-stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  --gs: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.ov-container {
+  --cfit: 1;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 12px);
+  overflow: hidden;
+}
+.ov-container[data-dir='row'] { flex-direction: row; align-items: stretch; }
+.ov-container.squeeze .ov-panel { min-height: 0 !important; }
+.ov-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap, 12px);
+  align-items: stretch;
+  min-width: 0;
+  min-height: 0;
+}
+.ov-container[data-dir='row'] > .ov-group { flex-direction: column; }
+.ov-free { position: absolute; inset: 0; pointer-events: none; }
+.ov-free > .ov-panel { pointer-events: auto; }
+
+.ov-panel {
+  --fit: 1;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: var(--outset, 0px);
+  transition: opacity var(--anim-ms, 350ms) ease, transform var(--anim-ms, 350ms) cubic-bezier(.2, .8, .2, 1);
+}
+.ov-panel.is-gone, .ov-group.is-gone { display: none !important; }
+.ov-panel.is-hidden { opacity: 0; }
+.ov-panel.is-hidden[data-anim='slideLeft'] { transform: translateX(-80px); }
+.ov-panel.is-hidden[data-anim='slideRight'] { transform: translateX(80px); }
+.ov-panel.is-hidden[data-anim='slideUp'] { transform: translateY(50px); }
+.ov-panel.is-hidden[data-anim='slideDown'] { transform: translateY(-50px); }
+.ov-panel.is-hidden[data-anim='pop'] { transform: scale(.6); }
+.ov-panel.is-hidden[data-anim='zoom'] { transform: scale(1.15); }
+.ov-panel[data-anim='pop'] { transition-timing-function: ease, cubic-bezier(.34, 1.56, .64, 1); }
+
+.ov-box {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: var(--radius, 0px);
+  overflow: hidden;
+}
+.ov-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg);
+  opacity: var(--bg-a, 1);
+  border-radius: inherit;
+}
+.ov-box.has-scan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, var(--scan-a)) 0 2px, transparent 2px 4px);
+}
+.ov-content {
+  --k: calc(var(--gs, 1) * var(--cfit, 1) * var(--fit, 1));
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: var(--pad, 16px);
+  color: var(--c-text);
+  font-family: var(--font);
+  font-weight: var(--fw, 400);
+  font-size: calc(var(--fs-b) * var(--k));
+  line-height: var(--lh, 1.4);
+  letter-spacing: var(--ls, 0);
+  text-shadow: var(--tshadow, none);
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+.ov-h {
+  font-family: var(--hfont);
+  font-size: calc(var(--fs-h) * var(--k));
+  color: var(--c-head);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 .4em;
+}
+.ov-glint {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.ov-glint::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .8), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+.ov-glint.play::after { animation: ov-glint 950ms ease-out 120ms; }
+@keyframes ov-glint {
+  0% { left: -60%; opacity: 1; }
+  100% { left: 140%; opacity: 1; }
+}
+
+/* 枠も背景も出さないパネル(演出だけ・空きスペース)。管理画面のプレビューでは点線で場所を示す */
+.ov-panel.is-ghost .ov-box { border: none !important; box-shadow: none !important; }
+.ov-panel.is-ghost .ov-box::before, .ov-panel.is-ghost .ov-box::after, .ov-panel.is-ghost .ov-glint { display: none !important; }
+.ov-panel.is-ghost .ov-content { padding: 0; }
+.ov-ghost { width: 100%; height: 100%; box-sizing: border-box; }
+.ov-ghost.peek {
+  border: 3px dashed rgba(255, 255, 255, .55); border-radius: 10px; background: rgba(255, 255, 255, .06);
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px;
+  font-size: 22px; line-height: 1.4; color: rgba(255, 255, 255, .8); text-shadow: 0 1px 2px #000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700;
+}
+
+/* ゲーム枠と同じデザインのスタイル(パネルの縁の帯) */
+.ov-gframe { position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; }

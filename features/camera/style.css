@@ -1,0 +1,15 @@
+/* カメラ枠 */
+.t-camera { position: relative; padding: 0 !important; }
+.t-camera .cam-hole { position: absolute; inset: 0; }
+.ov-stage.is-editor .t-camera .cam-hole { background: repeating-linear-gradient(45deg, rgba(255, 255, 255, .06) 0 12px, transparent 12px 24px); display: grid; place-items: center; }
+.t-camera .cam-hint { color: rgba(255, 255, 255, .6); font-size: 18px; font-weight: 700; }
+.t-camera .cam-plate {
+  position: absolute; max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--hfont); font-weight: 800; font-size: calc(var(--fs-b) * var(--k));
+  color: var(--t-on-accent, #fff); background: linear-gradient(135deg, var(--t-accent, #4f8cff), var(--t-accent2, #ff5fd2));
+  padding: .25em .9em; border-radius: 999px; box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+.t-camera .cam-plate.pos-bl { left: 14px; bottom: 14px; }
+.t-camera .cam-plate.pos-br { right: 14px; bottom: 14px; }
+.t-camera .cam-plate.pos-tl { left: 14px; top: 14px; }
+.t-camera .cam-plate.pos-b { left: 50%; bottom: -0.9em; transform: translateX(-50%); }

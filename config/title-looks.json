@@ -1,0 +1,311 @@
+{
+  "_説明": "ゲームタイトル「おまかせ」用の見た目セット。縁取り(strokes)は内側→外側の順。太さ・グロー・影は文字サイズ48px基準のpx値(自動で文字サイズに比例します)。",
+  "looks": [
+    {
+      "id": "gold_dragon",
+      "name": "ゴールド",
+      "font": "Dela Gothic One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#fffbd0",
+          "#ffd23a",
+          "#d27a00"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#5b2600",
+          "width": 3
+        },
+        {
+          "color": "#ffffff",
+          "width": 3
+        }
+      ],
+      "glow": {
+        "color": "#ffcc33",
+        "size": 10
+      },
+      "shadow": {
+        "x": 3,
+        "y": 5,
+        "blur": 0,
+        "color": "rgba(0,0,0,.7)"
+      },
+      "italic": false,
+      "skew": -6
+    },
+    {
+      "id": "reggae_fire",
+      "name": "ファイア",
+      "font": "Reggae One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#ffffff",
+          "#ffde59",
+          "#ff3d00"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#5c0000",
+          "width": 4
+        }
+      ],
+      "glow": {
+        "color": "#ff5500",
+        "size": 14
+      },
+      "shadow": null,
+      "italic": false,
+      "skew": -4
+    },
+    {
+      "id": "rocknroll_neon",
+      "name": "ネオン管",
+      "font": "RocknRoll One",
+      "weight": 400,
+      "fill": {
+        "type": "solid",
+        "color": "#e8fbff"
+      },
+      "strokes": [
+        {
+          "color": "#00c8ff",
+          "width": 3
+        }
+      ],
+      "glow": {
+        "color": "#00e5ff",
+        "size": 18
+      },
+      "shadow": null,
+      "italic": false,
+      "skew": 0
+    },
+    {
+      "id": "potta_pop",
+      "name": "ポップキャンディ",
+      "font": "Potta One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#ff7ad9",
+          "#ffd6f5"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#7a0059",
+          "width": 3
+        },
+        {
+          "color": "#ffffff",
+          "width": 4
+        }
+      ],
+      "glow": null,
+      "shadow": {
+        "x": 4,
+        "y": 5,
+        "blur": 0,
+        "color": "rgba(0,0,0,.5)"
+      },
+      "italic": false,
+      "skew": 0
+    },
+    {
+      "id": "yusei_chalk",
+      "name": "チョーク",
+      "font": "Yusei Magic",
+      "weight": 400,
+      "fill": {
+        "type": "solid",
+        "color": "#fdfdf0"
+      },
+      "strokes": [
+        {
+          "color": "#2d6a4f",
+          "width": 3
+        }
+      ],
+      "glow": null,
+      "shadow": {
+        "x": 2,
+        "y": 3,
+        "blur": 0,
+        "color": "#000000"
+      },
+      "italic": true,
+      "skew": 0
+    },
+    {
+      "id": "train_metal",
+      "name": "メタルプレート",
+      "font": "Train One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#ffffff",
+          "#a8b8c8",
+          "#59687a"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#0d1b2a",
+          "width": 3
+        }
+      ],
+      "glow": {
+        "color": "#9fd3ff",
+        "size": 8
+      },
+      "shadow": null,
+      "italic": false,
+      "skew": 0
+    },
+    {
+      "id": "dela_crimson",
+      "name": "クリムゾン",
+      "font": "Dela Gothic One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#ff9a9a",
+          "#e3001b"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#ffffff",
+          "width": 3
+        },
+        {
+          "color": "#2b0007",
+          "width": 4
+        }
+      ],
+      "glow": null,
+      "shadow": {
+        "x": 4,
+        "y": 6,
+        "blur": 0,
+        "color": "rgba(0,0,0,.6)"
+      },
+      "italic": false,
+      "skew": -8
+    },
+    {
+      "id": "zen_soft",
+      "name": "やわらか",
+      "font": "Zen Maru Gothic",
+      "weight": 900,
+      "fill": {
+        "type": "solid",
+        "color": "#ffffff"
+      },
+      "strokes": [
+        {
+          "color": "#ff8a00",
+          "width": 3
+        }
+      ],
+      "glow": null,
+      "shadow": {
+        "x": 0,
+        "y": 4,
+        "blur": 0,
+        "color": "#a34700"
+      },
+      "italic": false,
+      "skew": 0
+    },
+    {
+      "id": "modern_white",
+      "name": "モダン(白)",
+      "font": "Montserrat",
+      "fallbackFont": "Noto Sans JP",
+      "weight": 900,
+      "fill": {
+        "type": "solid",
+        "color": "#ffffff"
+      },
+      "strokes": [],
+      "glow": null,
+      "shadow": {
+        "x": 0,
+        "y": 4,
+        "blur": 12,
+        "color": "rgba(0,0,0,.55)"
+      },
+      "italic": false,
+      "skew": 0
+    },
+    {
+      "id": "esports_italic",
+      "name": "スポーツ",
+      "font": "Bebas Neue",
+      "fallbackFont": "Dela Gothic One",
+      "weight": 400,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": [
+          "#ffffff",
+          "#ffd0d6"
+        ]
+      },
+      "strokes": [
+        {
+          "color": "#ff2d55",
+          "width": 3
+        }
+      ],
+      "glow": null,
+      "shadow": {
+        "x": 4,
+        "y": 4,
+        "blur": 0,
+        "color": "rgba(0,0,0,.6)"
+      },
+      "italic": true,
+      "skew": -8
+    },
+    {
+      "id": "cyber",
+      "name": "サイバー",
+      "font": "Orbitron",
+      "fallbackFont": "Noto Sans JP",
+      "weight": 900,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": [
+          "#22e4ff",
+          "#ff3dd1"
+        ]
+      },
+      "strokes": [],
+      "glow": {
+        "color": "#22e4ff",
+        "size": 10
+      },
+      "shadow": null,
+      "italic": false,
+      "skew": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<title>EverStreamer</title>
+<style>
+  html, body { margin: 0; padding: 0; background: transparent !important; overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; opacity: 0; transition: opacity .3s; }
+  #stage.ready { opacity: 1; }
+</style>
+<link rel="stylesheet" href="/core/ov.css">
+<script src="/core/tokens.js"></script>
+<script src="/core/i18n.js"></script>
+<script src="/core/ov-core.js"></script>
+<script src="/core/hub-client.js"></script>
+<script src="/core/renderer.js"></script>
+<!--FEATURE_ASSETS-->
+</head>
+<body>
+<div id="stage"></div>
+<script src="/core/overlay-main.js"></script>
+</body>
+</html>

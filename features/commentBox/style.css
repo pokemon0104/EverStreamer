@@ -1,0 +1,55 @@
+.t-comments { display: flex; flex-direction: column; }
+.t-comments .cb-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: .35em;
+}
+.t-comments .cb-item { flex: 0 0 auto; line-height: 1.4; overflow-wrap: anywhere; }
+.t-comments .cb-head { display: inline; }
+.t-comments .cb-name { color: var(--t-accent-light, var(--c-num)); margin-right: .5em; font-size: .85em; font-weight: 800; }
+.t-comments .cb-item.new { animation: cb-in .4s cubic-bezier(.2, .8, .3, 1.1); }
+@keyframes cb-in { from { opacity: 0; transform: translateY(.5em) scale(.98); } to { opacity: 1; transform: none; } }
+/* 消えるまでの秒数:時間が来たら、しぼんで消える */
+.t-comments .cb-item.fade { animation: none, cb-out .6s ease forwards; max-height: 12em; }
+.t-comments .cb-item.fade.new { animation: cb-in .4s cubic-bezier(.2, .8, .3, 1.1), cb-out .6s ease forwards; }
+@keyframes cb-out { to { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; } }
+.t-comments .cb-amt { display: inline-block; color: var(--t-on-accent, #2a1a00); background: linear-gradient(135deg, var(--t-accent, #ffd34d), var(--t-accent2, #ff9f1a)); font-weight: 800; margin-right: .5em; font-size: .8em; padding: 0 .55em; border-radius: 99px; }
+.t-comments .cb-side { display: inline-block; font-size: .7em; padding: 0 .35em; margin-right: .4em; border-radius: .25em; background: #3a63e0; color: #fff; vertical-align: .1em; }
+.t-comments .cb-side.v { background: #e0458a; }
+.t-comments .cb-wait { opacity: .6; font-size: .85em; }
+/* バッジ・プラットフォームの印 */
+.t-comments .cb-badge, .t-comments .cb-plat { display: inline-grid; place-items: center; width: 1.05em; height: 1.05em; margin-right: .25em; vertical-align: -.12em; }
+.t-comments .cb-badge svg, .t-comments .cb-plat svg { width: 100%; height: 100%; }
+.t-comments .b-owner { color: #ffcc33; }
+.t-comments .b-moderator { color: #5aa9ff; }
+.t-comments .b-member { color: #2bd47d; }
+.t-comments .b-vip { color: #ff5fd2; }
+.t-comments .b-verified { color: #9aa4b8; }
+.t-comments .cb-plat { width: auto; height: auto; padding: 0 .3em; border-radius: .3em; font-style: normal; font-weight: 800; font-size: .62em; line-height: 1.5; vertical-align: .1em; color: #fff; }
+.t-comments .p-youtube { background: #c8434a; }
+.t-comments .p-twitch { background: #7a5bd6; }
+.t-comments .cb-emote { height: 1.5em; vertical-align: -.4em; margin: 0 .05em; }
+
+/* 見た目:吹き出し(1件ずつのカード) */
+.t-comments .cb-bubble .cb-item {
+  padding: .35em .7em .4em;
+  border-radius: .7em;
+  background: color-mix(in srgb, var(--c-text) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c-text) 10%, transparent);
+}
+.t-comments .cb-bubble .cb-head { display: flex; align-items: center; flex-wrap: wrap; margin-bottom: .1em; }
+.t-comments .cb-bubble .cb-text { display: block; }
+/* スーパーチャット・ビッツ:メインカラーで強調 */
+.t-comments .cb-item.sc {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--t-accent, #ffc93c) 28%, transparent), color-mix(in srgb, var(--t-accent2, #ff9f1a) 18%, transparent));
+  border: 1px solid color-mix(in srgb, var(--t-accent, #ffc93c) 70%, transparent);
+  box-shadow: 0 0 .8em color-mix(in srgb, var(--t-accent, #ffc93c) 35%, transparent);
+  padding: .35em .7em .4em;
+  border-radius: .6em;
+}
+.t-comments .cb-line .cb-item.sc { border-left-width: .25em; }
+.t-comments .cb-item.owner .cb-name { color: #ffcc33; }

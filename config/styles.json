@@ -1,0 +1,179 @@
+{
+  "_説明": "パネルの見た目スタイル。base が全スタイル共通の初期値、styles の look が base を上書きします。{accent}(メインカラー)・{accent2}・{text} などのトークンも使えます。保存すると数秒で反映されます。",
+  "base": {
+    "font": "Noto Sans JP",
+    "headingFont": "",
+    "numberFont": "",
+    "bold": true,
+    "headingSize": 26,
+    "bodySize": 20,
+    "numberSize": 56,
+    "lineHeight": 1.45,
+    "letterSpacing": 0.02,
+    "padding": 16,
+    "textColor": "#ffffff",
+    "headingColor": "#ffffff",
+    "numberColor": "#ffffff",
+    "strokeColor": "#000000",
+    "strokeWidth": 0,
+    "glowColor": "#ffffff",
+    "glowStrength": 0,
+    "textShadow": "",
+    "bgColor": "#10131c",
+    "bgAlpha": 0.85,
+    "bgImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 0,
+    "borderColor": "#ffffff",
+    "radius": 14,
+    "frame": "plain",
+    "pixelSteps": 1,
+    "insetColor": "",
+    "insetWidth": 3,
+    "bevel": false,
+    "innerShadow": "",
+    "shadowColor": "#000000",
+    "shadowAlpha": 0.6,
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "scanlines": false,
+    "scanlineAlpha": 0.25
+  },
+  "styles": [
+    {
+      "id": "darkCard",
+      "name": "ダークカード",
+      "look": {
+        "bgColor": "#10131c",
+        "bgAlpha": 0.86,
+        "borderWidth": 0,
+        "radius": 14,
+        "textColor": "#ffffff",
+        "headingColor": "{accentLight}",
+        "numberColor": "#ffffff",
+        "shadowBlur": 18,
+        "shadowY": 6,
+        "shadowAlpha": 0.45
+      }
+    },
+    {
+      "id": "glassDark",
+      "name": "ガラス(暗)",
+      "look": {
+        "bgColor": "#1a1f2e",
+        "bgAlpha": 0.55,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "borderColor": "rgba(255,255,255,.28)",
+        "radius": 18,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "shadowBlur": 24,
+        "shadowY": 8,
+        "shadowAlpha": 0.35
+      }
+    },
+    {
+      "id": "glassLight",
+      "name": "ガラス(明)",
+      "look": {
+        "bgColor": "#ffffff",
+        "bgAlpha": 0.78,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "borderColor": "rgba(255,255,255,.9)",
+        "radius": 18,
+        "textColor": "#1a1f2e",
+        "headingColor": "{accentDark}",
+        "numberColor": "{accent}",
+        "shadowColor": "#0b1020",
+        "shadowBlur": 24,
+        "shadowY": 8,
+        "shadowAlpha": 0.18
+      }
+    },
+    {
+      "id": "accentLine",
+      "name": "メインカラーの線",
+      "look": {
+        "bgColor": "#0c0e14",
+        "bgAlpha": 0.85,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "borderColor": "{accent}",
+        "radius": 12,
+        "textColor": "#ffffff",
+        "headingColor": "{accent}",
+        "numberColor": "{accentLight}",
+        "shadowColor": "{accent}",
+        "shadowBlur": 16,
+        "shadowAlpha": 0.4
+      }
+    },
+    {
+      "id": "accentFill",
+      "name": "メインカラーで塗る",
+      "look": {
+        "bgColor": "{accent}",
+        "bgImage": "linear-gradient(135deg, {accent} 0%, {accent2} 100%)",
+        "bgAlpha": 0.95,
+        "borderWidth": 0,
+        "radius": 16,
+        "textColor": "{onAccent}",
+        "headingColor": "{onAccent}",
+        "numberColor": "{onAccent}",
+        "shadowBlur": 20,
+        "shadowY": 6,
+        "shadowAlpha": 0.35
+      }
+    },
+    {
+      "id": "outline",
+      "name": "線だけ(背景なし)",
+      "look": {
+        "bgAlpha": 0.0,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "borderColor": "rgba(255,255,255,.85)",
+        "radius": 12,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "strokeWidth": 2,
+        "strokeColor": "rgba(0,0,0,.6)"
+      }
+    },
+    {
+      "id": "textOnly",
+      "name": "文字だけ(縁取り)",
+      "look": {
+        "bgAlpha": 0,
+        "borderWidth": 0,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "strokeWidth": 3,
+        "strokeColor": "#000000",
+        "padding": 8
+      }
+    },
+    {
+      "id": "whiteCard",
+      "name": "ホワイトカード",
+      "look": {
+        "bgColor": "#ffffff",
+        "bgAlpha": 0.96,
+        "borderWidth": 0,
+        "radius": 16,
+        "textColor": "#20242f",
+        "headingColor": "#20242f",
+        "numberColor": "{accent}",
+        "shadowColor": "#000000",
+        "shadowBlur": 18,
+        "shadowY": 6,
+        "shadowAlpha": 0.25
+      }
+    }
+  ]
+}

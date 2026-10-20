@@ -1,0 +1,18 @@
+/* リッチテキスト */
+.t-richText .rt-title { margin-bottom: .3em; }
+.t-richText .rt-body { display: flex; flex-direction: column; gap: .18em; }
+.t-richText .rt-line { display: flex; align-items: baseline; gap: .4em; font-size: calc(1em * var(--rt-sz, 1)); line-height: 1.3; }
+.t-richText .rt-mark { flex: 0 0 auto; font-size: .8em; color: var(--rt-accent); }
+.t-richText .rt-tx { min-width: 0; }
+.t-richText .rt-gap { height: .5em; }
+.t-richText .st-heading { font-family: var(--hfont); color: var(--c-head); font-weight: 700; }
+.t-richText .st-done .rt-tx { opacity: .6; text-decoration: line-through; text-decoration-thickness: .08em; }
+.t-richText .st-done .rt-mark { color: #4ade80; }
+.t-richText .rt-em { color: var(--rt-accent); font-weight: 800; }
+.t-richText .rt-mk { background: linear-gradient(transparent 55%, var(--rt-accent-a) 55%); color: inherit; padding: 0 .1em; }
+.t-richText .em-bold .rt-tx { font-weight: 800; }
+.t-richText .em-marker .rt-tx { background: linear-gradient(transparent 55%, var(--rt-accent-a) 55%); }
+.t-richText .em-glow .rt-tx { text-shadow: 0 0 .25em var(--rt-accent), 0 0 .6em var(--rt-accent), var(--tshadow, 0 0 0 transparent); }
+.t-richText .em-outline .rt-tx { -webkit-text-stroke: .06em #000; paint-order: stroke fill; }
+.t-richText .em-blink .rt-tx { animation: rt-blink 1.1s steps(1) infinite; }
+@keyframes rt-blink { 50% { opacity: .15; } }

@@ -1,0 +1,59 @@
+/* キャラクター */
+.chr-layer { position: absolute; inset: 0; pointer-events: none; z-index: 22; }
+.chr { position: absolute; transform: translate(-50%, -100%); }
+.chr-motion, .chr-sway, .chr-hop, .chr-bob { position: absolute; inset: 0; transform-origin: 50% 100%; }
+.chr.flip .chr-motion { transform: scaleX(-1); }
+.chr-img { position: absolute; left: 50%; bottom: 0; height: 100%; width: auto; max-width: none; transform: translateX(-50%); opacity: 0; user-select: none; }
+.chr-img.on { opacity: 1; }
+/* 呼吸・揺れ(ずっと、かすかに) */
+.chr.breathe .chr-bob { animation: chr-breathe 3.6s ease-in-out infinite; }
+@keyframes chr-breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.012, .985); } }
+.chr.sway .chr-sway { animation: chr-sway 5s ease-in-out infinite; }
+@keyframes chr-sway { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+/* 話している間、小さくはずむ */
+.chr.bob.talking .chr-bob { animation: chr-talk .26s ease-in-out infinite alternate; }
+@keyframes chr-talk { from { transform: translateY(0); } to { transform: translateY(-2.2%); } }
+/* 跳ねる(コメント・キーワード・アラート) */
+.chr-hop.hop { animation: chr-hop .5s cubic-bezier(.3, .7, .4, 1); }
+.chr-hop.hop-big { animation: chr-hop-big .9s cubic-bezier(.3, .7, .4, 1); }
+@keyframes chr-hop { 0% { transform: none; } 20% { transform: scale(1.06, .92); } 45% { transform: translateY(-9%) scale(.96, 1.05); } 75% { transform: scale(1.04, .96); } 100% { transform: none; } }
+@keyframes chr-hop-big { 0% { transform: none; } 15% { transform: scale(1.1, .86); } 35% { transform: translateY(-20%) scale(.94, 1.08); } 55% { transform: scale(1.08, .92); } 70% { transform: translateY(-7%) scale(.98, 1.03); } 100% { transform: none; } }
+/* 吹き出し(色はテンプレートに合わせる) */
+.chr-bubble {
+  position: absolute; left: 50%; bottom: 100%; margin-bottom: 4%; transform: translateX(-50%) scale(.6); transform-origin: 50% 100%;
+  opacity: 0; transition: opacity .25s, transform .3s cubic-bezier(.3, 1.4, .5, 1); white-space: nowrap; z-index: 2;
+}
+.chr-bubble.on { opacity: 1; transform: translateX(-50%) scale(1); }
+.chr-bubble span {
+  display: block; position: relative; max-width: 560px; overflow: hidden; text-overflow: ellipsis;
+  font-family: var(--t-hfont, 'Noto Sans JP'), sans-serif; font-weight: 800; font-size: 30px; line-height: 1.3;
+  color: var(--t-text, #1d1f2b); background: var(--t-surface, #fff);
+  border: 3px solid var(--t-accent, #4f8cff); border-radius: 22px; padding: 10px 22px 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .3), 0 0 16px color-mix(in srgb, var(--t-accent, #4f8cff) 35%, transparent);
+}
+.chr-bubble span::after {
+  content: ''; position: absolute; left: 50%; bottom: -12px; width: 20px; height: 20px; margin-left: -10px;
+  background: inherit; border-right: inherit; border-bottom: inherit; transform: rotate(45deg); border-radius: 0 0 4px 0;
+}
+/* 管理画面のプレビュー:ドラッグで動かせる */
+.ov-stage.is-editor .chr { pointer-events: auto; cursor: grab; outline: 2px dashed transparent; outline-offset: 4px; }
+.ov-stage.is-editor .chr:hover { outline-color: color-mix(in srgb, var(--t-accent, #4f8cff) 70%, transparent); }
+.ov-stage.is-editor .chr.dragging { cursor: grabbing; }
+/* ---- 管理画面 ---- */
+.adm .chr-slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 6px 0; }
+.adm .chr-slot { display: flex; flex-direction: column; gap: 4px; }
+.adm .chr-slot select { width: 100%; }
+.adm .chr-thumb { position: relative; aspect-ratio: 1; border-radius: 10px; cursor: pointer; display: grid; place-items: center; overflow: hidden;
+  background: repeating-conic-gradient(#2b2f3d 0 25%, #232633 0 50%) 0 0 / 16px 16px; border: 2px dashed var(--line); }
+.adm .chr-thumb.has { border-style: solid; }
+.adm .chr-thumb.over { border-color: var(--accent); }
+.adm .chr-thumb img { max-width: 92%; max-height: 92%; }
+.adm .chr-thumb:not(.has) img { display: none; }
+.adm .chr-thumb.has .chr-empty { display: none; }
+.adm .chr-empty { color: var(--muted); font-size: 12px; }
+.adm .chr-meter { position: relative; height: 12px; width: 100%; border-radius: 99px; background: var(--surface2); overflow: hidden; }
+.adm .chr-meter i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--muted); border-radius: inherit; }
+.adm .chr-meter.on i { background: var(--ok); }
+.adm .chr-meter b { position: absolute; top: -2px; bottom: -2px; width: 3px; margin-left: -1px; background: #000; box-shadow: 0 0 0 1px #fff; }
+.adm .chr-code { display: block; margin: 4px 0; padding: 6px 8px; background: var(--surface2); border-radius: 6px; font-family: ui-monospace, monospace; font-size: 12px; user-select: all; }
+.adm .chr-rule { border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; margin: 6px 0; }

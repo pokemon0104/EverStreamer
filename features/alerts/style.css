@@ -1,0 +1,41 @@
+/* アラート */
+.al-layer { position: absolute; inset: 0; pointer-events: none; z-index: 27; }
+.al-fx { position: absolute; inset: 0; overflow: hidden; }
+.al-wrap { position: absolute; left: 50%; top: var(--al-y, 70px); transform: translateX(-50%) scale(var(--al-scale, 1)); transform-origin: 50% 0; }
+.al-card {
+  position: relative; display: flex; align-items: center; gap: 26px; min-width: 520px; max-width: 1300px; overflow: hidden;
+  padding: 22px 40px 24px 24px; border-radius: 26px;
+  color: var(--t-text, #fff); font-family: var(--t-font, 'Noto Sans JP'), sans-serif;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--t-surface, #141824) 94%, transparent), color-mix(in srgb, var(--t-bg, #0b0d14) 92%, transparent));
+  border: 2px solid color-mix(in srgb, var(--t-accent, #4f8cff) 75%, transparent);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45), 0 0 34px color-mix(in srgb, var(--t-accent, #4f8cff) 40%, transparent);
+  animation: al-in .7s cubic-bezier(.2, .9, .3, 1.25) both;
+}
+.al-card.out { animation: al-out .55s ease forwards; }
+@keyframes al-in { 0% { transform: translateY(-60px) scale(.7); opacity: 0; } 100% { transform: none; opacity: 1; } }
+@keyframes al-out { to { transform: translateY(-40px) scale(.9); opacity: 0; } }
+.al-icon {
+  flex: 0 0 auto; width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; font-size: 52px; line-height: 1;
+  background: linear-gradient(135deg, var(--t-accent, #4f8cff), var(--t-accent2, #ff5fd2));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--t-accent, #4f8cff) 25%, transparent), 0 8px 20px rgba(0, 0, 0, .35);
+  animation: al-pop .9s cubic-bezier(.3, 1.6, .5, 1) .15s both;
+}
+.al-icon span { font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+@keyframes al-pop { 0% { transform: scale(0) rotate(-40deg); } 100% { transform: none; } }
+.al-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.al-title { font-family: var(--t-hfont, 'Noto Sans JP'), sans-serif; font-weight: 900; font-size: 64px; line-height: 1.1; white-space: nowrap; color: var(--t-accent-text, var(--t-accent-light, #fff)); text-shadow: 0 0 18px color-mix(in srgb, var(--t-accent, #4f8cff) 35%, transparent); display: flex; align-items: center; gap: 14px; }
+.al-plat .cb-plat { display: inline-block; font-style: normal; font-size: .32em; font-weight: 800; padding: .1em .4em; border-radius: .3em; color: #fff; vertical-align: middle; }
+.al-plat .p-youtube { background: #c8434a; }
+.al-plat .p-twitch { background: #7a5bd6; }
+.al-sub { font-weight: 800; font-size: 36px; line-height: 1.25; }
+.al-text { margin-top: 8px; font-size: 28px; font-weight: 600; line-height: 1.4; padding: 10px 18px; border-radius: 14px; background: color-mix(in srgb, var(--t-text, #fff) 9%, transparent); max-width: 1000px; overflow-wrap: anywhere; }
+.al-shine { position: absolute; inset: 0; pointer-events: none; overflow: hidden; border-radius: inherit; }
+.al-shine::after { content: ''; position: absolute; top: -20%; bottom: -20%; left: -40%; width: 22%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .35), transparent); transform: skewX(-20deg); animation: al-shine 1.4s ease-out .5s both; }
+@keyframes al-shine { from { left: -40%; } to { left: 130%; } }
+/* スーパーチャット・ギフト:金色寄り */
+.al-card.k-superchat .al-icon, .al-card.k-bits .al-icon, .al-card.k-gift .al-icon { background: linear-gradient(135deg, #ffe08a, #ffb02e 55%, var(--t-accent2, #ff5fd2)); }
+.ov-stage[data-canvas='v'] .al-card { min-width: 0; max-width: 940px; }
+/* 管理画面 */
+.adm .al-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12px; }
+.adm .al-table th, .adm .al-table td { border-bottom: 1px solid var(--line); padding: 5px 6px; text-align: left; }
+.adm .al-table td.ok { color: var(--ok); font-weight: 700; }

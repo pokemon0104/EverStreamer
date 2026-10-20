@@ -1,0 +1,110 @@
+/* ===== 場面(開始待機・休憩・終了) ===== */
+.sc-layer {
+  --u: 1px;
+  position: absolute; inset: 0; z-index: 30; pointer-events: none; overflow: hidden;
+  opacity: 0; transition: opacity var(--sc-fade, .8s) ease;
+  color: var(--t-text, #fff); font-family: var(--t-font, 'Noto Sans JP'), sans-serif;
+}
+.ov-stage[data-canvas='v'] .sc-layer { --u: .82px; }
+.sc-layer.on { opacity: 1; }
+.ov-stage.sc-on .ov-container, .ov-stage.sc-on .ov-free { opacity: 0; transition: opacity var(--sc-fade, .8s) ease; }
+.sc-bg { position: absolute; inset: 0; }
+.sc-fx { position: absolute; inset: 0; overflow: hidden; }
+.sc-fx i { position: absolute; display: block; }
+
+/* 中身 */
+.sc-wrap {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: calc(22 * var(--u)); padding: calc(80 * var(--u)) calc(90 * var(--u)); box-sizing: border-box; text-align: center;
+}
+.sc-layer[data-layout='left'] .sc-wrap { align-items: flex-start; text-align: left; padding-left: calc(140 * var(--u)); }
+.ov-stage[data-canvas='v'] .sc-layer[data-layout='left'] .sc-wrap { align-items: center; text-align: center; padding-left: calc(60 * var(--u)); }
+.sc-layer.on .sc-wrap > * { animation: sc-rise .9s cubic-bezier(.2, .8, .25, 1) both; }
+.sc-layer.on .sc-wrap > :nth-child(2) { animation-delay: .08s; }
+.sc-layer.on .sc-wrap > :nth-child(3) { animation-delay: .16s; }
+.sc-layer.on .sc-wrap > :nth-child(4) { animation-delay: .24s; }
+.sc-layer.on .sc-wrap > :nth-child(5) { animation-delay: .32s; }
+.sc-layer.on .sc-wrap > :nth-child(6) { animation-delay: .4s; }
+@keyframes sc-rise { from { opacity: 0; transform: translateY(calc(30 * var(--u))); } to { opacity: 1; transform: none; } }
+
+.sc-kicker { display: flex; align-items: center; gap: calc(18 * var(--u)); font-family: var(--t-nfont, 'Poppins'), sans-serif; font-weight: 800; font-size: calc(30 * var(--u)); letter-spacing: .32em; color: var(--t-accent); text-transform: uppercase; }
+.sc-kicker::before, .sc-kicker::after { content: ''; width: calc(70 * var(--u)); height: calc(2 * var(--u)); background: linear-gradient(90deg, transparent, var(--t-accent)); }
+.sc-kicker::after { background: linear-gradient(90deg, var(--t-accent), transparent); }
+.sc-layer[data-layout='left'] .sc-kicker::before { display: none; }
+.sc-title { --tk: 1; font-size: calc(124 * var(--u) * var(--tk)); font-weight: 900; line-height: 1.15; white-space: nowrap; }
+.sc-title .gt-title { display: inline-block; white-space: nowrap; line-height: 1.2; padding: .05em .12em .1em; }
+.sc-title .gt-layers { position: relative; display: inline-block; }
+.sc-title .gt-l { position: absolute; left: 0; top: 0; white-space: nowrap; }
+.sc-title .gt-fill { position: relative; }
+.sc-sub { font-size: calc(40 * var(--u)); font-weight: 700; color: var(--t-muted); max-width: 80%; }
+.sc-count { display: flex; flex-direction: column; align-items: center; gap: calc(14 * var(--u)); margin-top: calc(6 * var(--u)); }
+.sc-layer[data-layout='left'] .sc-count { align-items: flex-start; }
+.sc-num { font-family: var(--t-nfont, 'Poppins'), sans-serif; font-weight: 800; font-size: calc(150 * var(--u)); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .02em; color: var(--t-text); text-shadow: 0 0 calc(40 * var(--u)) var(--t-accent-a50); }
+.sc-num.done { font-size: calc(64 * var(--u)); font-family: var(--t-hfont, 'Noto Sans JP'), sans-serif; animation: sc-pulse 1.6s ease-in-out infinite; }
+@keyframes sc-pulse { 50% { opacity: .55; } }
+.sc-prog { width: calc(520 * var(--u)); height: calc(8 * var(--u)); border-radius: 99px; background: color-mix(in srgb, var(--t-text) 14%, transparent); overflow: hidden; }
+.sc-prog i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--t-accent), var(--t-accent2)); box-shadow: 0 0 12px var(--t-accent); transition: width .5s linear; }
+.sc-next { font-family: var(--t-hfont, 'Noto Sans JP'), sans-serif; font-size: calc(38 * var(--u)); font-weight: 800; padding: calc(14 * var(--u)) calc(40 * var(--u)); border-radius: 99px; color: var(--t-on-accent); background: linear-gradient(135deg, var(--t-accent), var(--t-accent2)); box-shadow: 0 10px 30px var(--t-accent-a50); }
+.sc-foot { position: absolute; left: 0; right: 0; bottom: calc(56 * var(--u)); display: flex; flex-direction: column; align-items: center; gap: calc(18 * var(--u)); animation: none !important; }
+.sc-layer[data-layout='left'] .sc-foot { align-items: flex-start; left: calc(140 * var(--u)); }
+.sc-game { display: flex; align-items: center; gap: calc(16 * var(--u)); font-size: calc(30 * var(--u)); font-weight: 800; }
+.sc-game img { max-height: calc(120 * var(--u)); max-width: calc(520 * var(--u)); filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .45)); }
+.sc-gk { font-family: var(--t-nfont, 'Poppins'), sans-serif; font-size: .7em; letter-spacing: .2em; color: var(--t-accent); padding: calc(4 * var(--u)) calc(14 * var(--u)); border: calc(2 * var(--u)) solid var(--t-accent); border-radius: 99px; }
+.sc-social { display: flex; flex-wrap: wrap; justify-content: center; gap: calc(14 * var(--u)) calc(30 * var(--u)); font-size: calc(28 * var(--u)); font-weight: 700; }
+.sc-sn { display: inline-flex; align-items: center; gap: calc(10 * var(--u)); }
+.sc-sn i { display: inline-grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; background: var(--t-accent); color: var(--t-on-accent); }
+.sc-sn i svg { width: 62%; height: 62%; }
+.sc-sn i .sn-mk { font-size: .58em; }
+
+/* ---- 背景の動き ---- */
+/* 光の玉(ぼかしは使わず、放射グラデーションで) */
+.sc-orb { width: 900px; height: 900px; border-radius: 50%; opacity: .55; mix-blend-mode: screen; animation: sc-drift 22s ease-in-out infinite alternate; }
+.sc-orb.o0 { left: -10%; top: -20%; background: radial-gradient(circle, var(--t-accent-a50), transparent 65%); }
+.sc-orb.o1 { right: -12%; top: 10%; background: radial-gradient(circle, var(--t-accent2-a50), transparent 65%); animation-duration: 28s; animation-delay: -6s; }
+.sc-orb.o2 { left: 30%; bottom: -35%; background: radial-gradient(circle, var(--t-accent-a20), transparent 65%); animation-duration: 34s; animation-delay: -12s; }
+.sc-orb.o3 { right: 25%; top: -30%; width: 600px; height: 600px; background: radial-gradient(circle, var(--t-accent2-a50), transparent 65%); opacity: .3; animation-duration: 26s; }
+@keyframes sc-drift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(120px, 60px) scale(1.12); } 100% { transform: translate(-80px, 110px) scale(.95); } }
+/* 奥へ流れるグリッド */
+.sc-grid {
+  left: -50%; right: -50%; bottom: -10%; height: 60%;
+  background-image: linear-gradient(var(--t-accent-a50) 2px, transparent 2px), linear-gradient(90deg, var(--t-accent-a50) 2px, transparent 2px);
+  background-size: 80px 80px;
+  transform: perspective(500px) rotateX(62deg); transform-origin: center top;
+  -webkit-mask-image: linear-gradient(transparent, #000 40%); mask-image: linear-gradient(transparent, #000 40%);
+  animation: sc-grid 3s linear infinite;
+}
+@keyframes sc-grid { to { background-position: 0 80px; } }
+.sc-horizon { left: 0; right: 0; top: 40%; height: 2px; background: linear-gradient(90deg, transparent, var(--t-accent), var(--t-accent2), transparent); box-shadow: 0 0 24px var(--t-accent); }
+/* 光の粒が昇る */
+.sc-pt { bottom: -20px; width: var(--s); height: var(--s); border-radius: 50%; background: var(--t-accent-light); box-shadow: 0 0 10px var(--t-accent); opacity: 0; animation: sc-pt var(--d) linear var(--dl) infinite; }
+@keyframes sc-pt { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: .9; } 90% { opacity: .6; } 100% { transform: translate(var(--x), -1300px); opacity: 0; } }
+/* 波 */
+.sc-wave { left: -50%; width: 200%; height: 42%; bottom: -8%; border-radius: 45%; animation: sc-wave 18s linear infinite; }
+.sc-wave.w1 { background: var(--t-accent-a20); }
+.sc-wave.w2 { background: var(--t-accent2-a50); opacity: .35; bottom: -14%; animation-duration: 26s; animation-direction: reverse; }
+.sc-wave.w3 { background: var(--t-accent-a20); bottom: -20%; animation-duration: 34s; }
+@keyframes sc-wave { to { transform: rotate(360deg); } }
+/* 斜めの光の線 */
+.sc-line { left: -40%; width: 40%; height: 3px; background: linear-gradient(90deg, transparent, var(--t-accent), transparent); transform: skewX(-30deg); animation: sc-line var(--d) cubic-bezier(.6, 0, .4, 1) var(--dl) infinite; opacity: .7; }
+.sc-line:nth-child(even) { background: linear-gradient(90deg, transparent, var(--t-accent2), transparent); height: 2px; }
+@keyframes sc-line { to { left: 140%; } }
+
+/* ---- 管理画面 ---- */
+.adm .sc-big { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 10px 0; }
+.adm .sc-bigbtn { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 8px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface2); color: var(--ink); cursor: pointer; }
+.adm .sc-bigbtn b { font-size: 15px; }
+.adm .sc-bigbtn small { color: var(--muted); font-size: 11px; }
+.adm .sc-bigbtn.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--surface2)); }
+.adm .sc-bigbtn[data-id='live'].on { border-color: var(--live); background: color-mix(in srgb, var(--live) 18%, var(--surface2)); }
+.adm .sc-quick .btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.adm .sc-quick .btn[data-id='live'].on { background: var(--live); color: #fff; border-color: var(--live); }
+.sc-bg .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sc-dim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)); }
+.adm .sc-bggrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; margin: 6px 0; }
+.adm .sc-bgbtn { padding: 0; border: 2px solid transparent; border-radius: 6px; background: none; cursor: pointer; overflow: hidden; }
+.adm .sc-bgbtn.on { border-color: var(--accent); }
+.adm .sc-bgbtn .bg-sw { width: 100%; aspect-ratio: 16 / 9; }
+/* 自分の画像・動画の上:文字を白に */
+.sc-layer.sc-photo { --t-text: #ffffff; --t-muted: rgba(255, 255, 255, .82); color: #fff; }
+.sc-layer.sc-photo .sc-fx { opacity: .35; }
+.sc-layer::before { content: ''; position: absolute; inset: 0; background: var(--t-bg, #000); } /* 半透明の背景でも、下が透けないように */

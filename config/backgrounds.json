@@ -1,0 +1,131 @@
+{
+  "_説明": "背景のプリセット。kind が css のものは css に書いた CSS の background、image のものは features/background/assets の画像ファイルを使います。保存すると数秒で反映されます。",
+  "presets": [
+    {
+      "id": "black",
+      "group": "シンプル",
+      "name": "漆黒",
+      "kind": "css",
+      "css": "#000000"
+    },
+    {
+      "id": "charcoal",
+      "group": "シンプル",
+      "name": "チャコール",
+      "kind": "css",
+      "css": "#16181d"
+    },
+    {
+      "id": "white",
+      "group": "シンプル",
+      "name": "ライトグレー",
+      "kind": "css",
+      "css": "#eef0f4"
+    },
+    {
+      "id": "navy",
+      "group": "シンプル",
+      "name": "ネイビー",
+      "kind": "css",
+      "css": "linear-gradient(180deg, #0c1530, #16244f)"
+    },
+    {
+      "id": "nightsky",
+      "group": "グラデーション",
+      "name": "ミッドナイト",
+      "kind": "css",
+      "css": "linear-gradient(180deg, #0a0f2c, #1b2a6b)"
+    },
+    {
+      "id": "sunset",
+      "group": "グラデーション",
+      "name": "夕焼け",
+      "kind": "css",
+      "css": "linear-gradient(180deg, #ff9a3c 0%, #e8456b 50%, #5b2a86 100%)"
+    },
+    {
+      "id": "neon",
+      "group": "グラデーション",
+      "name": "ネオン",
+      "kind": "css",
+      "css": "linear-gradient(135deg, #1a0b3a, #7a1fa2 55%, #ff3d8b)"
+    },
+    {
+      "id": "aurora",
+      "group": "グラデーション",
+      "name": "オーロラ",
+      "kind": "css",
+      "css": "radial-gradient(900px 600px at 15% 20%, rgba(34,228,255,.35), transparent 60%), radial-gradient(900px 700px at 85% 80%, rgba(155,92,255,.4), transparent 60%), linear-gradient(160deg, #05101f, #0c0820)"
+    },
+    {
+      "id": "ocean",
+      "group": "グラデーション",
+      "name": "オーシャン",
+      "kind": "css",
+      "css": "linear-gradient(160deg, #0f4c81 0%, #1b7fa8 50%, #3cc8c8 100%)"
+    },
+    {
+      "id": "peach",
+      "group": "グラデーション",
+      "name": "ピーチ",
+      "kind": "css",
+      "css": "linear-gradient(160deg, #ffd3c4 0%, #ffb0c8 50%, #c6b3ff 100%)"
+    },
+    {
+      "id": "mesh",
+      "group": "グラデーション",
+      "name": "メッシュ",
+      "kind": "css",
+      "css": "radial-gradient(700px 500px at 20% 30%, #ff6b9d 0%, transparent 60%), radial-gradient(700px 500px at 80% 20%, #6b8bff 0%, transparent 60%), radial-gradient(800px 600px at 60% 90%, #2ee6c5 0%, transparent 60%), #1b1530"
+    },
+    {
+      "id": "forest",
+      "group": "グラデーション",
+      "name": "フォレスト",
+      "kind": "css",
+      "css": "linear-gradient(160deg, #0d2b22 0%, #1d4d3a 55%, #3a7d5c 100%)"
+    },
+    {
+      "id": "checker",
+      "group": "パターン",
+      "name": "チェック",
+      "kind": "css",
+      "css": "conic-gradient(#1b2a6b 25%, #16225a 0 50%, #1b2a6b 0 75%, #16225a 0) 0 0 / 64px 64px"
+    },
+    {
+      "id": "dots",
+      "group": "パターン",
+      "name": "水玉",
+      "kind": "css",
+      "css": "radial-gradient(circle, rgba(255,255,255,.14) 3px, transparent 4px) 0 0 / 32px 32px, #101a4a"
+    },
+    {
+      "id": "stripe",
+      "group": "パターン",
+      "name": "斜めストライプ",
+      "kind": "css",
+      "css": "repeating-linear-gradient(45deg, #1b2a6b 0 24px, #223a8f 24px 48px)"
+    },
+    {
+      "id": "grid",
+      "group": "パターン",
+      "name": "ネオングリッド",
+      "kind": "css",
+      "css": "linear-gradient(rgba(255,61,139,.35) 2px, transparent 2px) 0 0 / 64px 64px, linear-gradient(90deg, rgba(255,61,139,.35) 2px, transparent 2px) 0 0 / 64px 64px, linear-gradient(180deg, #0a0420, #3a0f5a)"
+    },
+    {
+      "id": "carbon",
+      "group": "パターン",
+      "name": "カーボン",
+      "kind": "css",
+      "css": "repeating-linear-gradient(45deg, #15171c 0 6px, #1b1e24 6px 12px)"
+    },
+    {
+      "id": "hex",
+      "group": "パターン",
+      "name": "斜めライン(細)",
+      "kind": "css",
+      "css": "repeating-linear-gradient(-45deg, rgba(255,255,255,.04) 0 2px, transparent 2px 22px), #101218"
+    }
+  ]
+}

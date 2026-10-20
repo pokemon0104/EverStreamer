@@ -1,0 +1,45 @@
+/* ===== テンプレート(管理画面の部品。オーバーレイ側の飾りは config/templates/*.css) ===== */
+.adm .tpl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 8px; margin: 8px 0 10px; }
+.adm .tpl-card {
+  display: flex; flex-direction: column; gap: 4px; padding: 6px; text-align: left; cursor: pointer;
+  background: var(--surface2); border: 2px solid transparent; border-radius: 10px; color: var(--ink);
+  transition: border-color .15s, transform .15s;
+}
+.adm .tpl-card:hover { border-color: var(--line); transform: translateY(-1px); }
+.adm .tpl-card.on { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(139, 155, 255, .2); }
+.adm .tpl-nm { font-weight: 700; font-size: 13px; }
+.adm .tpl-desc { color: var(--muted); font-size: 11px; line-height: 1.4; }
+.adm .tpl-pv { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #000; }
+.adm .tpl-st { position: absolute; left: 0; top: 0; width: 320px; height: 180px; transform-origin: 0 0; overflow: hidden; }
+.adm .tpl-game {
+  position: absolute; display: grid; place-items: center; color: rgba(255, 255, 255, .35); font: 800 14px 'Poppins', sans-serif; letter-spacing: .2em;
+  background: linear-gradient(135deg, #2a3350, #11141f);
+}
+.adm .tpl-pill { position: absolute; padding: 3px 10px; border-radius: 99px; font: 800 8px 'Poppins', sans-serif; letter-spacing: .08em; }
+.adm .tpl-sw { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px 0; }
+.adm .tpl-swb { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .25); cursor: pointer; padding: 0; }
+.adm .tpl-swb:hover { transform: scale(1.12); }
+.adm .qk-h { display: flex; align-items: center; gap: 8px; margin-top: 18px; }
+.adm .qk-h:first-child { margin-top: 0; }
+.adm .qk-n { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 800; }
+.adm .url-in { flex: 1 1 auto; min-width: 0; font-family: ui-monospace, monospace; font-size: 12px; }
+.adm .tab-adv { margin-left: auto; color: var(--accent) !important; }
+.adm .tab-adv.on-adv { color: var(--muted) !important; }
+.adm .lang-slot select { background: var(--surface2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+
+/* 初回の案内 */
+.adm .wz-back { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: rgba(5, 6, 12, .72); backdrop-filter: blur(3px); }
+.adm .wz {
+  width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 48px); display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+}
+.adm .wz-body { padding: 8px 24px 12px; overflow: auto; }
+.adm .wz-body h2 { margin: 6px 0 6px; font-size: 20px; }
+.adm .wz-body p { color: var(--muted); margin: 0 0 10px; }
+.adm .wz-body .tpl-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.adm .wz-ol { margin: 0 0 12px; padding-left: 20px; line-height: 1.8; }
+.adm .wz-nav { padding: 12px 24px 18px; border-top: 1px solid var(--line); }
+.adm .wz-dots { display: flex; gap: 6px; justify-content: center; padding: 16px 0 4px; }
+.adm .wz-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.adm .wz-dots i.on { background: var(--accent); width: 22px; border-radius: 4px; }
+.adm .qk-bg { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 5px; margin: 6px 0; max-height: 210px; overflow: auto; }

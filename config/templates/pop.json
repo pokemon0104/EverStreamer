@@ -1,0 +1,167 @@
+{
+  "id": "pop",
+  "order": 3,
+  "name": {
+    "ja": "ポップ・カラフル",
+    "en": "Pop Colorful"
+  },
+  "desc": {
+    "ja": "太いフチと影のある、明るく元気なカード。パーティー・アクション・雑談に。",
+    "en": "Bright, bouncy cards with bold outlines and hard shadows. Great for party games and chatting."
+  },
+  "tokens": {
+    "accent": "#ff4d8d",
+    "accent2": "#ffc93c",
+    "bg": "#fff3d6",
+    "surface": "#ffffff",
+    "text": "#1d1b2f",
+    "muted": "#5b5670",
+    "font": "M PLUS Rounded 1c",
+    "headingFont": "Dela Gothic One",
+    "numberFont": "Dela Gothic One",
+    "radius": 22
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "",
+    "bgAlpha": 1,
+    "borderStyle": "solid",
+    "borderWidth": 4,
+    "borderColor": "{text}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accent}",
+    "numberColor": "{text}",
+    "glowStrength": 0,
+    "innerShadow": "",
+    "shadowColor": "{text}",
+    "shadowAlpha": 1,
+    "shadowBlur": 0,
+    "shadowY": 7,
+    "padding": 18
+  },
+  "title": {
+    "font": "Dela Gothic One",
+    "weight": 400,
+    "fill": {
+      "type": "solid",
+      "color": "#ffffff"
+    },
+    "strokes": [
+      {
+        "color": "{text}",
+        "width": 4
+      }
+    ],
+    "glow": null,
+    "shadow": {
+      "x": 4,
+      "y": 6,
+      "blur": 0,
+      "color": "{accent}"
+    },
+    "italic": false,
+    "skew": -4
+  },
+  "frame": {
+    "radius": 26,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 5,
+        "fill": "{text}"
+      },
+      {
+        "w": 9,
+        "fill": "linear-gradient(135deg, {accent}, {accent2})"
+      },
+      {
+        "w": 5,
+        "fill": "{text}"
+      }
+    ],
+    "shadow": {
+      "y": 12,
+      "blur": 0,
+      "color": "rgba(29,27,47,.85)"
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 1,
+      "textColor": "{text}",
+      "headingColor": "{accent}",
+      "numberColor": "{text}",
+      "font": "{font}"
+    }
+  },
+  "callout": {
+    "font": "Dela Gothic One",
+    "size": 60,
+    "bold": false,
+    "color": "{text}",
+    "fill": "solid",
+    "grad1": "#ffffff",
+    "grad2": "{accentLight}",
+    "grad3": "",
+    "gradAngle": 90,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "pulse",
+    "effectColor": "{accent}",
+    "box": "pill",
+    "boxColor": "#ffffff",
+    "boxAlpha": 1,
+    "boxImage": "",
+    "borderColor": "{text}",
+    "borderWidth": 5,
+    "radius": 999,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{accent}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "M PLUS Rounded 1c",
+    "titleFont": "Dela Gothic One",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accent}",
+    "align": "center",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "{accent}",
+    "boxColor": "#ffffff",
+    "boxAlpha": 1,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 5,
+    "borderColor": "{text}",
+    "radius": 26,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.45,
+    "backdropBlur": 4,
+    "backdropColor": "#1d1b2f",
+    "valign": "center"
+  },
+  "background": "radial-gradient(circle at 20% 20%, rgba(255,255,255,.55) 0 6px, transparent 7px) 0 0 / 46px 46px, linear-gradient(135deg, {accent2} 0%, {accent} 55%, #8a5bff 100%)",
+  "scene": {
+    "fx": "particles",
+    "layout": "center"
+  }
+}

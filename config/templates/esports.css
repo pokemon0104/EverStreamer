@@ -1,0 +1,12 @@
+/* eスポーツ:斜めにカットしたパネルと、左のメインカラーの帯 */
+.ov-stage[data-template='esports'] .ov-panel.is-tpl .ov-box {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+}
+.ov-stage[data-template='esports'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, var(--t-accent), var(--t-accent2));
+}
+.ov-stage[data-template='esports'] .ov-panel.is-tpl .ov-content { padding-left: calc(var(--pad) + 6px); }
+.ov-stage[data-template='esports'] .ov-panel.is-tpl .ov-content :is(.ov-h, .np-label, .rt-title, .tf-title, .sp-title) { font-style: italic; letter-spacing: .04em; }
+.ov-stage[data-template='esports'] .sc-kicker { color: var(--t-accent); font-style: italic; }
+.ov-stage[data-template='esports'] .sc-kicker::before { display: none; }

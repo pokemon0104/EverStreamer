@@ -1,0 +1,183 @@
+{
+  "id": "clean",
+  "order": 2,
+  "name": {
+    "ja": "クリーン・ミニマル",
+    "en": "Clean Minimal"
+  },
+  "desc": {
+    "ja": "白いすりガラスのカードと細い線。雑談・作業・どんなゲームにも合う。",
+    "en": "Frosted white cards with thin lines. Fits chatting, cozy games and anything else."
+  },
+  "tokens": {
+    "accent": "#4f6bff",
+    "accent2": "#14c8a8",
+    "bg": "#eef1f8",
+    "surface": "#ffffff",
+    "text": "#1a1f2e",
+    "muted": "#6b7388",
+    "font": "Noto Sans JP",
+    "headingFont": "Noto Sans JP",
+    "numberFont": "Poppins",
+    "radius": 18
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "",
+    "bgAlpha": 0.8,
+    "borderStyle": "solid",
+    "borderWidth": 1,
+    "borderColor": "{surface@0.9}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accentDark}",
+    "numberColor": "{accent}",
+    "glowStrength": 0,
+    "innerShadow": "",
+    "shadowColor": "#0b1020",
+    "shadowAlpha": 0.18,
+    "shadowBlur": 26,
+    "shadowY": 8,
+    "padding": 18
+  },
+  "title": {
+    "font": "Noto Sans JP",
+    "weight": 900,
+    "fill": {
+      "type": "solid",
+      "color": "{text}"
+    },
+    "strokes": [],
+    "glow": null,
+    "shadow": {
+      "x": 0,
+      "y": 3,
+      "blur": 10,
+      "color": "rgba(10,16,40,.18)"
+    },
+    "italic": false,
+    "skew": 0
+  },
+  "titleBig": {
+    "font": "Noto Sans JP",
+    "weight": 900,
+    "fill": {
+      "type": "gradient",
+      "angle": 180,
+      "stops": [
+        "#ffffff",
+        "{accentLight}"
+      ]
+    },
+    "strokes": [
+      {
+        "color": "{accentDark}",
+        "width": 3
+      }
+    ],
+    "glow": {
+      "color": "{accent}",
+      "size": 12
+    },
+    "shadow": {
+      "x": 0,
+      "y": 6,
+      "blur": 18,
+      "color": "rgba(0,0,0,.35)"
+    },
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 22,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 10,
+        "fill": "linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.55))"
+      },
+      {
+        "w": 2,
+        "fill": "{accent@0.55}"
+      }
+    ],
+    "shadow": {
+      "y": 10,
+      "blur": 30,
+      "color": "rgba(10,16,40,.28)"
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.82,
+      "textColor": "{text}",
+      "headingColor": "{accentDark}",
+      "numberColor": "{accent}",
+      "font": "{font}"
+    }
+  },
+  "callout": {
+    "font": "Noto Sans JP",
+    "size": 54,
+    "bold": true,
+    "color": "{text}",
+    "fill": "solid",
+    "strokeWidth": 0,
+    "shadow": false,
+    "effect": "float",
+    "effectColor": "{accent}",
+    "box": "card",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.92,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 0,
+    "radius": 22,
+    "padX": 40,
+    "padY": 20,
+    "subColor": "{accent}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "Noto Sans JP",
+    "titleFont": "Noto Sans JP",
+    "size": 36,
+    "titleSize": 46,
+    "color": "{text}",
+    "titleColor": "{accentDark}",
+    "align": "left",
+    "lineHeight": 1.85,
+    "letterSpacing": 0.03,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "#ffffff",
+    "boxColor": "{surface}",
+    "boxAlpha": 0.9,
+    "boxImage": "",
+    "borderStyle": "none",
+    "borderWidth": 0,
+    "borderColor": "{accent}",
+    "radius": 24,
+    "padding": 48,
+    "boxWidth": 64,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.35,
+    "backdropBlur": 6,
+    "backdropColor": "#1a1f2e",
+    "valign": "center"
+  },
+  "background": "radial-gradient(900px 600px at 90% 0%, {accent@0.18}, transparent 60%), radial-gradient(800px 600px at 0% 100%, {accent2@0.16}, transparent 60%), linear-gradient(180deg, {bg} 0%, #dfe4ef 100%)",
+  "scene": {
+    "fx": "waves",
+    "layout": "left"
+  }
+}

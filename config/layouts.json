@@ -1,0 +1,98 @@
+{
+  "_説明": "初期レイアウト(サイドバー全体の位置・向き)。dock は right / left / bottom / top / free。canvas: \"v\" は縦画面(1080x1920)用。",
+  "builtin": [
+    {
+      "id": "sidebarRight",
+      "name": "サイドバー右",
+      "container": {
+        "enabled": true,
+        "dock": "right",
+        "x": 1460,
+        "y": 0,
+        "w": 460,
+        "h": 1080,
+        "gap": 12,
+        "margin": 16,
+        "direction": "column"
+      }
+    },
+    {
+      "id": "sidebarLeft",
+      "name": "サイドバー左",
+      "container": {
+        "enabled": true,
+        "dock": "left",
+        "x": 0,
+        "y": 0,
+        "w": 460,
+        "h": 1080,
+        "gap": 12,
+        "margin": 16,
+        "direction": "column"
+      }
+    },
+    {
+      "id": "bottomBar",
+      "name": "下部バー",
+      "container": {
+        "enabled": true,
+        "dock": "bottom",
+        "x": 0,
+        "y": 830,
+        "w": 1920,
+        "h": 250,
+        "gap": 12,
+        "margin": 14,
+        "direction": "row"
+      }
+    },
+    {
+      "id": "vFree",
+      "canvas": "v",
+      "name": "縦型:パネル自由配置",
+      "container": {
+        "enabled": false,
+        "dock": "bottom",
+        "x": 0,
+        "y": 1100,
+        "w": 1080,
+        "h": 820,
+        "gap": 12,
+        "margin": 16,
+        "direction": "column"
+      }
+    },
+    {
+      "id": "vBottom",
+      "canvas": "v",
+      "name": "縦型:下にサイドバー",
+      "container": {
+        "enabled": true,
+        "dock": "bottom",
+        "x": 0,
+        "y": 1100,
+        "w": 680,
+        "h": 820,
+        "gap": 12,
+        "margin": 16,
+        "direction": "column"
+      }
+    },
+    {
+      "id": "vTop",
+      "canvas": "v",
+      "name": "縦型:上にサイドバー",
+      "container": {
+        "enabled": true,
+        "dock": "top",
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 280,
+        "gap": 12,
+        "margin": 16,
+        "direction": "row"
+      }
+    }
+  ]
+}

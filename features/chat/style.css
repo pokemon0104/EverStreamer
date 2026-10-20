@@ -1,0 +1,12 @@
+/* チャットタブ */
+.adm .ch-card { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 6px 0; background: var(--surface2); }
+.adm .ch-head { display: flex; align-items: center; gap: 8px; }
+.adm .ch-name { font-weight: 700; flex: 1; }
+.adm .ch-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
+.adm .ch-card[data-state='connected'] .ch-dot { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
+.adm .ch-card[data-state='connecting'] .ch-dot { background: #f0b429; animation: ch-blink 1s infinite; }
+.adm .ch-card[data-state='warn'] .ch-dot { background: #f0b429; }
+.adm .ch-card[data-state='error'] .ch-dot { background: var(--live); }
+.adm .ch-card[data-state='error'] { border-color: color-mix(in srgb, var(--live) 50%, var(--line)); }
+.adm .ch-detail { margin: 4px 0 0; }
+@keyframes ch-blink { 50% { opacity: .3; } }

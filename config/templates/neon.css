@@ -1,0 +1,10 @@
+/* ネオンサイバー:見出しの発光と、パネル上辺の光るライン */
+.ov-stage[data-template='neon'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; left: 14px; right: 14px; top: 0; height: 2px; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--t-accent2), var(--t-accent), transparent);
+  box-shadow: 0 0 12px var(--t-accent);
+}
+.ov-stage[data-template='neon'] .ov-panel.is-tpl .ov-content :is(h1, h2, h3, .ov-h, .title, .label) {
+  text-shadow: 0 0 10px var(--t-accent-a50), 0 0 2px var(--t-accent);
+  letter-spacing: .06em;
+}

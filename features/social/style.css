@@ -1,0 +1,9 @@
+/* 名前と SNS */
+.t-social .sn-wrap { display: flex; flex-direction: column; gap: calc(8px * var(--k)); }
+.t-social .sn-name { font-family: var(--hfont); color: var(--c-head); font-size: calc(var(--fs-h) * var(--k)); font-weight: 800; line-height: 1.2; text-shadow: var(--tshadow); }
+.t-social .sn-list { display: flex; flex-wrap: wrap; gap: calc(8px * var(--k)) calc(18px * var(--k)); }
+.t-social .sn-col .sn-list { flex-direction: column; }
+.t-social .sn-item { display: inline-flex; align-items: center; gap: calc(8px * var(--k)); font-size: calc(var(--fs-b) * var(--k)); font-weight: var(--fw); color: var(--c-text); white-space: nowrap; text-shadow: var(--tshadow); }
+.t-social .sn-ic { display: inline-grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; background: var(--t-accent, #4f8cff); color: var(--t-on-accent, #fff); flex: 0 0 auto; }
+.t-social .sn-ic svg { width: 62%; height: 62%; }
+.sn-mk { font-family: var(--t-nfont, 'Poppins'), 'Noto Sans JP', sans-serif; font-weight: 800; font-size: .58em; line-height: 1; letter-spacing: -.02em; }

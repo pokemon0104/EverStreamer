@@ -1,0 +1,8 @@
+.bg-layer { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.bg-fill, .bg-dim, .bg-frame { position: absolute; }
+.bg-frame { box-shadow: 0 0 0 2px rgba(0, 0, 0, .35), inset 0 0 0 2px rgba(0, 0, 0, .25); }
+/* 背景の動画 */
+.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bg-sw { position: relative; overflow: hidden; }
+.bg-sw-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.bg-sw-badge { position: absolute; right: 4px; bottom: 3px; font-size: 10px; color: #fff; background: rgba(0, 0, 0, .6); border-radius: 4px; padding: 0 4px; }

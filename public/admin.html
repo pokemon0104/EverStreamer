@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>EverStreamer 管理画面</title>
+<link rel="stylesheet" href="/core/ov.css">
+<link rel="stylesheet" href="/core/admin.css">
+<script src="/core/tokens.js"></script>
+<script src="/core/i18n.js"></script>
+<script src="/core/ov-core.js"></script>
+<script src="/core/hub-client.js"></script>
+<script src="/core/renderer.js"></script>
+<script src="/core/ui.js"></script>
+<script src="/core/admin-core.js"></script>
+<script src="/core/preview.js"></script>
+<!--FEATURE_ASSETS-->
+</head>
+<body class="adm">
+<header class="adm-top">
+  <div class="brand"><span class="brand-mark" aria-hidden="true"></span>EVERSTREAMER</div>
+  <div id="topbar-slots" class="tb-slots"></div>
+  <div id="lang-slot" class="lang-slot"></div>
+  <a id="overlay-link" class="btn ghost" href="/overlay" target="_blank" rel="noopener" title="OBS に登録する URL です">オーバーレイを開く</a>
+  <div id="conn" class="conn"><i></i><span>接続しています…</span></div>
+</header>
+<main class="adm-main">
+  <aside class="adm-left">
+    <nav id="tabs-nav" class="tabs"></nav>
+    <div id="tab-body" class="tab-body"></div>
+  </aside>
+  <section id="preview" class="adm-center"></section>
+  <aside id="inspector" class="adm-right"></aside>
+</main>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<script>ADM.start();</script>
+</body>
+</html>

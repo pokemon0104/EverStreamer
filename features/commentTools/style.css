@@ -1,0 +1,31 @@
+/* 投票 */
+.t-poll .pl-title, .t-ideas .id-title { display: flex; justify-content: space-between; align-items: baseline; gap: .6em; }
+.t-poll .pl-total, .t-ideas .id-count { font-size: .6em; font-weight: 400; opacity: .85; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.t-poll .pl-closed { color: #ff8f93; margin-right: .5em; }
+.t-poll .pl-row { margin-bottom: .55em; }
+.t-poll .pl-row:last-child { margin-bottom: 0; }
+.t-poll .pl-head { display: flex; align-items: baseline; gap: .5em; min-width: 0; }
+.t-poll .pl-rank { color: var(--c-num); font-size: .8em; }
+.t-poll .pl-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-poll .pl-n { color: var(--c-num); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.t-poll .pl-n small { color: var(--c-text); opacity: .75; font-size: .8em; }
+.t-poll .pl-track { height: .6em; margin-top: .15em; background: rgba(0, 0, 0, .45); border: 2px solid var(--c-text); border-radius: 2px; overflow: hidden; box-sizing: content-box; }
+.t-poll .pl-fill { display: block; height: 100%; width: 0; background: var(--c-num); }
+.t-poll .pl-row.lead .pl-fill { box-shadow: 0 0 8px var(--c-num); }
+.t-poll .pl-row.bump .pl-n { animation: np-pop .6s ease-out; }
+.t-poll .pl-empty, .t-ideas .id-empty { opacity: .7; }
+.t-poll .pl-hint { margin-top: .5em; font-size: .8em; opacity: .75; }
+/* アイデア募集 */
+.t-ideas .id-list { display: flex; flex-direction: column; gap: .35em; }
+.t-ideas .id-item { display: flex; justify-content: space-between; align-items: baseline; gap: .6em; padding-bottom: .25em; border-bottom: 1px dashed rgba(255, 255, 255, .3); min-width: 0; }
+.t-ideas .id-item.new { animation: id-in .6s cubic-bezier(.2, .8, .2, 1); }
+@keyframes id-in { from { transform: translateX(-30px); opacity: 0; background: rgba(255, 255, 255, .25); } to { transform: none; opacity: 1; } }
+.t-ideas .id-text { min-width: 0; overflow-wrap: anywhere; }
+.t-ideas .id-user { font-size: .75em; color: var(--c-num); white-space: nowrap; max-width: 40%; overflow: hidden; text-overflow: ellipsis; }
+/* カウンター */
+.t-counter .ct-grid { display: flex; gap: .5em; }
+.t-counter .ct-grid.col { flex-direction: column; }
+.t-counter .ct-card { flex: 1 1 0; min-width: 0; text-align: center; border: 2px solid var(--c-text); border-radius: 4px; padding: .3em .2em .15em; background: rgba(0, 0, 0, .3); }
+.t-counter .ct-name { font-size: .85em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-counter .ct-val { font-size: calc(var(--fs-n) * var(--k)); color: var(--c-num); font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; font-family: var(--nfont, var(--hfont)); }
+.t-counter .ct-card.up .ct-val { animation: np-pop .7s ease-out; }

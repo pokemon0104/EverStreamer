@@ -1,0 +1,160 @@
+{
+  "id": "tactical",
+  "order": 5,
+  "name": {
+    "ja": "FPS・タクティカル",
+    "en": "FPS Tactical"
+  },
+  "desc": {
+    "ja": "角を切ったHUD風のパネルとコーナーブラケット。FPS・シューターに。",
+    "en": "HUD-style panels with cut corners and brackets. Built for FPS and shooters."
+  },
+  "tokens": {
+    "accent": "#a6ff3d",
+    "accent2": "#ff7a1a",
+    "bg": "#0a0d0b",
+    "surface": "#111612",
+    "text": "#e6efe8",
+    "muted": "#93a397",
+    "font": "Noto Sans JP",
+    "headingFont": "Rajdhani",
+    "numberFont": "Rajdhani",
+    "radius": 0
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "linear-gradient(180deg, {surface@0.92}, {bg@0.9})",
+    "bgAlpha": 1,
+    "borderStyle": "solid",
+    "borderWidth": 1,
+    "borderColor": "{accent@0.45}",
+    "radius": 0,
+    "textColor": "{text}",
+    "headingColor": "{accent}",
+    "numberColor": "{text}",
+    "glowStrength": 0,
+    "innerShadow": "inset 0 0 24px {accent@0.08}",
+    "shadowColor": "#000000",
+    "shadowAlpha": 0.5,
+    "shadowBlur": 10,
+    "shadowY": 0,
+    "letterSpacing": 0.03,
+    "padding": 18
+  },
+  "title": {
+    "font": "Rajdhani",
+    "fallbackFont": "Noto Sans JP",
+    "weight": 700,
+    "fill": {
+      "type": "solid",
+      "color": "{text}"
+    },
+    "strokes": [],
+    "glow": {
+      "color": "{accent@0.6}",
+      "size": 6
+    },
+    "shadow": null,
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 0,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 1,
+        "fill": "{accent@0.4}"
+      }
+    ],
+    "corners": {
+      "len": 44,
+      "w": 4,
+      "color": "{accent}",
+      "gap": 10
+    },
+    "glow": {
+      "color": "{accent@0.25}",
+      "blur": 12
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.9,
+      "textColor": "{text}",
+      "headingColor": "{accent}",
+      "numberColor": "{text}",
+      "font": "{font}",
+      "headingFont": "{headingFont}"
+    }
+  },
+  "callout": {
+    "font": "Noto Sans JP",
+    "size": 54,
+    "bold": true,
+    "color": "{text}",
+    "fill": "solid",
+    "grad1": "#ffffff",
+    "grad2": "{accentLight}",
+    "grad3": "",
+    "gradAngle": 90,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "glow",
+    "effectColor": "{accent}",
+    "box": "card",
+    "boxColor": "{bg}",
+    "boxAlpha": 0.9,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 2,
+    "radius": 0,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{accent}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "Noto Sans JP",
+    "titleFont": "Rajdhani",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accent}",
+    "align": "left",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "{accent}",
+    "boxColor": "{bg}",
+    "boxAlpha": 0.88,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 1,
+    "borderColor": "{accent@0.6}",
+    "radius": 0,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.55,
+    "backdropBlur": 4,
+    "backdropColor": "#000000",
+    "valign": "center"
+  },
+  "background": "linear-gradient(rgba(166,255,61,.05) 1px, transparent 1px) 0 0 / 48px 48px, linear-gradient(90deg, rgba(166,255,61,.05) 1px, transparent 1px) 0 0 / 48px 48px, radial-gradient(900px 600px at 80% 20%, {accent2@0.12}, transparent 60%), {bg}",
+  "scene": {
+    "fx": "lines",
+    "layout": "left"
+  }
+}

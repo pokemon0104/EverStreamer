@@ -1,0 +1,167 @@
+{
+  "id": "pastel",
+  "order": 7,
+  "name": {
+    "ja": "パステル",
+    "en": "Pastel"
+  },
+  "desc": {
+    "ja": "やさしい色と丸いカード。のんびりしたゲーム・かわいい雰囲気に。",
+    "en": "Soft colors and round cards. For cozy games and a cute vibe."
+  },
+  "tokens": {
+    "accent": "#ff8fb8",
+    "accent2": "#8fd3ff",
+    "bg": "#fdf2f8",
+    "surface": "#ffffff",
+    "text": "#4a3f5c",
+    "muted": "#76698f",
+    "font": "Zen Maru Gothic",
+    "headingFont": "Zen Maru Gothic",
+    "numberFont": "Kiwi Maru",
+    "radius": 24
+  },
+  "panel": {
+    "font": "{font}",
+    "headingFont": "{headingFont}",
+    "numberFont": "{numberFont}",
+    "bold": true,
+    "bgColor": "{surface}",
+    "bgImage": "",
+    "bgAlpha": 0.9,
+    "borderStyle": "solid",
+    "borderWidth": 3,
+    "borderColor": "{accent@0.45}",
+    "radius": "{radius}",
+    "textColor": "{text}",
+    "headingColor": "{accentDark}",
+    "numberColor": "{accentDark}",
+    "glowStrength": 0,
+    "innerShadow": "",
+    "shadowColor": "{accent}",
+    "shadowAlpha": 0.25,
+    "shadowBlur": 22,
+    "shadowY": 8,
+    "padding": 18
+  },
+  "title": {
+    "font": "Zen Maru Gothic",
+    "weight": 900,
+    "fill": {
+      "type": "gradient",
+      "angle": 180,
+      "stops": [
+        "{accent}",
+        "{accentDark}"
+      ]
+    },
+    "strokes": [
+      {
+        "color": "#ffffff",
+        "width": 4
+      }
+    ],
+    "glow": null,
+    "shadow": {
+      "x": 0,
+      "y": 5,
+      "blur": 10,
+      "color": "{accent@0.35}"
+    },
+    "italic": false,
+    "skew": 0
+  },
+  "frame": {
+    "radius": 28,
+    "ratio": "",
+    "layers": [
+      {
+        "w": 8,
+        "fill": "linear-gradient(135deg, {accentLight}, {accent2Light} 50%, #c9f5e4)"
+      },
+      {
+        "w": 3,
+        "fill": "#ffffff"
+      }
+    ],
+    "shadow": {
+      "y": 10,
+      "blur": 24,
+      "color": "{accent@0.35}"
+    },
+    "panel": {
+      "bgColor": "{surface}",
+      "bgAlpha": 0.9,
+      "textColor": "{text}",
+      "headingColor": "{accentDark}",
+      "numberColor": "{accentDark}",
+      "font": "{font}"
+    }
+  },
+  "callout": {
+    "font": "Zen Maru Gothic",
+    "size": 56,
+    "bold": true,
+    "color": "{text}",
+    "fill": "solid",
+    "grad1": "#ffffff",
+    "grad2": "{accentLight}",
+    "grad3": "",
+    "gradAngle": 90,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadow": false,
+    "effect": "float",
+    "effectColor": "{accent}",
+    "box": "bubble",
+    "boxColor": "#ffffff",
+    "boxAlpha": 0.96,
+    "boxImage": "",
+    "borderColor": "{accent}",
+    "borderWidth": 4,
+    "radius": 30,
+    "padX": 44,
+    "padY": 18,
+    "subColor": "{accentDark}",
+    "iconColor": "{accent}"
+  },
+  "story": {
+    "font": "Zen Maru Gothic",
+    "titleFont": "Zen Maru Gothic",
+    "size": 38,
+    "titleSize": 48,
+    "color": "{text}",
+    "titleColor": "{accentDark}",
+    "align": "center",
+    "lineHeight": 1.8,
+    "letterSpacing": 0.04,
+    "bold": true,
+    "strokeWidth": 0,
+    "strokeColor": "#000000",
+    "shadowBlur": 0,
+    "shadowY": 0,
+    "shadowColor": "#000000",
+    "glow": 0,
+    "glowColor": "{accent}",
+    "boxColor": "#ffffff",
+    "boxAlpha": 0.95,
+    "boxImage": "",
+    "borderStyle": "solid",
+    "borderWidth": 4,
+    "borderColor": "{accent@0.6}",
+    "radius": 30,
+    "padding": 44,
+    "boxWidth": 68,
+    "boxShadow": true,
+    "titleDeco": "none",
+    "dim": 0.3,
+    "backdropBlur": 4,
+    "backdropColor": "#4a3f5c",
+    "valign": "center"
+  },
+  "background": "radial-gradient(circle at 25% 25%, rgba(255,255,255,.7) 0 3px, transparent 4px) 0 0 / 38px 38px, linear-gradient(135deg, {accentLight} 0%, #f7e8ff 45%, {accent2Light} 100%)",
+  "scene": {
+    "fx": "orbs",
+    "layout": "center"
+  }
+}

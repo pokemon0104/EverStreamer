@@ -1,0 +1,6 @@
+/* クリーン・ミニマル:すりガラスのカードと、見出しの左のアクセント */
+.ov-stage[data-template='clean'] .ov-panel.is-tpl .ov-box { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.ov-stage[data-template='clean'] .ov-panel.is-tpl .ov-box::after {
+  content: ''; position: absolute; left: 0; top: 18px; width: 4px; height: 28px; z-index: 2; pointer-events: none;
+  border-radius: 0 4px 4px 0; background: linear-gradient(180deg, var(--t-accent), var(--t-accent2));
+}

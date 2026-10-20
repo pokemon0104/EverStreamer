@@ -1,0 +1,308 @@
+{
+  "_説明": "ゲーム枠の種類。layers(内側から順の帯)・radius・glow・shadow・corners・panel(同じデザインのパネル用の色)を書きます。色には {accent} などのトークンは使えません(テンプレートの枠は config/templates で決めます)。",
+  "frames": [
+    {
+      "id": "simple",
+      "name": "シンプル(白線)",
+      "desc": "細い白線だけ",
+      "ratio": "",
+      "radius": 0,
+      "layers": [
+        {
+          "w": 3,
+          "fill": "#ffffff"
+        }
+      ],
+      "shadow": {
+        "y": 0,
+        "blur": 10,
+        "color": "rgba(0,0,0,.55)"
+      },
+      "panel": {
+        "bgColor": "#000000",
+        "bgAlpha": 0.85,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffe14d",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "minimal",
+      "name": "ミニマル",
+      "desc": "細い白線と、やわらかい影",
+      "ratio": "",
+      "radius": 6,
+      "layers": [
+        {
+          "w": 2,
+          "fill": "rgba(255,255,255,.92)"
+        }
+      ],
+      "shadow": {
+        "y": 6,
+        "blur": 18,
+        "color": "rgba(0,0,0,.45)"
+      },
+      "panel": {
+        "bgColor": "#000000",
+        "bgAlpha": 0.6,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "glass",
+      "name": "ガラス風",
+      "desc": "半透明の白いフチ",
+      "ratio": "",
+      "radius": 20,
+      "layers": [
+        {
+          "w": 12,
+          "fill": "linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.12) 45%,rgba(255,255,255,.38))"
+        },
+        {
+          "w": 2,
+          "fill": "rgba(255,255,255,.75)"
+        }
+      ],
+      "shadow": {
+        "y": 10,
+        "blur": 30,
+        "color": "rgba(0,0,0,.45)"
+      },
+      "panel": {
+        "bgColor": "#0e1424",
+        "bgAlpha": 0.5,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "neon",
+      "name": "ネオン",
+      "desc": "シアン〜紫〜ピンクに光る",
+      "ratio": "",
+      "radius": 14,
+      "layers": [
+        {
+          "w": 2,
+          "fill": "rgba(0,0,0,.6)"
+        },
+        {
+          "w": 3,
+          "fill": "linear-gradient(135deg,#00e5ff,#7c4dff 50%,#ff3df2)"
+        }
+      ],
+      "glow": {
+        "color": "rgba(124,77,255,.75)",
+        "blur": 22
+      },
+      "panel": {
+        "bgColor": "#0a0618",
+        "bgAlpha": 0.88,
+        "textColor": "#f0e9ff",
+        "headingColor": "#ff6bf2",
+        "numberColor": "#00e5ff",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "sunset",
+      "name": "グラデーション(夕焼け)",
+      "desc": "オレンジ〜ピンク〜紫",
+      "ratio": "",
+      "radius": 20,
+      "layers": [
+        {
+          "w": 6,
+          "fill": "linear-gradient(135deg,#ff7a59,#ff3d81 50%,#7c4dff)"
+        }
+      ],
+      "glow": {
+        "color": "rgba(255,61,129,.45)",
+        "blur": 18
+      },
+      "panel": {
+        "bgColor": "#1a0d24",
+        "bgAlpha": 0.9,
+        "textColor": "#ffffff",
+        "headingColor": "#ff9a7a",
+        "numberColor": "#ffd27a",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "gold",
+      "name": "ゴールド(上質)",
+      "desc": "金属のような金のフチ",
+      "ratio": "",
+      "radius": 4,
+      "layers": [
+        {
+          "w": 2,
+          "fill": "#1a1204"
+        },
+        {
+          "w": 6,
+          "fill": "linear-gradient(135deg,#f9e29a,#b8862b 45%,#f5d77a 55%,#8a5f14)"
+        },
+        {
+          "w": 2,
+          "fill": "#3a2a08"
+        }
+      ],
+      "shadow": {
+        "y": 6,
+        "blur": 18,
+        "color": "rgba(0,0,0,.5)"
+      },
+      "panel": {
+        "bgColor": "#120d03",
+        "bgAlpha": 0.94,
+        "textColor": "#f7ecd0",
+        "headingColor": "#f5d77a",
+        "numberColor": "#f9e29a",
+        "font": "Noto Sans JP",
+        "headingFont": "Shippori Mincho"
+      }
+    },
+    {
+      "id": "hud",
+      "name": "HUD風(四隅だけ)",
+      "desc": "四隅のカギ型と細い線",
+      "ratio": "",
+      "radius": 0,
+      "layers": [
+        {
+          "w": 1,
+          "fill": "rgba(0,229,255,.35)"
+        }
+      ],
+      "corners": {
+        "len": 38,
+        "w": 4,
+        "color": "#00e5ff",
+        "gap": 8
+      },
+      "glow": {
+        "color": "rgba(0,229,255,.35)",
+        "blur": 10
+      },
+      "panel": {
+        "bgColor": "#04111a",
+        "bgAlpha": 0.82,
+        "textColor": "#d8faff",
+        "headingColor": "#00e5ff",
+        "numberColor": "#00e5ff",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "esports",
+      "name": "eスポーツ風",
+      "desc": "赤〜オレンジの太い線と四隅",
+      "ratio": "",
+      "radius": 0,
+      "layers": [
+        {
+          "w": 5,
+          "fill": "linear-gradient(90deg,#ff2d55,#ff9500)"
+        }
+      ],
+      "corners": {
+        "len": 26,
+        "w": 4,
+        "color": "#ffffff",
+        "gap": 10
+      },
+      "shadow": {
+        "y": 0,
+        "blur": 14,
+        "color": "rgba(255,45,85,.5)"
+      },
+      "panel": {
+        "bgColor": "#12060c",
+        "bgAlpha": 0.9,
+        "textColor": "#ffffff",
+        "headingColor": "#ff9500",
+        "numberColor": "#ff2d55",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "darkglass",
+      "name": "ダークガラス",
+      "desc": "暗いすりガラスのフチ",
+      "ratio": "",
+      "radius": 18,
+      "layers": [
+        {
+          "w": 10,
+          "fill": "linear-gradient(135deg,rgba(20,24,36,.85),rgba(40,46,64,.7))"
+        },
+        {
+          "w": 1,
+          "fill": "rgba(255,255,255,.35)"
+        }
+      ],
+      "shadow": {
+        "y": 10,
+        "blur": 30,
+        "color": "rgba(0,0,0,.5)"
+      },
+      "panel": {
+        "bgColor": "#141824",
+        "bgAlpha": 0.8,
+        "textColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "numberColor": "#ffffff",
+        "font": "Noto Sans JP"
+      }
+    },
+    {
+      "id": "pastel",
+      "name": "パステル",
+      "desc": "やさしいピンク〜水色",
+      "ratio": "",
+      "radius": 24,
+      "layers": [
+        {
+          "w": 8,
+          "fill": "linear-gradient(135deg,#ffc6e0,#c9d6ff 50%,#b9f3e4)"
+        },
+        {
+          "w": 3,
+          "fill": "#ffffff"
+        }
+      ],
+      "shadow": {
+        "y": 8,
+        "blur": 20,
+        "color": "rgba(120,90,160,.35)"
+      },
+      "panel": {
+        "bgColor": "#ffffff",
+        "bgAlpha": 0.88,
+        "textColor": "#4a3f5c",
+        "headingColor": "#e2689b",
+        "numberColor": "#6b7cff",
+        "font": "Zen Maru Gothic"
+      }
+    },
+    {
+      "id": "none",
+      "name": "枠なし",
+      "desc": "何も表示しない",
+      "match": [],
+      "ratio": "",
+      "radius": 0,
+      "layers": []
+    }
+  ]
+}
