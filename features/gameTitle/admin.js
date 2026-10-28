@@ -37,7 +37,7 @@
   ADM.registerTopbar({
     order: 8,
     build(root) {
-      const sel = h('select', { class: 'tb-game', title: 'ゲームプロファイルを切り替えます(タイトル・ロゴ・背景・目的・あらすじが、まとめて切り替わります)' });
+      const sel = h('select', { class: 'tb-game', title: 'ゲームプロファイルを切り替えます(タイトル・ロゴ・目的・あらすじと、パネル・レイアウト・背景・ゲーム枠などの画面の設定が、まとめて切り替わります)' });
       sel.addEventListener('change', () => { if (sel.value) ADM.send('game:loadProfile', { id: sel.value }); });
       UI.bind(sel, () => {
         const profs = OV.state.gameProfiles || [];
@@ -80,7 +80,16 @@
         profs.length ? list : h('p', { class: 'hint' }, 'まだありません。下で今の設定に名前を付けて保存できます。'),
         h('div', { class: 'row', style: { marginTop: '6px' } }, nameIn,
           UI.button('今の設定を保存', () => { ADM.send('game:saveProfile', { name: nameIn.value }); nameIn.value = ''; }, 'primary')),
-        h('p', { class: 'hint' }, 'タイトル・表示方式・見た目・ロゴと、「ゲーム全体の目的」「今日の目標」がまとめて保存されます。目的・目標は書き換えると、選んでいるプロファイルにも自動で保存されます。'));
+        h('p', { class: 'hint' }, 'タイトル・表示方式・見た目・ロゴと、「ゲーム全体の目的」「今日の目標」がまとめて保存されます。目的・目標は書き換えると、選んでいるプロファイルにも自動で保存されます。'),
+        UI.toggle({ label: 'ゲームごとに画面の設定を分ける(OBS のシーンのように)', get: () => G().sceneLink !== false, set: (v) => ADM.patchGame({ sceneLink: v }) }),
+        (() => {
+          const note = h('p', { class: 'hint' });
+          return UI.bind(note, () => {
+            note.textContent = G().sceneLink === false
+              ? 'オフのときは、パネル・サイドバー・演出などの設定は、すべてのゲームで共通です(背景・ゲーム枠は、それぞれのタブの設定に従います)。'
+              : 'パネル(文字の大きさ・スタイル・表示/非表示・位置)、サイドバーの大きさ、背景、ゲーム枠、演出、あらすじの出し方を、ゲームごとに別々に持ちます(横画面・縦画面とも)。ゲームを切り替えると、まるごと切り替わります。初めて切り替えたゲームは、それまでの画面を引き継ぎます。YouTube 連携・経過時間・お祝い・感謝メッセージは、すべてのゲームで共通です。';
+          });
+        })());
 
       // --- 目的と目標(横画面・縦画面で共通)
       if (ADM.richEditor) {

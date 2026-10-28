@@ -14,7 +14,7 @@
     id: 'panels',
     label: 'パネル',
     order: 10,
-    sig: () => JSON.stringify((OV.state.panels || []).map((p) => [p.id, p.name, p.visible, p.placement, p.pairWithNext, p.type, p.fill, p.type === 'group' ? (p.data || {}).members : 0])) + ADM.selectedId + (((OV.state.layout || {}).container || {}).enabled !== false),
+    sig: () => JSON.stringify((OV.state.panels || []).map((p) => [p.id, p.name, p.visible, p.placement, p.pairWithNext, p.type, p.fill, p.type === 'group' ? (p.data || {}).members : 0])) + ADM.selectedId + (((OV.state.layout || {}).container || {}).enabled !== false) + JSON.stringify(OV.state.screens || {}),
     build(root) {
       const types = Object.values(OV.panelTypes);
       let addType = 'text';
@@ -43,7 +43,8 @@
           h('span', { class: 'chip' }, ADM.typeLabel(p.type)),
           p.pairWithNext && p.placement !== 'free' && !sub && p.type !== 'group' ? h('span', { class: 'chip pair', title: '次のパネルと横並び' }, '横並び') : null,
           p.type === 'group' ? h('span', { class: 'chip grp', title: '中のパネルを横一列に並べます' }, `${panels.filter((x) => gmap.get(x.id) === p.id).length}個`) : null,
-          p.fill ? h('span', { class: 'chip', title: '残りのスペースを埋める' }, '伸縮') : null].filter(Boolean));
+          p.fill ? h('span', { class: 'chip', title: '残りのスペースを埋める' }, '伸縮') : null,
+          (OV.panelHiders || []).some((fn) => fn(p)) ? h('span', { class: 'chip off', title: '「コメント連動」タブの「出す画面」で、この画面には出さない設定になっています' }, 'この画面は出さない') : null].filter(Boolean));
         if (sub) return li; // グループの中の並び順は、グループの設定で変える
         li.addEventListener('dragstart', (e) => { dragId = p.id; e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', p.id); });
         li.addEventListener('dragover', (e) => {
@@ -101,6 +102,18 @@
     sw.style.border = `${bw}px ${L.borderStyle || 'solid'} ${L.borderColor}`;
     sw.style.borderRadius = `${Math.min(8, Number(L.radius) || 0)}px`;
     if (L.glowStrength) sw.style.textShadow = `0 0 6px ${L.glowColor}`;
+    if (L.borderTitle) {
+      // 見出しが枠線の上に乗るスタイル:見本にも小さなラベルを出す
+      sw.style.position = 'relative';
+      sw.style.overflow = 'visible';
+      const lg = h('span', { class: 'style-sw-lg' }, '名前');
+      lg.style.background = L.bgColor || '#000';
+      lg.style.color = L.headingColor || L.textColor;
+      if (L.borderTitleAlign === 'center') { lg.style.left = '50%'; lg.style.transform = 'translate(-50%, -50%)'; }
+      else if (L.borderTitleAlign === 'right') lg.style.right = '6px';
+      else lg.style.left = '6px';
+      sw.append(lg);
+    }
     return sw;
   }
 
@@ -211,6 +224,28 @@
       h('div', { class: 'row' },
         UI.button('全パネルにこのスタイル', () => { if (confirm('すべてのパネルを同じスタイルにしますか?')) ADM.send('panels:setStyle', { all: true, styleId: P().styleId }); }, 'small'),
         UI.button('個別調整をすべて戻す', () => ADM.send('panels:resetLook', { id }), 'small'))));
+
+    // 見出しを枠線の上に重ねる(ウィンドウ風)
+    const btOn = () => !!L().borderTitle;
+    root.append(UI.section('btitle', '見出しを枠線の上に重ねる',
+      h('p', { class: 'hint' }, 'ゲームのウィンドウのように、見出しを枠線の上に乗せて表示します。どのスタイル・どの枠にも使えます(見出しのあるパネルが対象です)。'),
+      UI.toggle({ label: '見出しを枠線の上に重ねる', ...lk('borderTitle') }),
+      UI.when(btOn, h('div', null,
+        UI.seg({ label: '位置', options: [['left', '左'], ['center', '中央'], ['right', '右']], ...lk('borderTitleAlign') }),
+        UI.when(() => L().borderTitleAlign !== 'center', UI.num({ label: '端からの距離', min: 0, max: 200, step: 1, unit: 'px', ...lk('borderTitleInset') })),
+        UI.num({ label: '大きさ', min: 0.5, max: 2, step: 0.05, unit: '倍', ...lk('borderTitleScale') }),
+        UI.num({ label: '文字の左右の余白', min: 0, max: 1.5, step: 0.05, unit: 'em', ...lk('borderTitlePad') }),
+        UI.seg({ label: '文字のうしろ', options: [['auto', 'パネルの背景色'], ['color', '色を指定'], ['none', 'なし(線が透ける)']], ...lk('borderTitleBgMode') }),
+        UI.when(() => L().borderTitleBgMode === 'color', UI.color({ label: 'うしろの色', ...lk('borderTitleBgColor') })))),
+      h('p', { class: 'hint' }, '文字のうしろを塗りつぶして、枠線を切り取ったように見せます。見出しの文字・大きさ・色は、ふだんの見出しと同じ設定を使います。'),
+      h('div', { class: 'row' },
+        UI.button('全パネルをこの設定にする', () => {
+          const cur = L();
+          const keys = ['borderTitle', 'borderTitleAlign', 'borderTitleInset', 'borderTitleScale', 'borderTitlePad', 'borderTitleBgMode', 'borderTitleBgColor'];
+          const patch = {};
+          keys.forEach((k) => { if (cur[k] !== undefined) patch[k] = cur[k]; });
+          if (confirm(`すべてのパネルで「見出しを枠線の上に重ねる」を${cur.borderTitle ? 'オン' : 'オフ'}にしますか?`)) ADM.send('panels:setLookAll', { patch });
+        }, 'small'))));
 
     // 枠と背景
     root.append(UI.section('frame', '枠と背景',

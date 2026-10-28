@@ -274,6 +274,11 @@ input[type='range'] { accent-color: var(--accent); min-width: 0; }
   overflow: hidden;
   border-radius: 3px;
 }
+.style-sw-lg {
+  position: absolute; top: 0; transform: translateY(-50%);
+  font-size: 10px; line-height: 1.2; padding: 0 3px; white-space: nowrap;
+}
+.style-sw:has(.style-sw-lg) { margin-top: 6px; }
 .style-btn .nm { display: block; font-size: 11px; color: var(--muted); padding: 3px 2px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ゲーム */
@@ -449,3 +454,22 @@ body.canvas-v .canvas-seg button.on { background: #e0458a; color: #fff; }
 .pitem.sub { margin-left: 22px; }
 .pitem .chip.grp { color: #7dd3fc; border-color: #7dd3fc; }
 .tb-game { max-width: 180px; }
+
+/* ゲーム映像の場所(プレビューで移動・大きさ変更) */
+.pv-gbox { position: absolute; outline: calc(2px * var(--inv)) dashed rgba(90, 200, 255, .75); }
+.pv-gtab {
+  position: absolute; top: 0; left: 0; pointer-events: auto; cursor: grab;
+  font-size: calc(12px * var(--inv)); line-height: 1.4; padding: calc(2px * var(--inv)) calc(8px * var(--inv));
+  background: rgba(30, 140, 200, .9); color: #fff; border-radius: 0 0 calc(4px * var(--inv)) 0; white-space: nowrap;
+}
+.pv-gh::after { background: #5ac8ff; }
+/* YouTube の画面に出る部品の目安 */
+.pv-ytshot { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+.pv-yt { position: absolute; border: calc(2px * var(--inv)) dashed rgba(255, 70, 70, .9); background: rgba(255, 40, 40, .16); box-sizing: border-box; }
+.pv-yt-label {
+  position: absolute; left: 0; top: 0; max-width: 100%; pointer-events: auto; cursor: grab;
+  font-size: calc(12px * var(--inv)); line-height: 1.35; padding: calc(2px * var(--inv)) calc(6px * var(--inv));
+  background: rgba(200, 20, 20, .88); color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.pv-yh::after { background: #ff5a5a; }
+.pv-frame, .pv-frame * { -webkit-user-select: none; user-select: none; }

@@ -86,6 +86,7 @@ function createHub({ server, store, catalogs, handlers, panelTypes, bus }) {
       commit: (...keys) => keys.forEach((k) => touched.add(keyFor(canvas, k))),
       commitRaw: (...keys) => keys.forEach((k) => touched.add(k)),
       normalize: (key, v) => store.normalize(keyFor(canvas, key), v),
+      normalizeRaw: (key, v) => store.normalize(key, v), // 画面の読み替えをしない(vPanels などを直接)
       reply: (t, p) => sendTo(ws, t, p),
       toast: (message, kind = 'info') => sendTo(ws, 'core:toast', { message, kind }),
       broadcast,

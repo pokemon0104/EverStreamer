@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-10-28
+
+### Added
+- **Large text panel** with a gallery of 111 original text designs (neon, metallic, pop, soft, thumbnail, contrast headings, classic and 65 photo textures), per-character size and color markup, multi-layer outlines, glow, 3D shadow, gradients, textures, background shapes and motion; "My designs" and favorites
+- **Font tab**: register fonts installed on your PC or import font files into `data/userfonts`; they show up in all font pickers
+- **Social accounts panel** (several accounts; list / row / rotating; neutral text marks, no service logos)
+- **Per-game screen settings** linked to game profiles, and per-game game frames
+- **Panel heading on the border** option (with "apply to all panels")
+- **Game video area** can be dragged and resized in the preview; **YouTube display guide** and screenshot overlay (preview only)
+- **Horizontal / vertical output toggle** for celebrations, thank-you messages, effects and chat-linked panels
+- 7 more Google Fonts (all SIL OFL): Mochiy Pop One, Hachi Maru Pop, Darumadrop One, Klee One, Kaisei Tokumin, Yuji Boku, Rampart One
+
+### Notes
+- Photo textures in `features/bigText/textures/` are supplied by the author, who confirmed they are original or freely redistributable (see `NOTICE.md`)
+
+---
+
 ## [1.0.0] - 2026-10-20
 
 First public release.
@@ -21,6 +38,10 @@ First public release.
 - `start.bat` / `start.command` / `start.sh` launchers and `npm run release` for release zips
 
 ---
+
+## 1.1.0(日本語)
+
+大きな文字パネル(111 種類のデザイン・写真の質感 65 種)、フォントタブ(PC のフォント・フォントファイルの取り込み)、SNSアカウントパネル、ゲームごとの画面設定、見出しを枠線の上に重ねる設定、ゲーム映像の場所をプレビューで移動、YouTube の表示の目安、横型・縦型の出力切り替えを追加しました。Google Fonts を 7 種類追加(すべて OFL)。
 
 ## 1.0.0(日本語)
 

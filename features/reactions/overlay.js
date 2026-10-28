@@ -301,6 +301,7 @@
     const all = OV.state.reactions;
     if (!all) return;
     if (p.canvas && p.canvas !== OV.canvas) return; // 別の画面(横/縦)向けのテスト・言葉の反応
+    if (OV.screenOn && !OV.screenOn('reactions')) return; // この画面(横型/縦型)には出さない
     if (p.kind === 'word') {
       const w = all.word;
       if (!w || (!w.enabled && !p.test)) return;

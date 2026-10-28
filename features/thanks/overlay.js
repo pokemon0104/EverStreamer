@@ -47,7 +47,7 @@
   }
 
   function render(e, S) {
-    const sh = S.thanksShow || {};
+    const sh = OV.screenOn && !OV.screenOn('thanks') ? {} : S.thanksShow || {};
     const cfg = S.thanks || {};
     e.stage.classList.toggle('th-hide-ui', !!(sh.active && cfg.hideSidebar));
     if (!sh.active) {

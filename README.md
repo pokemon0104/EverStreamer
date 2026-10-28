@@ -182,6 +182,13 @@ Switch with the **Scenes** tab, the top-bar buttons, or `Alt + 1–4`. Includes 
 ### And more
 
 - **Name & SNS**: show your X, YouTube, Twitch, Discord, TikTok and Instagram IDs
+- **Social accounts panel**: list several accounts (X, YouTube, Twitch, Instagram, TikTok, Bluesky, Threads, Discord and more) stacked, side by side, or rotating one by one
+- **Large text panel**: free-placement headline text with 111 ready-made designs (neon, metallic, pop, thumbnail style, photo textures…), per-character sizes and colors, outlines, glow and shadows; save your own looks to "My designs"
+- **Font tab**: use fonts installed on your PC, or import your own font files (TTF / OTF / WOFF / WOFF2); they appear in every font picker
+- **Per-game screen settings**: turn on "keep separate screen settings per game" in the Game tab and each game profile remembers its own panels, layout, background and frame
+- **Panel headings on the border**: put every panel's heading on top of its border like a window title
+- **Game video area**: drag and resize the game video area right in the preview, and show a guide for where YouTube's chat and buttons will overlap
+- **Horizontal / vertical output toggle**: choose which screens celebrations, thank-you messages, effects and chat-linked panels appear on
 - **Callouts**: show "Please subscribe!" and similar messages with one button
 - **Story**: show your game's story so far with effects before the stream
 - **Game profiles**: save title, logo, background and goals per game and switch between them

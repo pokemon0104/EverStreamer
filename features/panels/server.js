@@ -6,6 +6,9 @@ const { uid, clone, deepMerge, pick, isPlainObject, watchJson } = require('../..
 // スタイル変更時も維持する「サイズ系」の個別調整
 const SIZE_KEYS = ['headingSize', 'bodySize', 'numberSize', 'lineHeight', 'letterSpacing', 'padding'];
 
+// 「見出しを枠線の上に重ねる」の設定(自分でオンにしていれば、スタイルを変えても維持する)
+const BORDER_TITLE_KEYS = ['borderTitle', 'borderTitleAlign', 'borderTitleInset', 'borderTitleScale', 'borderTitlePad', 'borderTitleBgMode', 'borderTitleBgColor'];
+
 const PANEL_BASE = () => ({
   id: uid('p'),
   type: 'text',
@@ -182,7 +185,18 @@ module.exports = {
       const targets = all ? ctx.state.panels : [find(ctx, id)].filter(Boolean);
       for (const p of targets) {
         p.styleId = styleId;
-        p.look = pick(p.look, SIZE_KEYS); // 枠・背景・文字装飾はスタイルに戻す
+        const keepTitle = p.look && p.look.borderTitle === true ? pick(p.look, BORDER_TITLE_KEYS) : {};
+        p.look = { ...pick(p.look, SIZE_KEYS), ...keepTitle }; // 枠・背景・文字装飾はスタイルに戻す(「見出しを枠線の上に」をオンにしていれば維持)
+      }
+      ctx.commit('panels');
+    },
+    // すべてのパネルの見た目を一部だけ変える(例:見出しを枠線の上に重ねる)。キーは決まったものだけ受け付ける
+    setLookAll({ patch }, ctx) {
+      if (!isPlainObject(patch)) return;
+      const safe = pick(patch, BORDER_TITLE_KEYS);
+      for (const p of ctx.state.panels) {
+        if (p.type === 'group') continue;
+        p.look = { ...(p.look || {}), ...safe };
       }
       ctx.commit('panels');
     },

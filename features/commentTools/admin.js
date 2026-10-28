@@ -107,6 +107,7 @@
     order: 36,
     sig: () => `${(OV.state.panels || []).filter((p) => p.type === 'counter').map((p) => `${p.id}:${(p.data.counters || []).length}`).join(',')}|${(OV.state.ct || {}).token}`,
     build(root) {
+      if (ADM.screenRow) root.append(ADM.screenRow('ct', '投票・アイデア募集・カウンターのパネル'), help('出さない画面では、これらのパネルを置いていても表示しません。コメントの集計は続けます。言葉に反応する演出は「演出」タブで切り替えます。'));
       const name = h('input', { type: 'text', value: 'テスト', style: { width: '90px' } });
       const text = h('input', { type: 'text', placeholder: '例:左 / 草 / セーブ / #案 〇〇', style: { flex: 1 } });
       const send = (count) => { ADM.send('ct:test', { name: name.value, text: text.value, count }); };

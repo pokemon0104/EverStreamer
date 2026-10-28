@@ -37,7 +37,14 @@
     "shadowBlur": 0,
     "shadowY": 0,
     "scanlines": false,
-    "scanlineAlpha": 0.25
+    "scanlineAlpha": 0.25,
+    "borderTitle": false,
+    "borderTitleAlign": "left",
+    "borderTitleInset": 24,
+    "borderTitleScale": 1,
+    "borderTitlePad": 0.4,
+    "borderTitleBgMode": "auto",
+    "borderTitleBgColor": "#000000"
   },
   "styles": [
     {

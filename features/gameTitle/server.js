@@ -10,6 +10,38 @@ const PROFILE_KEYS = ['title', 'method', 'lookId', 'lookLocked', 'logo', 'logoSh
 const TEXT_KEYS = ['purposeTitle', 'purpose', 'objectiveTitle', 'objective', 'storyTitle', 'story', 'logo', 'method', 'logoShadow', 'logoGlow', 'logoGlowColor'];
 const ALLOWED_EXT = ['.png', '.webp', '.svg'];
 
+// ---- シーン(OBS のシーンのように、ゲームプロファイルごとに見た目・配置をまるごと持つ) ----
+// 横画面・縦画面のパネル(文字サイズ・スタイル・表示/非表示・位置)、サイドバー・全体の大きさ、背景、ゲーム枠、演出、あらすじの出し方
+const SCENE_KEYS = ['panels', 'vPanels', 'layout', 'vLayout', 'background', 'vBackground', 'gameFrame', 'vGameFrame', 'frameCustom', 'reactions', 'vReactions', 'story', 'storyView', 'vStoryView'];
+const sceneOn = (raw) => ((raw.game || {}).sceneLink !== false);
+/** いまの画面の設定を、プロファイルのシーンとして保存する */
+function saveScene(raw, prof) {
+  if (!prof || !sceneOn(raw)) return false;
+  const sc = {};
+  for (const k of SCENE_KEYS) if (raw[k] !== undefined) sc[k] = clone(raw[k]);
+  prof.scene = sc;
+  return true;
+}
+/** プロファイルのシーンを、いまの画面に読み込む。変えた設定欄の名前を返す */
+function applyScene(ctx, prof) {
+  const raw = ctx.raw;
+  const sc = prof && prof.scene;
+  if (!sc || !sceneOn(raw)) return [];
+  const changed = [];
+  for (const k of SCENE_KEYS) {
+    if (sc[k] === undefined) continue;
+    // 背景・ゲーム枠で「ゲームごとに切り替える」をオフにしている画面は、いまのまま(全ゲーム共通)
+    if ((k === 'background' || k === 'vBackground' || k === 'gameFrame' || k === 'vGameFrame') && raw[k] && raw[k].linkGame === false) continue;
+    if (k === 'frameCustom' && ((raw.gameFrame || {}).linkGame === false || (raw.vGameFrame || {}).linkGame === false)) continue;
+    let v = clone(sc[k]);
+    // 取り込んだゲーム枠の画像の一覧は、すべてのゲームで共通
+    if ((k === 'gameFrame' || k === 'vGameFrame') && isPlainObject(v)) v.images = clone((raw[k] || {}).images || []);
+    raw[k] = ctx.normalizeRaw(k, v);
+    changed.push(k);
+  }
+  return changed;
+}
+
 let looks = [];
 let logosDir = '';
 
@@ -188,19 +220,42 @@ module.exports = {
       const bgMod = require('../background/server');
       bgMod.saveToProfile(ctx.raw, 'h');
       bgMod.saveToProfile(ctx.raw, 'v');
+      // ゲーム枠も、このゲームの枠として保存する(ゲーム枠タブで「ゲームと連動」がオンの画面だけ)
+      require('../gameFrame/server').saveAllToProfile(ctx.raw);
+      // パネル・レイアウトなど、画面の設定をまるごと、このゲームのシーンとして保存する
+      saveScene(ctx.raw, entry);
       ctx.commit('gameProfiles', 'game');
       ctx.toast(`ゲームプロファイル「${entry.name}」を保存しました`);
     },
     loadProfile({ id }, ctx) {
       const p = ctx.state.gameProfiles.find((x) => x.id === id);
       if (!p) return;
+      // 切り替える前に、いまのゲームの背景・ゲーム枠を、いまのゲームのプロファイルに保存しておく
+      // (まだ保存されていないプロファイルでも、切り替えて戻ったときに元の見た目に戻るように)
+      const bgMod = require('../background/server');
+      const gfMod = require('../gameFrame/server');
+      const prev = ctx.state.game.profileId ? ctx.state.gameProfiles.find((x) => x.id === ctx.state.game.profileId) : null;
+      if (prev && prev.id !== p.id) {
+        const a = bgMod.saveToProfile(ctx.raw, 'h');
+        const b = bgMod.saveToProfile(ctx.raw, 'v');
+        const c = saveScene(ctx.raw, prev);
+        if (gfMod.saveAllToProfile(ctx.raw) || a || b || c) ctx.commit('gameProfiles');
+      }
       // 古いプロファイルに目的・目標がなければ、空にする(前のゲームの内容を持ち越さない)
       const empty = { purposeTitle: 'このゲームの目的', purpose: [], objectiveTitle: '今日の目標', objective: [], storyTitle: 'これまでのあらすじ', story: '' };
       Object.assign(ctx.state.game, empty, clone(pick(p, PROFILE_KEYS)), { profileId: p.id });
       ctx.commit('game');
       // そのゲームの背景に切り替える(保存されていれば)
-      const changed = require('../background/server').applyFromProfile(ctx.raw, p);
-      if (changed.length) ctx.commitRaw(...changed);
+      // シーンが保存されていれば、パネル・レイアウト・背景・ゲーム枠などをまるごと切り替える。
+      // まだなければ(初めて切り替えたゲーム)、いまの画面をそのまま引き継ぎ、別のゲームに切り替えるときに、このゲームのシーンとして保存する
+      const changed = p.scene && sceneOn(ctx.raw)
+        ? applyScene(ctx, p)
+        : [...bgMod.applyFromProfile(ctx.raw, p), ...gfMod.applyFromProfile(ctx.raw, p)];
+      if (changed.length) ctx.commitRaw(...new Set(changed));
+      if (!p.scene && sceneOn(ctx.raw)) {
+        saveScene(ctx.raw, p);
+        ctx.commit('gameProfiles');
+      }
     },
     deleteProfile({ id }, ctx) {
       ctx.state.gameProfiles = ctx.state.gameProfiles.filter((x) => x.id !== id);

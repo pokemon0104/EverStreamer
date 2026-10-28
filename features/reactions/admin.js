@@ -101,6 +101,7 @@
     order: 37,
     sig: () => '',
     build(root) {
+      if (ADM.screenRow) root.append(ADM.screenRow('reactions', 'いいね・コメント・言葉の演出'));
       root.append(
         h('p', { class: 'hint' }, 'YouTube の取得中に、いいねやコメントが増えると自動で再生されます。演出に API は使わないので、利用上限の消費は増えません。テスト再生はプレビューと OBS の両方に表示されます。'),
         section('like', 'いいねを受け取ったとき', LIKE_TYPES),

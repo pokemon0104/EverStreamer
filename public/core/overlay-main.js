@@ -14,6 +14,7 @@
   function fitWindow() {
     const s = Math.min(window.innerWidth / OV.W, window.innerHeight / OV.H);
     stageEl.style.transform = Math.abs(s - 1) < 0.001 ? '' : `scale(${s})`;
+    if (OV.fixPixelFilters) OV.fixPixelFilters(stageEl); // 縮小表示でも、ドット風の文字が消えないようにする
   }
   window.addEventListener('resize', fitWindow);
   fitWindow();

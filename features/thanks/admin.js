@@ -62,6 +62,7 @@
     order: 38,
     sig: () => JSON.stringify([(T().messages || []).map((m) => m.id), T().token]),
     build(root) {
+      if (ADM.screenRow) root.append(ADM.screenRow('thanks', '感謝メッセージ'));
       const status = h('div', { class: 'hint' });
       UI.bind(status, () => {
         const s = SH();

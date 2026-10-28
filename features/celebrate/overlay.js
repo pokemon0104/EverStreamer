@@ -137,6 +137,7 @@
   }
 
   OV.onMessage('celebrate:play', (p) => {
+    if (OV.screenOn && !OV.screenOn('celebrate')) return; // この画面(横型/縦型)には出さない
     for (const e of entries) {
       if (!e.stage.isConnected) continue;
       const mode = p.mode || 'full';

@@ -142,3 +142,42 @@
 
 /* ゲーム枠と同じデザインのスタイル(パネルの縁の帯) */
 .ov-gframe { position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; }
+
+/* ===== 見出しを枠線の上に重ねる(ウィンドウ風) ===== */
+.ov-legend { display: none; }
+.ov-panel.has-legend {
+  --lg-fs: calc(var(--fs-h, 26px) * var(--gs, 1) * var(--cfit, 1) * var(--fit, 1) * var(--lg-scale, 1));
+  --lg-h: calc(var(--lg-fs) * 1.3);
+  --lg-extra: max(0px, calc(var(--lg-h) / 2 - var(--lg-bc, 0px) - var(--outset, 0px)));
+  padding-top: calc(var(--outset, 0px) + var(--lg-extra));
+}
+.ov-panel.has-legend > .ov-box > .ov-content {
+  padding-top: max(var(--pad, 16px), calc(var(--lg-h) / 2 - var(--lg-off, 0px) + var(--lg-fs) * .3));
+}
+.ov-panel.has-legend > .ov-box > .ov-content .is-lg-src { display: none !important; }
+.ov-panel.has-legend > .ov-legend {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  top: calc(var(--outset, 0px) + var(--lg-extra) + var(--lg-bc, 0px) - var(--lg-h) / 2);
+  height: var(--lg-h);
+  line-height: var(--lg-h);
+  max-width: calc(100% - 2 * var(--lg-inset, 24px));
+  box-sizing: border-box;
+  padding: 0 var(--lg-padx, .4em);
+  background: var(--lg-bg, #000);
+  font-family: var(--hfont);
+  font-size: var(--lg-fs);
+  font-weight: var(--fw, 700);
+  letter-spacing: var(--ls, 0);
+  color: var(--c-head);
+  text-shadow: var(--tshadow, none);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.ov-panel.has-legend[data-lg-align='left'] > .ov-legend { left: var(--lg-inset, 24px); }
+.ov-panel.has-legend[data-lg-align='right'] > .ov-legend { right: var(--lg-inset, 24px); }
+.ov-panel.has-legend[data-lg-align='center'] > .ov-legend { left: 50%; transform: translateX(-50%); }
+.ov-legend > span + span { margin-left: .6em; }

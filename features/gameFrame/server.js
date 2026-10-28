@@ -16,6 +16,7 @@ const defaults = () => ({
   vignette: 0, // 周辺を暗く
   // ゲーム映像の大きさ・位置: auto = 背景/レイアウトの設定から自動 / manual = 数値で指定(OBS のゲーム映像に合わせる)
   size: { mode: 'auto', x: 60, y: 40, w: 1342, h: 1000, keepRatio: true },
+  linkGame: true, // ゲームプロファイルと連動(ゲームごとに枠を保存・切り替え)
   images: [], // 取り込んだ枠画像 { id, name, file, iw, ih, hole:{x,y,w,h}(0〜1) }
 });
 
@@ -52,7 +53,62 @@ function normalize(v) {
 
 let dir = '';
 
+// ---- ゲームプロファイルとの連動(背景と同じしくみ) ----
+// プロファイルに保存する項目(枠の選び方・種類・対応表・効果)。ゲーム映像の大きさ・位置と、取り込んだ画像の一覧は共通のまま
+const LOOK_KEYS = ['enabled', 'mode', 'frameId', 'map', 'autoRatio', 'opacity', 'scanlines', 'vignette'];
+const pickLook = (g) => { const o = {}; for (const k of LOOK_KEYS) if (g && g[k] !== undefined) o[k] = g[k]; return JSON.parse(JSON.stringify(o)); };
+const KEY = { h: 'gameFrame', v: 'vGameFrame' };
+const linked = (g) => !!g && g.linkGame !== false;
+// 枠の種類ごとの調整は横・縦で共通なので、両方の画面で連動しているときだけゲームごとに切り替える
+const customLinked = (raw) => linked(raw.gameFrame) && linked(raw.vGameFrame);
+const currentProfile = (raw) => {
+  const id = (raw.game || {}).profileId;
+  return id ? (raw.gameProfiles || []).find((x) => x.id === id) : null;
+};
+/** いまのゲーム枠を、選んでいるゲームプロファイルに保存する(canvas: 'h' / 'v')。保存したら true */
+function saveToProfile(raw, canvas) {
+  const g = raw[KEY[canvas]];
+  const prof = currentProfile(raw);
+  if (!prof || !linked(g)) return false;
+  prof.frame = { ...(prof.frame || {}), [canvas]: pickLook(g) };
+  return true;
+}
+/** 枠の種類ごとの調整(色・太さなど。横・縦で共通)を、選んでいるゲームプロファイルに保存する */
+function saveCustomToProfile(raw) {
+  const prof = currentProfile(raw);
+  if (!prof || !customLinked(raw)) return false;
+  prof.frame = { ...(prof.frame || {}), custom: JSON.parse(JSON.stringify(raw.frameCustom || {})) };
+  return true;
+}
+/** 横・縦の画面と、枠の調整をまとめて保存する */
+function saveAllToProfile(raw) {
+  const a = saveToProfile(raw, 'h');
+  const b = saveToProfile(raw, 'v');
+  const c = saveCustomToProfile(raw);
+  return a || b || c;
+}
+/** ゲームプロファイルを切り替えたとき、そのゲームの枠にする(保存されている画面だけ)。変えた設定欄の名前を返す */
+function applyFromProfile(raw, prof) {
+  const changed = [];
+  const fr = prof && prof.frame;
+  if (!fr) return changed;
+  for (const c of ['h', 'v']) {
+    const g = raw[KEY[c]];
+    if (!fr[c] || !linked(g)) continue;
+    raw[KEY[c]] = normalize({ ...g, ...pickLook(fr[c]), map: { ...(fr[c].map || {}) } });
+    changed.push(KEY[c]);
+  }
+  if (isPlainObject(fr.custom) && customLinked(raw)) {
+    raw.frameCustom = JSON.parse(JSON.stringify(fr.custom));
+    changed.push('frameCustom');
+  }
+  return changed;
+}
+
 module.exports = {
+  saveToProfile,
+  saveAllToProfile,
+  applyFromProfile,
   order: 6,
   namespace: 'gameFrame',
   sections: {
@@ -100,10 +156,12 @@ module.exports = {
       }
       all[fid] = cur;
       ctx.commit('frameCustom');
+      if (saveCustomToProfile(ctx.raw)) ctx.commitRaw('gameProfiles');
     },
     resetCustom({ id }, ctx) {
       delete ctx.state.frameCustom[String(id || '')];
       ctx.commit('frameCustom');
+      if (saveCustomToProfile(ctx.raw)) ctx.commitRaw('gameProfiles');
     },
     update({ patch }, ctx) {
       if (!isPlainObject(patch)) return;
@@ -113,6 +171,8 @@ module.exports = {
       deepMerge(ctx.state.gameFrame, p);
       ctx.state.gameFrame = normalize(ctx.state.gameFrame);
       ctx.commit('gameFrame');
+      // 連動をオンにしたときは、いまの枠をこのゲームの枠として保存する
+      if (saveToProfile(ctx.raw, ctx.canvas === 'v' ? 'v' : 'h')) ctx.commitRaw('gameProfiles');
     },
     addImage(payload, ctx) {
       const img = normImage({ ...payload, id: uid('img') });
@@ -121,6 +181,7 @@ module.exports = {
       ctx.state.gameFrame.frameId = `img:${img.id}`;
       ctx.state.gameFrame.enabled = true;
       ctx.commit('gameFrame');
+      if (saveToProfile(ctx.raw, ctx.canvas === 'v' ? 'v' : 'h')) ctx.commitRaw('gameProfiles');
     },
     updateImage({ id, patch }, ctx) {
       const i = ctx.state.gameFrame.images.find((x) => x.id === id);
@@ -141,6 +202,15 @@ module.exports = {
       const used = [ctx.raw.gameFrame, ctx.raw.vGameFrame].some((s) => s && s !== g && (s.images || []).some((x) => x.file === i.file));
       if (!used) { try { fs.unlinkSync(path.join(dir, path.basename(i.file))); } catch { /* ignore */ } }
       ctx.commit('gameFrame');
+      // ゲームプロファイルに保存した枠からも外す
+      const c = ctx.canvas === 'v' ? 'v' : 'h';
+      for (const prof of ctx.raw.gameProfiles || []) {
+        const f = prof.frame && prof.frame[c];
+        if (!f) continue;
+        if (f.frameId === `img:${id}`) f.frameId = 'simple';
+        for (const k of Object.keys(f.map || {})) if (f.map[k] === `img:${id}`) delete f.map[k];
+      }
+      ctx.commitRaw('gameProfiles');
     },
   },
 };

@@ -157,6 +157,14 @@
     order: 47,
     sig: () => JSON.stringify([(targetDef() || {}).id, ((targetDef() || {}).layers || []).length, !!(targetDef() || {}).glow, !!(targetDef() || {}).shadow, !!(targetDef() || {}).corners, frames().map((f) => f.customized ? f.id : ''), frames().length, (G().images || []).map((i) => i.id + i.file), OV.canvas]),
     build(root) {
+      const profNote = h('p', { class: 'hint' });
+      UI.bind(profNote, () => {
+        const g = OV.state.game || {};
+        const prof = (OV.state.gameProfiles || []).find((x) => x.id === g.profileId);
+        profNote.textContent = G().linkGame === false ? 'オフのときは、ゲームを切り替えてもゲーム枠は変わりません(すべてのゲームで共通)。'
+          : prof ? `いまの枠は、ゲーム「${prof.name}」の枠として保存されます(${OV.canvas === 'v' ? '縦画面' : '横画面'})。ゲームタブや上部バーでゲームを切り替えると、そのゲームの枠に切り替わります。ゲーム映像の大きさ・位置は、すべてのゲームで共通です。`
+            : 'ゲームタブでゲームプロファイルを選ぶ(または保存する)と、ゲーム枠もゲームごとに保存・切り替えできます。';
+      });
       const info = h('div', { class: 'note-box' });
       UI.bind(info, () => {
         const fr = OV.resolveFrame ? OV.resolveFrame(OV.state) : null;
@@ -169,6 +177,8 @@
       });
       root.append(
         UI.toggle({ label: 'ゲーム枠を表示する', ...gk('enabled') }),
+        UI.toggle({ label: 'ゲームごとに枠を切り替える(ゲームプロファイルと連動)', get: () => G().linkGame !== false, set: (v) => send({ linkGame: v }) }),
+        profNote,
         h('p', { class: 'hint' }, 'ゲーム映像のまわりに枠を重ねます。枠の中(ゲーム映像の場所)は透明なので、OBS ではこのオーバーレイをゲーム映像より上に置いてください。「ゲーム映像の場所」は、背景タブ/レイアウトタブの設定に従い、枠ごと収まるように自動で計算します。'),
         info,
         h('p', { class: 'hint' }, '「テンプレートの枠」は、クイック設定で選んだテンプレートとメインカラーに合わせて変わります。'));

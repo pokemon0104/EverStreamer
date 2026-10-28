@@ -20,6 +20,11 @@ function normalizeLayout(v, vertical) {
     container: { ...(vertical ? V_CONTAINER : FALLBACK_CONTAINER), ...(isPlainObject(l.container) ? l.container : {}) },
     // アバターなどを置く場所の目安(管理画面のプレビューにだけ表示。オーバーレイには出ません)
     avatar: { show: false, side: 'right', w: vertical ? 400 : 420, h: vertical ? 440 : 420, ...(isPlainObject(l.avatar) ? l.avatar : {}) },
+    // YouTube の画面に出る部品(チャット欄・登録ボタンなど)の目安。管理画面のプレビューにだけ表示。items は部品ごとの {show, x, y, w, h}
+    ytGuide: (() => {
+      const g = isPlainObject(l.ytGuide) ? l.ytGuide : {};
+      return { show: g.show === true, items: isPlainObject(g.items) ? g.items : {} };
+    })(),
   };
 }
 

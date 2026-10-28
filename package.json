@@ -1,6 +1,6 @@
 {
   "name": "everstreamer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Template-based OBS overlay for game streamers: 8 templates, YouTube & Twitch chat, PNGtuber character, alerts, horizontal and vertical (Shorts) layouts. Japanese / English.",
   "license": "MIT",
   "private": true,

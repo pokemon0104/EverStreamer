@@ -29,6 +29,7 @@
     order: 39,
     sig: () => '',
     build(root) {
+      if (ADM.screenRow) root.append(ADM.screenRow('celebrate', 'お祝い'));
       root.append(
         h('p', { class: 'hint' }, 'YouTube の取得中に、チャンネル登録者が増えたとき、数値パネルの目標を達成したときに、画面いっぱい、または登録者目標のパネルのまわりだけに、お祝いを表示します。API の消費は増えません。'),
         h('div', { class: 'row' },

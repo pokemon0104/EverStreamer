@@ -1,0 +1,7 @@
+/* フォントタブ(管理画面) */
+.uf-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.uf-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; align-items: center; border: 1px solid rgba(255, 255, 255, .12); border-radius: 6px; padding: 6px 8px; }
+.uf-meta { display: flex; gap: 6px; align-items: center; min-width: 0; }
+.uf-meta b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uf-row .uf-pv { grid-column: 1 / 2; }
+.uf-pv { font-size: 22px; line-height: 1.3; color: #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 4px 0; }

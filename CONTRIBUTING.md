@@ -112,6 +112,11 @@ Scope every rule to your template so it only applies when it's selected:
 
 ---
 
+## Adding a text design or texture
+
+- **Designs** (large text panel) live in `config/text-designs.json`: `types` hold `variants` with a `look`. Use only your own designs; don't name commercial fonts or copy known logos / titles.
+- **Textures**: drop a JPG / PNG into `features/bigText/textures/` (add a label in `textures.json`). Only add images you made or that are clearly redistributable, and list them in `NOTICE.md`.
+
 ## Adding a translation
 
 The admin page is written in Japanese. English text comes from `public/i18n/en.json`:

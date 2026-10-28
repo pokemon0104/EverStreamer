@@ -1,0 +1,22 @@
+.t-sns .sns-list { display: flex; gap: .45em .9em; }
+.t-sns .sns-list.l-list { flex-direction: column; }
+.t-sns .sns-list.l-row { flex-direction: row; flex-wrap: wrap; }
+.t-sns .sns-list.l-rotate { display: grid; }
+.t-sns .sns-list.l-rotate > .sns-it { grid-area: 1 / 1; opacity: 0; transform: translateY(.4em); transition: opacity .5s ease, transform .5s ease; }
+.t-sns .sns-list.l-rotate > .sns-it.on { opacity: 1; transform: none; }
+.t-sns .sns-it { display: flex; align-items: center; gap: .5em; min-width: 0; }
+.t-sns .sns-ic {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  width: 1.5em; height: 1.5em; border-radius: .35em;
+  font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 1em; line-height: 1;
+  text-shadow: none; letter-spacing: 0;
+}
+.t-sns .sns-ic.wide > span { font-size: .62em; }
+.t-sns .sns-tx { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.t-sns .sns-sv { font-size: .62em; opacity: .8; }
+.t-sns .sns-id { overflow-wrap: anywhere; }
+.t-sns .sns-empty { opacity: .6; font-size: .8em; }
+.ov-stage:not(.is-editor) .t-sns .sns-empty { display: none; }
+/* 管理画面 */
+.sns-edit { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 8px; }
+.sns-row { border: 1px solid rgba(255, 255, 255, .12); border-radius: 6px; padding: 6px 8px; }

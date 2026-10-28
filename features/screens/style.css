@@ -1,0 +1,5 @@
+.scr-row { border: 1px solid var(--line, #3a3f4b); border-radius: 8px; padding: 8px 10px; margin: 4px 0 10px; }
+.scr-row .row { gap: 16px; flex-wrap: wrap; }
+.scr-row .f-toggle { margin: 4px 0 0; }
+.scr-row .warn { color: #f59e0b; margin: 4px 0 0; }
+.pitem .chip.off { color: #f59e0b; border-color: #f59e0b; }

@@ -82,6 +82,55 @@
     node.wrap.classList.toggle('is-tpl', !!L.tpl && L.tplDeco !== false); // テンプレートの飾り(テンプレートの CSS が使う)
   }
 
+  // ---------- 見出しを枠線の上に重ねる(ウィンドウ風) ----------
+  // パネルの最初の見出し(.ov-h)を、枠線の上に乗せたラベル(.ov-legend)に写す。元の見出しは隠す
+  function legendBg(L) {
+    const mode = L.borderTitleBgMode || 'auto';
+    if (mode === 'none') return 'transparent';
+    if (mode === 'color' && L.borderTitleBgColor) return L.borderTitleBgColor;
+    // 自動:背景色(グラデーションなら最初の色)で、枠線を切り取ったように見せる
+    const m = L.bgImage ? /#[0-9a-f]{3,8}\b|rgba?\([^)]*\)/i.exec(L.bgImage) : null;
+    return m ? m[0] : (L.bgColor || '#000000');
+  }
+  function legendSource(n) {
+    if (n.type === 'group') return null;
+    for (const el of n.content.querySelectorAll('.ov-h')) {
+      if (el.closest('.ov-content') === n.content) return el;
+    }
+    return null;
+  }
+  function syncLegend(n, L) {
+    if (L) n.legendLook = L;
+    L = n.legendLook || {};
+    const w = n.wrap;
+    const src = L.borderTitle && !w.classList.contains('is-ghost') ? legendSource(n) : null;
+    if (!src) {
+      if (w.classList.contains('has-legend')) w.classList.remove('has-legend');
+      n.content.querySelectorAll('.is-lg-src').forEach((el) => el.classList.remove('is-lg-src'));
+      return false;
+    }
+    let lg = n.legend;
+    if (!lg) { lg = document.createElement('div'); lg.className = 'ov-legend'; w.appendChild(lg); n.legend = lg; }
+    if (!src.classList.contains('is-lg-src')) src.classList.add('is-lg-src');
+    if (lg.innerHTML !== src.innerHTML) lg.innerHTML = src.innerHTML;
+    if (!w.classList.contains('has-legend')) w.classList.add('has-legend');
+    const bw = Number(L.borderWidth) || 0;
+    const pixel = L.frame === 'pixel';
+    const cssBorder = !pixel && L.borderStyle && L.borderStyle !== 'none' && bw > 0;
+    const out = frameOutset(L);
+    // 枠線の太さの中心(パネルの箱の上端からの距離)。ピクセル枠は箱の外側に描かれる
+    const bc = pixel ? -out / 2 : (cssBorder ? bw / 2 : 0);
+    const s = w.style;
+    s.setProperty('--lg-bc', `${bc}px`);
+    s.setProperty('--lg-off', `${pixel ? out / 2 : (cssBorder ? bw / 2 : 0)}px`);
+    s.setProperty('--lg-inset', `${Number(L.borderTitleInset == null ? 24 : L.borderTitleInset)}px`);
+    s.setProperty('--lg-scale', String(Number(L.borderTitleScale) || 1));
+    s.setProperty('--lg-bg', legendBg(L));
+    s.setProperty('--lg-padx', `${Number(L.borderTitlePad == null ? 0.4 : L.borderTitlePad)}em`);
+    w.dataset.lgAlign = L.borderTitleAlign || 'left';
+    return true;
+  }
+
   // ---------- 配置 ----------
   const PLACE_PROPS = ['position', 'left', 'top', 'width', 'height', 'flex', 'alignSelf', 'minHeight', 'minWidth', 'maxWidth'];
   function applyPlacement(el, p, mode) {
@@ -208,7 +257,7 @@
     }
 
     function setVisible(node, p, animate) {
-      const visible = p.visible !== false;
+      const visible = p.visible !== false && !(OV.panelHiders || []).some((fn) => { try { return fn(p); } catch (e) { return false; } });
       if (node.visible === visible) return;
       node.visible = visible;
       clearTimeout(node.visTimer);
@@ -301,6 +350,7 @@
           }
           // 「演出だけ」「空きスペース」など、枠も背景も出さないパネル
           n.wrap.classList.toggle('is-ghost', !!(n.content.firstElementChild && n.content.firstElementChild.classList.contains('ov-ghost')));
+          syncLegend(n, L);
           n.content.querySelectorAll('img').forEach((img) => {
             if (!img.complete) img.addEventListener('load', queueFit, { once: true });
           });
@@ -446,7 +496,10 @@
       document.fonts.addEventListener('loadingdone', queueFit);
       if (document.fonts.ready) document.fonts.ready.then(queueFit);
     }
-    const tick = setInterval(() => { for (const fn of OV.tickers) fn(stage); }, 500);
+    const tick = setInterval(() => {
+      for (const fn of OV.tickers) fn(stage);
+      for (const n of nodes.values()) if (n.legendLook && n.legendLook.borderTitle) syncLegend(n);
+    }, 500);
 
     return {
       stage,

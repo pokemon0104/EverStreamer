@@ -1,0 +1,5600 @@
+{
+ "_説明": "テキストデザインのギャラリー(大きな文字パネル)。types=カード1枚分の「型」、variants=プルダウンで選ぶ「配色」。look の太さ・影などは文字の大きさ 120px 基準の px 値で、適用するときに今の文字の大きさに合わせて拡大縮小します。",
+ "baseSize": 120,
+ "categories": [
+  {
+   "id": "photo",
+   "name": "写真の質感(画像を使った文字)"
+  },
+  {
+   "id": "glow",
+   "name": "ネオン・光る文字"
+  },
+  {
+   "id": "metal",
+   "name": "メタリック(金・銀・宝石)"
+  },
+  {
+   "id": "impact",
+   "name": "メリハリ見出し(文字ごとの大きさ)"
+  },
+  {
+   "id": "thumb",
+   "name": "サムネイル"
+  },
+  {
+   "id": "pop",
+   "name": "ポップ・やわらか"
+  },
+  {
+   "id": "basic",
+   "name": "定番"
+  }
+ ],
+ "textures": [
+  {
+   "id": "none",
+   "name": "なし"
+  },
+  {
+   "id": "fire",
+   "name": "炎"
+  },
+  {
+   "id": "ice",
+   "name": "氷"
+  },
+  {
+   "id": "marble",
+   "name": "大理石"
+  },
+  {
+   "id": "metal",
+   "name": "金属"
+  },
+  {
+   "id": "glitter",
+   "name": "ラメ"
+  },
+  {
+   "id": "holo",
+   "name": "ホログラム"
+  },
+  {
+   "id": "grunge",
+   "name": "かすれ"
+  },
+  {
+   "id": "stone",
+   "name": "石"
+  }
+ ],
+ "themes": [
+  {
+   "id": "fantasy",
+   "name": "ファンタジー・冒険",
+   "ids": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T19",
+    "T20",
+    "T21",
+    "T22",
+    "T23",
+    "T24",
+    "T25",
+    "T26",
+    "T27",
+    "T28",
+    "T29",
+    "T30",
+    "T31",
+    "T32",
+    "T33",
+    "T34",
+    "T35",
+    "T36",
+    "T37",
+    "T38",
+    "T39",
+    "T40",
+    "T41",
+    "T42",
+    "T43",
+    "T44",
+    "T45",
+    "T46",
+    "T47",
+    "T48",
+    "T49",
+    "T50",
+    "T51",
+    "T52",
+    "T53",
+    "T54",
+    "T55",
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T61",
+    "T62",
+    "T63",
+    "T64",
+    "T65"
+   ]
+  },
+  {
+   "id": "action",
+   "name": "アクション・バトル",
+   "ids": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6",
+    "N7",
+    "N8",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6"
+   ]
+  },
+  {
+   "id": "cyber",
+   "name": "サイバー・ネオン",
+   "ids": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6",
+    "N7",
+    "N8",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T19",
+    "T20",
+    "T21",
+    "T22",
+    "T23",
+    "T24",
+    "T25",
+    "T26",
+    "T27",
+    "T28",
+    "T29",
+    "T30",
+    "T31",
+    "T32",
+    "T33",
+    "T34",
+    "T35",
+    "T36",
+    "T37",
+    "T38",
+    "T39",
+    "T40",
+    "T41",
+    "T42",
+    "T43",
+    "T44",
+    "T45",
+    "T46",
+    "T47",
+    "T48",
+    "T49",
+    "T50",
+    "T51",
+    "T52",
+    "T53",
+    "T54",
+    "T55",
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T61",
+    "T62",
+    "T63",
+    "T64",
+    "T65"
+   ]
+  },
+  {
+   "id": "cute",
+   "name": "かわいい・やさしい",
+   "ids": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6"
+   ]
+  },
+  {
+   "id": "luxury",
+   "name": "豪華・ゴールド",
+   "ids": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ]
+  },
+  {
+   "id": "celebrate",
+   "name": "お祝い・にぎやか",
+   "ids": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ]
+  },
+  {
+   "id": "calm",
+   "name": "落ち着いた",
+   "ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ]
+  }
+ ],
+ "types": [
+  {
+   "id": "neon",
+   "name": "ネオン",
+   "category": "glow",
+   "desc": "暗い背景で光る、ネオン管のような文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "N1",
+     "name": "ネオン(シアン)",
+     "sample": "光る",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#7ef6ff",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#00e5ff"
+      },
+      "glow": {
+       "on": true,
+       "color": "#00e5ff",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#00e5ff",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N2",
+     "name": "ネオン(マゼンタ)",
+     "sample": "NEON",
+     "look": {
+      "font": "M PLUS Rounded 1c",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffb3f2",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ff2fd6"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ff2fd6",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff2fd6",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N3",
+     "name": "ネオン(ライム)",
+     "sample": "ゲーム",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#d6ff8a",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#7dff00"
+      },
+      "glow": {
+       "on": true,
+       "color": "#7dff00",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#7dff00",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N4",
+     "name": "ネオン(オレンジ)",
+     "sample": "夜の街",
+     "look": {
+      "font": "M PLUS Rounded 1c",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffd29a",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ff8a00"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ff8a00",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff8a00",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N5",
+     "name": "ネオン(バイオレット)",
+     "sample": "配信中",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#d9c2ff",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#8a4dff"
+      },
+      "glow": {
+       "on": true,
+       "color": "#8a4dff",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#8a4dff",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N6",
+     "name": "ネオン(レッド)",
+     "sample": "LIVE",
+     "look": {
+      "font": "M PLUS Rounded 1c",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffb0b0",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ff2a2a"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ff2a2a",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff2a2a",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N7",
+     "name": "ネオン(ブルー)",
+     "sample": "START",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#bcd4ff",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#2f6bff"
+      },
+      "glow": {
+       "on": true,
+       "color": "#2f6bff",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#2f6bff",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    },
+    {
+     "id": "N8",
+     "name": "ネオン(ピンク)",
+     "sample": "ありがとう",
+     "look": {
+      "font": "M PLUS Rounded 1c",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffd0e6",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ff4fa3"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ff4fa3",
+       "size": 16
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff4fa3",
+       "x": 0,
+       "y": 0,
+       "blur": 12,
+       "alpha": 0.7
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "metal",
+   "name": "メタリック",
+   "category": "metal",
+   "desc": "金・銀・宝石のような、つやのある立体風の文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "G1",
+     "name": "ゴールド",
+     "sample": "黄金",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#fff6c8",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#5a3300"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#ffd23a"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#5a3300"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#a86a00",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#fff6c8",
+        "pos": 0
+       },
+       {
+        "color": "#ffd23a",
+        "pos": 48
+       },
+       {
+        "color": "#a86a00",
+        "pos": 52
+       },
+       {
+        "color": "#ffd23a",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G2",
+     "name": "シルバー",
+     "sample": "白銀",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#232a35"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#cdd5e0"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#232a35"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#6b7688",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#ffffff",
+        "pos": 0
+       },
+       {
+        "color": "#cdd5e0",
+        "pos": 48
+       },
+       {
+        "color": "#6b7688",
+        "pos": 52
+       },
+       {
+        "color": "#cdd5e0",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G3",
+     "name": "ブロンズ",
+     "sample": "銅",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffe2c0",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#3a1d08"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#d89a5a"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#3a1d08"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#7a4515",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#ffe2c0",
+        "pos": 0
+       },
+       {
+        "color": "#d89a5a",
+        "pos": 48
+       },
+       {
+        "color": "#7a4515",
+        "pos": 52
+       },
+       {
+        "color": "#d89a5a",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G4",
+     "name": "ローズゴールド",
+     "sample": "薔薇",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffe8e0",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#4a1f1a"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#f2b3a3"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#4a1f1a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#a8574a",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#ffe8e0",
+        "pos": 0
+       },
+       {
+        "color": "#f2b3a3",
+        "pos": 48
+       },
+       {
+        "color": "#a8574a",
+        "pos": 52
+       },
+       {
+        "color": "#f2b3a3",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G5",
+     "name": "プラチナ",
+     "sample": "白金",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#f4fbff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1f2d3d"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#bcd0e2"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1f2d3d"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#6e8aa6",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#f4fbff",
+        "pos": 0
+       },
+       {
+        "color": "#bcd0e2",
+        "pos": 48
+       },
+       {
+        "color": "#6e8aa6",
+        "pos": 52
+       },
+       {
+        "color": "#bcd0e2",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G6",
+     "name": "エメラルド",
+     "sample": "翠",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#d8ffe6",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#05301a"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#4fd18b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#05301a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#127a45",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#d8ffe6",
+        "pos": 0
+       },
+       {
+        "color": "#4fd18b",
+        "pos": 48
+       },
+       {
+        "color": "#127a45",
+        "pos": 52
+       },
+       {
+        "color": "#4fd18b",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G7",
+     "name": "ルビー",
+     "sample": "紅玉",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffd6dc",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#350410"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#e8405a"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#350410"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#8a0f26",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#ffd6dc",
+        "pos": 0
+       },
+       {
+        "color": "#e8405a",
+        "pos": 48
+       },
+       {
+        "color": "#8a0f26",
+        "pos": 52
+       },
+       {
+        "color": "#e8405a",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "G8",
+     "name": "サファイア",
+     "sample": "蒼玉",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#d6e6ff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#06143a"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#4a86ff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#06143a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 7,
+       "blur": 6,
+       "alpha": 0.55
+      },
+      "gloss": {
+       "on": true,
+       "strength": 0.8
+      },
+      "color2": "#1238a8",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#d6e6ff",
+        "pos": 0
+       },
+       {
+        "color": "#4a86ff",
+        "pos": 48
+       },
+       {
+        "color": "#1238a8",
+        "pos": 52
+       },
+       {
+        "color": "#4a86ff",
+        "pos": 100
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "pop",
+   "name": "ポップ",
+   "category": "pop",
+   "desc": "太い縁取りで目立つ、にぎやかな文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "P1",
+     "name": "ポップ(レッド)",
+     "sample": "ガチ勢",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ff2a3c",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#b0001a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#b0001a",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P2",
+     "name": "ポップ(ブルー)",
+     "sample": "神回",
+     "look": {
+      "font": "Potta One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#2f8bff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#0a3fa8"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#0a3fa8",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P3",
+     "name": "ポップ(イエロー)",
+     "sample": "祝!",
+     "look": {
+      "font": "Mochiy Pop One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffe94a",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#2b1a00"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#ff8a00"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff8a00",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P4",
+     "name": "ポップ(グリーン)",
+     "sample": "やってみた",
+     "look": {
+      "font": "Mochiy Pop One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#35d96b",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#0b7a34"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#0b7a34",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P5",
+     "name": "ポップ(パープル)",
+     "sample": "大成功",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#a255ff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#52129e"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#52129e",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P6",
+     "name": "ポップ(ピンク)",
+     "sample": "かわいい",
+     "look": {
+      "font": "Potta One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ff5fb0",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#b00f66"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#b00f66",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P7",
+     "name": "ポップ(オレンジ)",
+     "sample": "突撃",
+     "look": {
+      "font": "Mochiy Pop One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ff9a1f",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#a84a00"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#a84a00",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    },
+    {
+     "id": "P8",
+     "name": "ポップ(ブラック)",
+     "sample": "ヤバい",
+     "look": {
+      "font": "Mochiy Pop One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#222222",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 4,
+       "color": "#ff2a3c"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff2a3c",
+       "x": 0,
+       "y": 6,
+       "blur": 0,
+       "alpha": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soft",
+   "name": "やわらか",
+   "category": "pop",
+   "desc": "手書き風・丸い書体のやさしい文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "S1",
+     "name": "やわらか(ももいろ)",
+     "sample": "おやすみ",
+     "look": {
+      "font": "Hachi Maru Pop",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffb3d2",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#ff5f9e"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffb3d2",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ff5f9e",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#ff5f9e",
+      "angle": 180
+     }
+    },
+    {
+     "id": "S2",
+     "name": "やわらか(そらいろ)",
+     "sample": "たのしい",
+     "look": {
+      "font": "Klee One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#b3e6ff",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#3fb0ff"
+      },
+      "glow": {
+       "on": true,
+       "color": "#b3e6ff",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#3fb0ff",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#3fb0ff",
+      "angle": 180
+     }
+    },
+    {
+     "id": "S3",
+     "name": "やわらか(みどり)",
+     "sample": "ほっと",
+     "look": {
+      "font": "Kiwi Maru",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#c8f5c0",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#4fcf6a"
+      },
+      "glow": {
+       "on": true,
+       "color": "#c8f5c0",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#4fcf6a",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#4fcf6a",
+      "angle": 180
+     }
+    },
+    {
+     "id": "S4",
+     "name": "やわらか(レモン)",
+     "sample": "きらきら",
+     "look": {
+      "font": "Zen Maru Gothic",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#fff3a8",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#ffc83a"
+      },
+      "glow": {
+       "on": true,
+       "color": "#fff3a8",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#ffc83a",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#ffc83a",
+      "angle": 180
+     }
+    },
+    {
+     "id": "S5",
+     "name": "やわらか(ラベンダー)",
+     "sample": "ゆめ",
+     "look": {
+      "font": "Hachi Maru Pop",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#e0ccff",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#9a6bff"
+      },
+      "glow": {
+       "on": true,
+       "color": "#e0ccff",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#9a6bff",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#9a6bff",
+      "angle": 180
+     }
+    },
+    {
+     "id": "S6",
+     "name": "やわらか(ミント)",
+     "sample": "まったり",
+     "look": {
+      "font": "M PLUS Rounded 1c",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#b8f5e8",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 3,
+       "color": "#2fd0b0"
+      },
+      "glow": {
+       "on": true,
+       "color": "#b8f5e8",
+       "size": 8
+      },
+      "shadow": {
+       "on": true,
+       "color": "#2fd0b0",
+       "x": 0,
+       "y": 5,
+       "blur": 6,
+       "alpha": 0.35
+      },
+      "color2": "#2fd0b0",
+      "angle": 180
+     }
+    }
+   ]
+  },
+  {
+   "id": "thumb",
+   "name": "サムネイル",
+   "category": "thumb",
+   "desc": "縁取りと影で目立たせる、サムネイル向けの文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "B1",
+     "name": "サムネ(イエロー)",
+     "sample": "衝撃",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#ffe500",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#000000"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#ffffff"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "B2",
+     "name": "サムネ(レッド)",
+     "sample": "検証",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#ff2a2a",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#000000"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "B3",
+     "name": "サムネ(ブルー)",
+     "sample": "最強",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#2f9bff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#001a66"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "B4",
+     "name": "サムネ(グリーン)",
+     "sample": "初見",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#3dff7a",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#003a14"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#ffffff"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "B5",
+     "name": "サムネ(ホワイト)",
+     "sample": "注目",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#000000"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#ff2a2a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "B6",
+     "name": "サムネ(オレンジ)",
+     "sample": "緊急",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": -0.03,
+      "fillType": "solid",
+      "color": "#ff9a1f",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 8,
+       "color": "#5a2a00"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 3,
+       "y": 5,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "impact",
+   "name": "メリハリ見出し",
+   "category": "impact",
+   "desc": "ひらがなを小さく、大事な言葉を大きく・別の色にした、紹介文のような見出し",
+   "fontHint": "<< >> で囲むと大きく、(( )) で囲むと小さく、[[ ]] / {{ }} で囲むと色1・色2になります。ひらがなは自動で小さくしています(設定の「文字ごとの大きさ」で変えられます)。",
+   "variants": [
+    {
+     "id": "M1",
+     "name": "メリハリ(白×金×青)",
+     "sample": "{{<<3>>人}}の仲間と[[最終決戦!]]",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0a1428"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#c8d4ea"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0a1428"
+      },
+      "glow": {
+       "on": true,
+       "color": "#6a90ff",
+       "size": 12
+      },
+      "accent": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#fff27a",
+       "color2": "#ff7a00",
+       "angle": 180
+      },
+      "accent2": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#d8fcff",
+       "color2": "#1a6aff",
+       "angle": 180
+      },
+      "charSize": {
+       "auto": "hira",
+       "digits": false,
+       "big": 1.3,
+       "small": 0.72
+      },
+      "color2": "#a8b4c8",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#ffffff",
+        "pos": 0
+       },
+       {
+        "color": "#f0f4fa",
+        "pos": 45
+       },
+       {
+        "color": "#a8b4c8",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "M2",
+     "name": "メリハリ(赤×白)",
+     "sample": "{{<<100>>万}}回あそばれた[[名作]]",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2a0008"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2a0008"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ff4a4a",
+       "size": 12
+      },
+      "accent": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#ff6b6b",
+       "color2": "#d8101c",
+       "angle": 180
+      },
+      "accent2": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#ffe94a",
+       "color2": "#ff8a00",
+       "angle": 180
+      },
+      "charSize": {
+       "auto": "hira",
+       "digits": true,
+       "big": 1.3,
+       "small": 0.72
+      },
+      "color2": "#e8e8e8",
+      "angle": 180
+     }
+    },
+    {
+     "id": "M3",
+     "name": "メリハリ(金×黒)",
+     "sample": "今日は{{<<5>>つ}}の[[目標]]に挑戦",
+     "look": {
+      "font": "Noto Serif JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#fff6c8",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1a0f00"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#fff0a8"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1a0f00"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffb800",
+       "size": 12
+      },
+      "accent": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#ffffff",
+       "color2": "#cfd8e6",
+       "angle": 180
+      },
+      "accent2": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#7ef6ff",
+       "color2": "#00a8ff",
+       "angle": 180
+      },
+      "charSize": {
+       "auto": "hira",
+       "digits": false,
+       "big": 1.3,
+       "small": 0.72
+      },
+      "color2": "#ffb800",
+      "angle": 180,
+      "stops": [
+       {
+        "color": "#fff6c8",
+        "pos": 0
+       },
+       {
+        "color": "#ffd23a",
+        "pos": 50
+       },
+       {
+        "color": "#ffb800",
+        "pos": 100
+       }
+      ]
+     }
+    },
+    {
+     "id": "M4",
+     "name": "メリハリ(ネオン)",
+     "sample": "{{<<24>>時間}}の[[耐久配信]]",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#e8ffff",
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#001a33"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 6,
+       "color": "#00e5ff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#001a33"
+      },
+      "glow": {
+       "on": true,
+       "color": "#00e5ff",
+       "size": 12
+      },
+      "accent": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#ff9af0",
+       "color2": "#ff2fd6",
+       "angle": 180
+      },
+      "accent2": {
+       "on": true,
+       "fillType": "gradient",
+       "color": "#fff27a",
+       "color2": "#ffb000",
+       "angle": 180
+      },
+      "charSize": {
+       "auto": "hira",
+       "digits": true,
+       "big": 1.3,
+       "small": 0.72
+      },
+      "color2": "#7ef6ff",
+      "angle": 180
+     }
+    }
+   ]
+  },
+  {
+   "id": "basic",
+   "name": "定番",
+   "category": "basic",
+   "desc": "どんな画面にも合わせやすい、シンプルな文字",
+   "fontHint": "",
+   "variants": [
+    {
+     "id": "A1",
+     "name": "白文字・黒縁",
+     "sample": "シンプル",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#000000"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 4,
+       "y": 4,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "A2",
+     "name": "黒文字・白縁",
+     "sample": "シンプル",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#111111",
+      "stroke1": {
+       "on": true,
+       "width": 6,
+       "color": "#ffffff"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 4,
+       "blur": 6,
+       "alpha": 0.35
+      }
+     }
+    },
+    {
+     "id": "A3",
+     "name": "やさしい影",
+     "sample": "しずかな時間",
+     "look": {
+      "font": "Zen Maru Gothic",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 3,
+       "blur": 10,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "A4",
+     "name": "明朝(上品)",
+     "sample": "上品",
+     "look": {
+      "font": "Shippori Mincho",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#f4efe6",
+      "stroke1": {
+       "on": true,
+       "width": 2,
+       "color": "#2a2118"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 3,
+       "blur": 8,
+       "alpha": 0.5
+      }
+     }
+    },
+    {
+     "id": "A5",
+     "name": "筆文字",
+     "sample": "一本勝負",
+     "look": {
+      "font": "Yuji Boku",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#1a0a0a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 4,
+       "y": 4,
+       "blur": 0,
+       "alpha": 0.6
+      }
+     }
+    },
+    {
+     "id": "A6",
+     "name": "2色グラデーション",
+     "sample": "グラデーション",
+     "look": {
+      "font": "Dela Gothic One",
+      "bold": false,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "gradient",
+      "color": "#9be8ff",
+      "stroke1": {
+       "on": true,
+       "width": 5,
+       "color": "#1b1b3a"
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 6,
+       "alpha": 0.45
+      },
+      "color2": "#ff9bd6",
+      "angle": 180
+     }
+    }
+   ]
+  },
+  {
+   "id": "photo",
+   "name": "写真の質感",
+   "category": "photo",
+   "desc": "炎・氷・金属・石・宇宙・ネオンなどの質感を、文字の中に敷いた文字",
+   "fontHint": "質感の画像は、設定の「質感」で選べます。明るさ・大きさ・重ね方で調整してください。自分の画像は data/text-textures に入れると増やせます(README 参照)。",
+   "variants": [
+    {
+     "id": "T1",
+     "name": "黒いざらざら",
+     "sample": "黒いざらざら",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "black-grain",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#010101"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#0b0b0b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#010101"
+      },
+      "glow": {
+       "on": true,
+       "color": "#090909",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T2",
+     "name": "黒い流線",
+     "sample": "黒い流線",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "black-hair",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#070709"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#363441"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#070709"
+      },
+      "glow": {
+       "on": true,
+       "color": "#2c2a35",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T3",
+     "name": "黒いメッシュ(カーボン風)",
+     "sample": "黒いメッシュ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "black-mesh",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#040404"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#202323"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#040404"
+      },
+      "glow": {
+       "on": true,
+       "color": "#1a1c1c",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T4",
+     "name": "光の粒",
+     "sample": "光の粒",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "bokeh-stars",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#080909"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#3e4148"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#080909"
+      },
+      "glow": {
+       "on": true,
+       "color": "#32353a",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T5",
+     "name": "水色の結晶",
+     "sample": "水色の結晶",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "crystal-aqua",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#172926"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#172926"
+      },
+      "glow": {
+       "on": true,
+       "color": "#89f4e6",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T6",
+     "name": "青いクリスタル",
+     "sample": "青いクリスタル",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "crystal-blue",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1a202b"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1a202b"
+      },
+      "glow": {
+       "on": true,
+       "color": "#9dbffe",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T7",
+     "name": "透明な結晶",
+     "sample": "透明な結晶",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "crystal-clear",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1b1c1d"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#c9d0d3"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1b1c1d"
+      },
+      "glow": {
+       "on": true,
+       "color": "#a3a9ab",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T8",
+     "name": "カットガラス(青)",
+     "sample": "カットガラス",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "crystal-cut",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#22272d"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#22272d"
+      },
+      "glow": {
+       "on": true,
+       "color": "#caebff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T9",
+     "name": "ピンクの結晶",
+     "sample": "ピンクの結晶",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "crystal-pink",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2a262c"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2a262c"
+      },
+      "glow": {
+       "on": true,
+       "color": "#fce4ff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T10",
+     "name": "ダイヤモンド",
+     "sample": "ダイヤモンド",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "diamond",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1f2428"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1f2428"
+      },
+      "glow": {
+       "on": true,
+       "color": "#b7d5f1",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T11",
+     "name": "炎(写真)",
+     "sample": "炎",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "fire-flame",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2a1301"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2a1301"
+      },
+      "glow": {
+       "on": true,
+       "color": "#f87206",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T12",
+     "name": "霜の結晶",
+     "sample": "霜の結晶",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "frost-crystal",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2a2c2e"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2a2c2e"
+      },
+      "glow": {
+       "on": true,
+       "color": "#f9ffff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T13",
+     "name": "白い霜",
+     "sample": "白い霜",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "frost-white",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2f2f2f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2f2f2f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffffff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T14",
+     "name": "グリッチ(にじみ)",
+     "sample": "グリッチ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "glitch-blur",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#090908"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#464340"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#090908"
+      },
+      "glow": {
+       "on": true,
+       "color": "#393634",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T15",
+     "name": "グリッチ(模様)",
+     "sample": "グリッチ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "glitch-pattern",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0e1314"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#668b98"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0e1314"
+      },
+      "glow": {
+       "on": true,
+       "color": "#53717b",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T16",
+     "name": "ラメ(金)",
+     "sample": "ラメ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "glitter-gold",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#191308"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#bc8b3b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#191308"
+      },
+      "glow": {
+       "on": true,
+       "color": "#997130",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T17",
+     "name": "ラメ(虹色・紫)",
+     "sample": "ラメ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "glitter-iris",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#211e24"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#211e24"
+      },
+      "glow": {
+       "on": true,
+       "color": "#c5b4d7",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T18",
+     "name": "ラメ(ローズゴールド)",
+     "sample": "ラメ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "glitter-rosegold",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2d261f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2d261f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffe2b8",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T19",
+     "name": "金箔",
+     "sample": "金箔",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "gold-foil",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2e260d"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2e260d"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffe04f",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T20",
+     "name": "金塊",
+     "sample": "金塊",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "gold-nugget",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1c1105"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#d1812b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1c1105"
+      },
+      "glow": {
+       "on": true,
+       "color": "#aa6923",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T21",
+     "name": "緑のフェルト",
+     "sample": "緑のフェルト",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "green-felt",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#041606"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#20a130"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#041606"
+      },
+      "glow": {
+       "on": true,
+       "color": "#1a8327",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T22",
+     "name": "緑のガラス",
+     "sample": "緑のガラス",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "green-glass",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#040b02"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#1e5414"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#040b02"
+      },
+      "glow": {
+       "on": true,
+       "color": "#184410",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T23",
+     "name": "汚れた壁",
+     "sample": "汚れた壁",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "grunge-wall",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#212120"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#f0f0ec"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#212120"
+      },
+      "glow": {
+       "on": true,
+       "color": "#c3c3c0",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T24",
+     "name": "ホログラム箔(暗い)",
+     "sample": "ホログラム箔",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "holo-foil-dark",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#141112"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#938184"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#141112"
+      },
+      "glow": {
+       "on": true,
+       "color": "#77696b",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T25",
+     "name": "ホログラム箔(明るい)",
+     "sample": "ホログラム箔",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "holo-foil-light",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#262b2e"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#262b2e"
+      },
+      "glow": {
+       "on": true,
+       "color": "#e6feff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T26",
+     "name": "ホログラム(パステル)",
+     "sample": "ホログラム",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "holo-pastel",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1d2127"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1d2127"
+      },
+      "glow": {
+       "on": true,
+       "color": "#abc4ea",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T27",
+     "name": "ホログラム(青紫の波)",
+     "sample": "ホログラム",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "holo-wave",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0f1a2b"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0f1a2b"
+      },
+      "glow": {
+       "on": true,
+       "color": "#5c9dff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T28",
+     "name": "ひび割れた氷",
+     "sample": "ひび割れた氷",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "ice-cracked",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#242829"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#242829"
+      },
+      "glow": {
+       "on": true,
+       "color": "#d6f0f7",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T29",
+     "name": "氷の結晶",
+     "sample": "氷の結晶",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "ice-crystal",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#12181f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#86b3e8"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#12181f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#6d91bc",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T30",
+     "name": "暗い氷",
+     "sample": "暗い氷",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "ice-dark",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1115"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#587c9c"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1115"
+      },
+      "glow": {
+       "on": true,
+       "color": "#47657f",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T31",
+     "name": "氷(うす青の霜)",
+     "sample": "氷",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "ice-frost",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#2c3233"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#2c3233"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffffff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T32",
+     "name": "溶岩のひび割れ",
+     "sample": "溶岩のひび割れ",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "lava-crack",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0b0000"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#500606"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0b0000"
+      },
+      "glow": {
+       "on": true,
+       "color": "#410505",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T33",
+     "name": "溶岩(赤黒い岩)",
+     "sample": "溶岩",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "lava-ember",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0c0302"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#581c14"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0c0302"
+      },
+      "glow": {
+       "on": true,
+       "color": "#471710",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T34",
+     "name": "こげ茶の革",
+     "sample": "こげ茶の革",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "leather-brown",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#150a02"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#9c4b14"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#150a02"
+      },
+      "glow": {
+       "on": true,
+       "color": "#7f3d10",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T35",
+     "name": "赤い革",
+     "sample": "赤い革",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "leather-red",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#220604"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#220604"
+      },
+      "glow": {
+       "on": true,
+       "color": "#c9271c",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T36",
+     "name": "茶色の革(ステッチ)",
+     "sample": "茶色の革",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "leather-tan",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#260f03"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#260f03"
+      },
+      "glow": {
+       "on": true,
+       "color": "#e65d12",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T37",
+     "name": "稲妻(青紫)",
+     "sample": "稲妻",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "lightning-blue",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#141228"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#141228"
+      },
+      "glow": {
+       "on": true,
+       "color": "#7a6af1",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T38",
+     "name": "稲妻(紫)",
+     "sample": "稲妻",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "lightning-purple",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1b1a1f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#c9c0e3"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1b1a1f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#a39cb8",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T39",
+     "name": "稲妻(赤紫)",
+     "sample": "稲妻",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "lightning-red",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#12070c"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#83395b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#12070c"
+      },
+      "glow": {
+       "on": true,
+       "color": "#6a2e4a",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T40",
+     "name": "黒い金属(ヘアライン)",
+     "sample": "黒い金属",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "metal-black",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#050505"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#262626"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#050505"
+      },
+      "glow": {
+       "on": true,
+       "color": "#1f1f1f",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T41",
+     "name": "青銀の岩肌",
+     "sample": "青銀の岩肌",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "metal-bluerock",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#16171b"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#a3a9c9"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#16171b"
+      },
+      "glow": {
+       "on": true,
+       "color": "#8489a3",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T42",
+     "name": "銀の金属(ヘアライン)",
+     "sample": "銀の金属",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "metal-silver",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1d1f21"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1d1f21"
+      },
+      "glow": {
+       "on": true,
+       "color": "#b0bcc8",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T43",
+     "name": "天の川",
+     "sample": "天の川",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "milky-way",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#090f19"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#4870b6"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#090f19"
+      },
+      "glow": {
+       "on": true,
+       "color": "#3a5b94",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T44",
+     "name": "星雲",
+     "sample": "星雲",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "nebula",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1614"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#5ca691"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1614"
+      },
+      "glow": {
+       "on": true,
+       "color": "#4b8776",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T45",
+     "name": "ネオン管(青)",
+     "sample": "ネオン管",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-blue",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#01090e"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#0c4166"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#01090e"
+      },
+      "glow": {
+       "on": true,
+       "color": "#0a3553",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T46",
+     "name": "ネオンの泡",
+     "sample": "ネオンの泡",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-bubble",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#030206"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#1b102e"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#030206"
+      },
+      "glow": {
+       "on": true,
+       "color": "#160d25",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T47",
+     "name": "ネオンサイン",
+     "sample": "ネオンサイン",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-signs",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#150e12"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#996b89"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#150e12"
+      },
+      "glow": {
+       "on": true,
+       "color": "#7c576f",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T48",
+     "name": "光の線(紫)",
+     "sample": "光の線",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-trails",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#100313"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#781690"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#100313"
+      },
+      "glow": {
+       "on": true,
+       "color": "#611275",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T49",
+     "name": "ネオン(三角)",
+     "sample": "ネオン",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-triangle",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#05080e"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#263c6c"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#05080e"
+      },
+      "glow": {
+       "on": true,
+       "color": "#1f3158",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T50",
+     "name": "ネオン管(水色×ピンク)",
+     "sample": "ネオン管",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "neon-tubes",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1b28"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0c1b28"
+      },
+      "glow": {
+       "on": true,
+       "color": "#47a2f0",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T51",
+     "name": "しわの紙",
+     "sample": "しわの紙",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "paper-crumpled",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#292825"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#292825"
+      },
+      "glow": {
+       "on": true,
+       "color": "#f7efde",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T52",
+     "name": "方眼紙(しわ)",
+     "sample": "方眼紙",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "paper-grid",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#303131"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#303131"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ffffff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T53",
+     "name": "錆びた緑の鉄",
+     "sample": "錆びた緑の鉄",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "rust-green",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#10130f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#788e71"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#10130f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#61735c",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T54",
+     "name": "錆びた鉄",
+     "sample": "錆びた鉄",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "rust-plain",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#24130c"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#24130c"
+      },
+      "glow": {
+       "on": true,
+       "color": "#d5734b",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T55",
+     "name": "錆びた鉄板(リベット)",
+     "sample": "錆びた鉄板",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "rust-rivet",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#201e1c"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ebded0"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#201e1c"
+      },
+      "glow": {
+       "on": true,
+       "color": "#bfb4a9",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T56",
+     "name": "青い海",
+     "sample": "青い海",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "sea-calm",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0e1a1f"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#69c3e4"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0e1a1f"
+      },
+      "glow": {
+       "on": true,
+       "color": "#559eb9",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T57",
+     "name": "夜の海",
+     "sample": "夜の海",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "sea-dark",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0d1417"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#6191a9"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0d1417"
+      },
+      "glow": {
+       "on": true,
+       "color": "#4f7689",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T58",
+     "name": "白い波しぶき",
+     "sample": "白い波しぶき",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "sea-foam",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1c2528"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1c2528"
+      },
+      "glow": {
+       "on": true,
+       "color": "#a7dff0",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T59",
+     "name": "空と雪",
+     "sample": "空と雪",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "sky-snow",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#14282b"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#14282b"
+      },
+      "glow": {
+       "on": true,
+       "color": "#78edff",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T60",
+     "name": "雪",
+     "sample": "雪",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "snow",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#282929"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#282929"
+      },
+      "glow": {
+       "on": true,
+       "color": "#f1f5f5",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T61",
+     "name": "ごつごつの岩",
+     "sample": "ごつごつの岩",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "stone-rough",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#211f1b"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#211f1b"
+      },
+      "glow": {
+       "on": true,
+       "color": "#c8b9a2",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T62",
+     "name": "石垣",
+     "sample": "石垣",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "stone-wall",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1e1b15"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#e0c69b"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1e1b15"
+      },
+      "glow": {
+       "on": true,
+       "color": "#b6a17e",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T63",
+     "name": "白い石壁",
+     "sample": "白い石壁",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "stone-white",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#282723"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#ffffff"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#282723"
+      },
+      "glow": {
+       "on": true,
+       "color": "#ede7d3",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T64",
+     "name": "雷雲",
+     "sample": "雷雲",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "storm-cloud",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#0d0f13"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#637390"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#0d0f13"
+      },
+      "glow": {
+       "on": true,
+       "color": "#505d75",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    },
+    {
+     "id": "T65",
+     "name": "夕日の水しぶき",
+     "sample": "夕日の水しぶき",
+     "look": {
+      "font": "Noto Sans JP",
+      "bold": true,
+      "italic": false,
+      "skew": 0,
+      "letterSpacing": 0,
+      "fillType": "solid",
+      "color": "#ffffff",
+      "texture": {
+       "id": "water-sunset",
+       "blend": "normal",
+       "bright": 0,
+       "scale": 0.7,
+       "contrast": 0,
+       "x": 50,
+       "y": 50
+      },
+      "stroke1": {
+       "on": true,
+       "width": 3,
+       "color": "#1a1816"
+      },
+      "stroke2": {
+       "on": true,
+       "width": 5,
+       "color": "#c1b3a3"
+      },
+      "stroke3": {
+       "on": true,
+       "width": 3,
+       "color": "#1a1816"
+      },
+      "glow": {
+       "on": true,
+       "color": "#9d9184",
+       "size": 12
+      },
+      "shadow": {
+       "on": true,
+       "color": "#000000",
+       "x": 0,
+       "y": 6,
+       "blur": 8,
+       "alpha": 0.55
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
