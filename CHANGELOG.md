@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-10-29
+
+### Added
+- **Add-on packs**: drop a folder into `packs/` to add templates, large-text designs, textures and character sets; loaded automatically while running and kept when updating. Pack templates are marked "Add-on pack" in the template list
+- **Character sets**: switch all four character images at once (sample or add-on pack characters)
+- 4 more Google Fonts (all SIL OFL): DotGothic16, Press Start 2P, Creepster, Bangers
+
+### Changed
+- Release zips and git never include the contents of `packs/` (only its README)
+
+---
+
 ## [1.1.0] - 2026-10-28
 
 ### Added
@@ -38,6 +50,10 @@ First public release.
 - `start.bat` / `start.command` / `start.sh` launchers and `npm run release` for release zips
 
 ---
+
+## 1.2.0(日本語)
+
+追加パックの読み込み(`packs` フォルダに入れるだけで、テンプレート・大きな文字のデザイン・質感・キャラクターを追加)、キャラクターのセットの切り替え、Google Fonts 4 種類の追加(すべて OFL)。
 
 ## 1.1.0(日本語)
 

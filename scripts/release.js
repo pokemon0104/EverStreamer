@@ -2,7 +2,7 @@
 'use strict';
 // Releases 用の zip を作る:node scripts/release.js → dist/everstreamer-v<version>.zip
 // 追加のパッケージは使わない(Node.js 標準の zlib だけで zip を書く)
-// 含めないもの:node_modules / data(設定・APIキー・アップロードした画像)/ dist / .git
+// 含めないもの:node_modules / data(設定・APIキー・アップロードした画像)/ dist / .git / packs の中身(README だけ入れる)
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
@@ -19,6 +19,7 @@ function walk(dir, rel = '') {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     if (EXCLUDE.has(e.name)) continue;
     const r = rel ? `${rel}/${e.name}` : e.name;
+    if (rel === 'packs' && r !== 'packs/README.md') continue; // 追加パック(有料パックなど)は本体の zip に入れない
     if (e.isDirectory()) out.push(...walk(path.join(dir, e.name), r));
     else if (e.isFile()) {
       if (SECRET.test(e.name)) throw new Error(`秘密情報らしいファイルがあります / Secret-like file found: ${r}`);

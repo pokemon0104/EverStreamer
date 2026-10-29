@@ -7,7 +7,15 @@
   const C = () => OV.raw.character || {};
   const V = () => OV.state.characterView || {};
   /** 画像の URL(sample: は同梱のサンプル) */
-  OV.charImageUrl = (f) => (!f ? '' : f.startsWith('sample:') ? `/char-assets/${encodeURIComponent(f.slice(7))}` : `/char-uploads/${encodeURIComponent(f)}`);
+  OV.charImageUrl = (f) => {
+    if (!f) return '';
+    if (f.startsWith('sample:')) return `/char-assets/${encodeURIComponent(f.slice(7))}`;
+    if (f.startsWith('pack:')) { // pack:<パック>/<セット>/<ファイル>(追加パックのキャラクター)
+      const [p, s, file] = f.slice(5).split('/');
+      return `/packs/${encodeURIComponent(p)}/characters/${encodeURIComponent(s)}/${encodeURIComponent(file || '')}`;
+    }
+    return `/char-uploads/${encodeURIComponent(f)}`;
+  };
 
   // ---- マイクの音量(OBS のマイク・管理画面のマイクで共通) ----
   /** マイクの音量を測る。onLevel(0〜1) を約 30 回/秒 呼ぶ。止めるときは返り値の stop() */

@@ -86,12 +86,26 @@
     label: 'キャラクター',
     order: 23,
     basic: true,
-    sig: () => JSON.stringify([OV.canvas, OV.catalogs.charUploads, C().images, (C().rules || []).map((r) => r.id)]),
+    sig: () => JSON.stringify([OV.canvas, OV.catalogs.charUploads, (OV.catalogs.charSets || []).map((x) => x.id), C().images, (C().rules || []).map((r) => r.id)]),
     build(root) {
       root.append(
         h('p', { class: 'hint' }, '画像を 2〜4 枚読み込むと、声に合わせて口が動き、まばたきや呼吸をして、コメントやアラートに反応します(PNGtuber 方式)。最初はサンプルの「もちまる」が入っています。'),
         UI.toggle({ label: 'キャラクターを表示する', ...ck('enabled') }),
         UI.toggle({ label: 'この画面(横/縦)に表示する', ...vk('show') }));
+
+      // ---- キャラクターのセット(サンプル・追加パック) ----
+      const sets = OV.catalogs.charSets || [];
+      if (sets.length > 1) {
+        const same = (a, b) => ['idle', 'talk', 'blink', 'happy'].every((k) => (a[k] || '') === (b[k] || ''));
+        root.append(h('h3', { class: 'h' }, 'キャラクターのセット'),
+          UI.select({
+            label: 'セット',
+            options: () => [['', '(自分の画像)'], ...sets.map((x) => [x.id, x.pack ? `${x.name}(${x.pack})` : x.name])],
+            get: () => { const cur = C().images || {}; const hit = sets.find((x) => same(x.images, cur)); return hit ? hit.id : ''; },
+            set: (v) => { const hit = sets.find((x) => x.id === v); if (hit) upd({ images: { ...hit.images } }); },
+          }),
+          h('p', { class: 'hint' }, '追加パックに入っているキャラクターを、4 枚まとめて切り替えます。自分の画像に戻すときは、下の画像の欄で選び直してください。'));
+      }
 
       // ---- 画像 ----
       const ups = OV.catalogs.charUploads || [];
@@ -107,7 +121,7 @@
         thumb.addEventListener('drop', (e) => { e.preventDefault(); thumb.classList.remove('over'); if (e.dataTransfer.files[0]) pick(e.dataTransfer.files[0]); });
         UI.bind(thumb, () => { const u = OV.charImageUrl((C().images || {})[slot]); thumb.classList.toggle('has', !!u); if (u) img.src = u; else img.removeAttribute('src'); });
         const sel = UI.select({
-          options: () => [['__sample', '(サンプル)'], ...(slot === 'idle' ? [] : [['', '(使わない)']]), ...ups.map((f) => [f, f])],
+          options: () => { const v = (C().images || {})[slot] || ''; return [['__sample', '(サンプル)'], ...(v.startsWith('pack:') ? [[v, '(セットの画像)']] : []), ...(slot === 'idle' ? [] : [['', '(使わない)']]), ...ups.map((f) => [f, f])]; },
           get: () => { const v = (C().images || {})[slot] || ''; return v.startsWith('sample:') ? '__sample' : v; },
           set: (v) => upd({ images: { [slot]: v === '__sample' ? `sample:mochimaru-${slot}.svg` : v } }),
         });

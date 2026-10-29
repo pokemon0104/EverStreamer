@@ -200,6 +200,14 @@ Click **Advanced ▸** in the admin page for fine-tuning of panels, layout, back
 
 ---
 
+## Add-on packs
+
+Put an add-on pack folder into the `packs` folder and EverStreamer loads its templates, large-text designs, textures and characters automatically (even while running). Updating EverStreamer keeps the `packs` folder. See [packs/README.md](packs/README.md) for the folder layout if you want to make your own.
+
+An optional paid pack (**EverStreamer Premium Pack Vol.1**: 6 more templates, 35 large-text designs, 10 textures and 2 characters) is sold separately on BOOTH. Everything in this repository stays free.
+
+---
+
 ## Where your data lives / updating
 
 Settings, the API key and uploaded images are all stored in the `data/` folder.

@@ -7,6 +7,10 @@ data/
 # Release builds
 dist/
 
+# Add-on packs (paid / personal packs must never be committed; keep only the README)
+packs/*
+!packs/README.md
+
 # Secrets (just in case)
 *.key
 .env

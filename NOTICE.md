@@ -28,7 +28,11 @@ Notes:
 
 Fonts are fetched from Google Fonts the first time they are used and cached in `data/fonts/` on your own PC. They are not included in this repository or in release zips.
 
-Noto Sans JP, Noto Serif JP, M PLUS Rounded 1c, Zen Maru Gothic, Zen Kaku Gothic New, Kiwi Maru, Dela Gothic One, Reggae One, RocknRoll One, Potta One, Yusei Magic, Train One, Shippori Mincho, Yuji Syuku, Kaisei Decol, Orbitron, Rajdhani, Poppins, Montserrat, Bebas Neue, Cinzel, Mochiy Pop One, Hachi Maru Pop, Darumadrop One, Klee One, Kaisei Tokumin, Yuji Boku, Rampart One.
+Noto Sans JP, Noto Serif JP, M PLUS Rounded 1c, Zen Maru Gothic, Zen Kaku Gothic New, Kiwi Maru, Dela Gothic One, Reggae One, RocknRoll One, Potta One, Yusei Magic, Train One, Shippori Mincho, Yuji Syuku, Kaisei Decol, Orbitron, Rajdhani, Poppins, Montserrat, Bebas Neue, Cinzel, Mochiy Pop One, Hachi Maru Pop, Darumadrop One, Klee One, Kaisei Tokumin, Yuji Boku, Rampart One, DotGothic16, Press Start 2P, Creepster, Bangers.
+
+### Add-on packs
+
+Folders you put in `packs/` (for example a pack you bought) are not part of this repository and are never included in release zips. Each pack has its own license.
 
 ### Your own fonts
 

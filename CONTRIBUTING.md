@@ -117,6 +117,10 @@ Scope every rule to your template so it only applies when it's selected:
 - **Designs** (large text panel) live in `config/text-designs.json`: `types` hold `variants` with a `look`. Use only your own designs; don't name commercial fonts or copy known logos / titles.
 - **Textures**: drop a JPG / PNG into `features/bigText/textures/` (add a label in `textures.json`). Only add images you made or that are clearly redistributable, and list them in `NOTICE.md`.
 
+## Making an add-on pack
+
+A pack is a folder in `packs/` with optional `pack.json`, `templates/`, `text-designs.json`, `textures/` and `characters/<set>/` (see `packs/README.md`). Use the same rules as above for rights. Pack assets are served at `/packs/<pack>/…`. Never commit pack contents to this repository.
+
 ## Adding a translation
 
 The admin page is written in Japanese. English text comes from `public/i18n/en.json`:

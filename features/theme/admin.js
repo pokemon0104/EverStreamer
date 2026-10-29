@@ -73,7 +73,7 @@
     const cards = templates().map((t) => {
       const b = h('button', { type: 'button', class: 'tpl-card', onclick: () => { setTheme({ templateId: t.id }); if (onPick) onPick(t); } },
         ADM.templatePreview(t),
-        h('span', { class: 'tpl-nm' }, OV.tplName(t)),
+        h('span', { class: 'tpl-nm' }, OV.tplName(t), t.pack ? h('span', { class: 'tpl-pack', title: t.pack }, '追加パック') : ''),
         h('span', { class: 'tpl-desc' }, OV.tplName(t, 'desc')));
       b.dataset.id = t.id;
       grid.append(b);

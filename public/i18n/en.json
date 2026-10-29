@@ -1940,7 +1940,18 @@
   "スマホの縦型ライブの見え方が基準です。": "Based on how a vertical live stream looks on a phone.",
   "PC で見たときの操作バーと、スマホを横向き全画面にしてチャットを開いたときが基準です。": "Based on the player controls on a PC, and on a phone in landscape fullscreen with the chat open.",
   "自動(サイドバー以外の場所に合わせる)": "Automatic (fits the area outside the sidebar)",
-  "(ゲーム枠の内側)": " (inside the game frame)"
+  "(ゲーム枠の内側)": " (inside the game frame)",
+  "キャラクターのセット": "Character sets",
+  "セット": "Set",
+  "(自分の画像)": "(My images)",
+  "(セットの画像)": "(Set image)",
+  "追加パック": "Add-on pack",
+  "追加パックに入っているキャラクターを、4 枚まとめて切り替えます。自分の画像に戻すときは、下の画像の欄で選び直してください。": "Switches all four images to a character from an add-on pack. To go back to your own images, choose them again in the image slots below.",
+  "もちまる(サンプル)": "Mochimaru (sample)",
+  "DotGothic16(ドット風・日本語)": "DotGothic16 (pixel, Japanese)",
+  "Press Start 2P(ドット風・英数字)": "Press Start 2P (pixel, Latin)",
+  "Creepster(ホラー・英字)": "Creepster (horror, Latin)",
+  "Bangers(マンガ風・英字)": "Bangers (comic, Latin)"
  },
  "patterns": {
   "未対応のメッセージです: {0}": "Unsupported message: {0}",

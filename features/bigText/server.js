@@ -9,15 +9,24 @@ module.exports = {
   /** テキストデザインのギャラリー:デザイン一覧(config/text-designs.json)と、お気に入り・最近・マイデザイン(data) */
   init({ app, catalogs, paths, dir }) {
     const express = require('express');
-    // 質感の画像:同梱のもの(features/bigText/textures)と、自分で足したもの(data/text-textures)を自動で見つけて、質感の選択肢に加える
-    const texDirs = [path.join(paths.data, 'text-textures'), path.join(dir, 'textures')];
-    try { fs.mkdirSync(texDirs[0], { recursive: true }); } catch { /* 作れなくても動く */ }
-    for (const d of texDirs) app.use('/text-textures', express.static(d, { maxAge: '10m' }));
+    // 質感の画像:自分で足したもの(data/text-textures)・同梱のもの(features/bigText/textures)・追加パック(packs/*/textures)を自動で見つけて、質感の選択肢に加える
+    const packs = require('../../core/packs');
+    const userTex = path.join(paths.data, 'text-textures');
+    try { fs.mkdirSync(userTex, { recursive: true }); } catch { /* 作れなくても動く */ }
+    const texDirs = () => [userTex, path.join(dir, 'textures'), ...packs.list(paths.packs).map((p) => path.join(p.dir, 'textures'))];
+    app.get('/text-textures/:file', (req, res) => {
+      const f = String(req.params.file || '');
+      if (!/^[\w.-]+\.(png|jpe?g|webp)$/i.test(f)) return res.status(404).end();
+      const d = texDirs().find((x) => fs.existsSync(path.join(x, f)));
+      if (!d) return res.status(404).end();
+      res.set('Cache-Control', 'max-age=600');
+      res.sendFile(path.join(d, f));
+    });
     let designs = { types: [], categories: [], textures: [] };
     let lastSig = '';
     const scanTextures = () => {
       const out = [];
-      for (const d of texDirs) {
+      for (const d of texDirs()) {
         let labels = {};
         try { labels = JSON.parse(fs.readFileSync(path.join(d, 'textures.json'), 'utf8')); } catch { /* ラベルなし */ }
         let names = [];
@@ -30,13 +39,46 @@ module.exports = {
       }
       return out;
     };
+    /** 追加パックの text-designs.json を足す(id が重なるときは、パックの名前を前に付ける) */
+    const withPacks = (base) => {
+      const out = { ...base, categories: [...(base.categories || [])], themes: (base.themes || []).map((t) => ({ ...t, ids: [...(t.ids || [])] })), types: [...(base.types || [])], textures: [...(base.textures || [])] };
+      const typeIds = new Set(out.types.map((t) => t.id));
+      const varIds = new Set(out.types.flatMap((t) => (t.variants || []).map((v) => v.id)));
+      for (const p of packs.list(paths.packs)) {
+        const d = packs.readJson(path.join(p.dir, 'text-designs.json'));
+        if (!d || !Array.isArray(d.types)) continue;
+        const rename = {};
+        for (const c of d.categories || []) if (c && c.id && !out.categories.some((x) => x.id === c.id)) out.categories.push({ ...c, pack: p.name });
+        for (const t of d.types) {
+          if (!t || !t.id || !Array.isArray(t.variants)) continue;
+          const tid = typeIds.has(t.id) ? `${p.id}-${t.id}` : t.id;
+          typeIds.add(tid);
+          const variants = t.variants.filter((v) => v && v.id).map((v) => {
+            const vid = varIds.has(v.id) ? `${p.id}-${v.id}` : v.id;
+            varIds.add(vid); rename[v.id] = vid;
+            return { ...v, id: vid };
+          });
+          out.types.push({ ...t, id: tid, pack: p.name, variants });
+        }
+        for (const th of d.themes || []) {
+          if (!th || !th.id) continue;
+          const ids = (th.ids || []).map((x) => rename[x] || x);
+          const cur = out.themes.find((x) => x.id === th.id);
+          if (cur) cur.ids.push(...ids); else out.themes.push({ ...th, ids });
+        }
+        for (const tx of d.textures || []) if (tx && tx.id && !out.textures.some((x) => x.id === tx.id)) out.textures.push(tx);
+      }
+      return out;
+    };
     const publishDesigns = () => {
-      const have = new Set((designs.textures || []).map((t) => t.id));
+      const all = withPacks(designs);
+      const have = new Set((all.textures || []).map((t) => t.id));
       const extra = scanTextures().filter((t) => !have.has(t.id));
       lastSig = JSON.stringify(extra);
-      catalogs.set('textDesigns', { ...designs, textures: [...(designs.textures || []), ...extra] });
+      catalogs.set('textDesigns', { ...all, textures: [...(all.textures || []), ...extra] });
     };
     watchJson(path.join(paths.config, 'text-designs.json'), (d) => { designs = d && Array.isArray(d.types) ? d : { types: [], categories: [], textures: [] }; publishDesigns(); }, { fallback: { types: [] } });
+    packs.watch(paths.packs, publishDesigns);
     setInterval(() => { // 画像を data/text-textures に入れたら、再起動しなくても選択肢に出す
       const have = new Set((designs.textures || []).map((t) => t.id));
       if (JSON.stringify(scanTextures().filter((t) => !have.has(t.id))) !== lastSig) publishDesigns();

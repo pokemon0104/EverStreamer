@@ -8,6 +8,7 @@
 .adm .tpl-card:hover { border-color: var(--line); transform: translateY(-1px); }
 .adm .tpl-card.on { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(139, 155, 255, .2); }
 .adm .tpl-nm { font-weight: 700; font-size: 13px; }
+.adm .tpl-pack { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 999px; font-size: 10px; font-weight: 700; vertical-align: 2px; background: #f5c542; color: #2a1f00; }
 .adm .tpl-desc { color: var(--muted); font-size: 11px; line-height: 1.4; }
 .adm .tpl-pv { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #000; }
 .adm .tpl-st { position: absolute; left: 0; top: 0; width: 320px; height: 180px; transform-origin: 0 0; overflow: hidden; }

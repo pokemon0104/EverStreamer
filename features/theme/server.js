@@ -105,12 +105,13 @@ module.exports = {
       catalogs,
       commitRaw: (...keys) => { store.scheduleSave(); keys.forEach((k) => hub.broadcast('core:section', { key: k, value: store.state[k] })); },
     };
-    theme.watchTemplates(dir, (list) => { catalogs.set('templates', list); refreshFollowers(fake); });
+    theme.watchTemplates(dir, (list) => { catalogs.set('templates', list); refreshFollowers(fake); }, paths.packs);
     // テンプレートごとの CSS(飾り)。/templates/neon.css など
     app.get('/templates/:file', (req, res) => {
       const f = String(req.params.file || '');
       if (!/^[\w-]+\.css$/.test(f)) return res.status(404).end();
-      res.type('text/css').sendFile(path.join(dir, f), (e) => { if (e && !res.headersSent) res.status(404).end(); });
+      const t = (catalogs.get('templates') || []).find((x) => `${x.id}.css` === f);
+      res.type('text/css').sendFile(path.join((t && t.dir) || dir, f), (e) => { if (e && !res.headersSent) res.status(404).end(); });
     });
     app.use('/template-assets', express.static(path.join(dir, 'assets')));
   },

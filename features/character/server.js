@@ -106,6 +106,11 @@ module.exports = {
     const list = () => { try { return fs.readdirSync(uploadsDir).filter((f) => /\.(png|webp)$/i.test(f)).sort(); } catch { return []; } };
     const refresh = () => catalogs.set('charUploads', list());
     refresh();
+    // キャラクターのセット:同梱のサンプルと、追加パック(packs/*/characters/<セット>/)のもの
+    const packs = require('../../core/packs');
+    const publishSets = () => catalogs.set('charSets', [{ id: 'mochimaru', name: 'もちまる(サンプル)', pack: '', images: { ...SAMPLE } }, ...packs.characterSets(paths.packs)]);
+    publishSets();
+    packs.watch(paths.packs, publishSets);
     app.use('/char-assets', express.static(path.join(__dirname, 'assets')));
     app.use('/char-uploads', express.static(uploadsDir));
     // 透過画像(PNG / WebP)を受け取る

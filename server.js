@@ -12,6 +12,7 @@ const { mountFonts } = require('./core/fonts');
 const { isLoopback } = require('./core/util');
 const { bus } = require('./core/bus');
 const { V_ALIAS } = require('./core/canvas');
+const packs = require('./core/packs');
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = '127.0.0.1'; // localhost のみで待ち受け(外部公開しない)
@@ -22,8 +23,10 @@ const paths = {
   config: path.join(__dirname, 'config'),
   public: path.join(__dirname, 'public'),
   features: path.join(__dirname, 'features'),
+  packs: path.join(__dirname, 'packs'), // 追加パック(テンプレート・素材)。本体を更新しても消えない
 };
 fs.mkdirSync(paths.data, { recursive: true });
+fs.mkdirSync(paths.packs, { recursive: true });
 
 // ---- 機能(プラグイン)の読み込み ----
 const features = loadFeatures(paths.features);
@@ -64,6 +67,11 @@ const hub = createHub({ server, store, catalogs, handlers, panelTypes, bus });
 
 const featureCtx = { app, store, catalogs, hub, paths, panelTypes, bus };
 mountFonts(featureCtx);
+// 追加パック:一覧を配り、画像・CSS を /packs/... で配る
+packs.serve(app, paths.packs);
+const publishPacks = () => catalogs.set('packs', packs.list(paths.packs).map(({ id, name, version, author }) => ({ id, name, version, author })));
+publishPacks();
+packs.watch(paths.packs, publishPacks);
 for (const f of features) {
   if (typeof f.mod.init === 'function') f.mod.init({ ...featureCtx, dir: f.dir });
 }
